@@ -1,0 +1,198 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                           count    min threads    max threads
+--------------------------  -------  -------------  -------------
+all                               1              1              1
+blast                             6              2              2
+makedb                            3              1              1
+reciprocal_best_blast_hits        3              1              1
+total                            13              1              2
+
+Select jobs to execute...
+
+[Mon Jul 10 11:20:11 2023]
+rule makedb:
+    input: processed_data/prot/Astrub.fa
+    output: processed_data/prot/Astrub.dmnd
+    jobid: 5
+    reason: Missing output files: processed_data/prot/Astrub.dmnd
+    wildcards: spec2=Astrub
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+
+[Mon Jul 10 11:20:11 2023]
+rule makedb:
+    input: processed_data/prot/Holleu.fa
+    output: processed_data/prot/Holleu.dmnd
+    jobid: 8
+    reason: Missing output files: processed_data/prot/Holleu.dmnd
+    wildcards: spec2=Holleu
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 11:20:13 2023]
+Finished job 5.
+1 of 13 steps (8%) done
+Select jobs to execute...
+
+[Mon Jul 10 11:20:13 2023]
+rule makedb:
+    input: processed_data/prot/Parliv.fa
+    output: processed_data/prot/Parliv.dmnd
+    jobid: 3
+    reason: Missing output files: processed_data/prot/Parliv.dmnd
+    wildcards: spec2=Parliv
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 11:20:13 2023]
+Finished job 8.
+2 of 13 steps (15%) done
+Select jobs to execute...
+[Mon Jul 10 11:20:15 2023]
+Finished job 3.
+3 of 13 steps (23%) done
+
+[Mon Jul 10 11:20:15 2023]
+rule blast:
+    input: processed_data/prot/Holleu.fa, processed_data/prot/Astrub.dmnd
+    output: blastp/Holleu+Astrub.blp
+    jobid: 9
+    reason: Missing output files: blastp/Holleu+Astrub.blp; Input files updated by another job: processed_data/prot/Astrub.dmnd
+    wildcards: spec1=Holleu, spec2=Astrub
+    threads: 2
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 11:24:20 2023]
+Finished job 9.
+4 of 13 steps (31%) done
+Select jobs to execute...
+
+[Mon Jul 10 11:24:20 2023]
+rule blast:
+    input: processed_data/prot/Holleu.fa, processed_data/prot/Parliv.dmnd
+    output: blastp/Holleu+Parliv.blp
+    jobid: 12
+    reason: Missing output files: blastp/Holleu+Parliv.blp; Input files updated by another job: processed_data/prot/Parliv.dmnd
+    wildcards: spec1=Holleu, spec2=Parliv
+    threads: 2
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 11:29:42 2023]
+Finished job 12.
+5 of 13 steps (38%) done
+Select jobs to execute...
+
+[Mon Jul 10 11:29:42 2023]
+rule blast:
+    input: processed_data/prot/Parliv.fa, processed_data/prot/Astrub.dmnd
+    output: blastp/Parliv+Astrub.blp
+    jobid: 4
+    reason: Missing output files: blastp/Parliv+Astrub.blp; Input files updated by another job: processed_data/prot/Astrub.dmnd
+    wildcards: spec1=Parliv, spec2=Astrub
+    threads: 2
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 11:33:15 2023]
+Finished job 4.
+6 of 13 steps (46%) done
+Select jobs to execute...
+
+[Mon Jul 10 11:33:15 2023]
+rule blast:
+    input: processed_data/prot/Parliv.fa, processed_data/prot/Holleu.dmnd
+    output: blastp/Parliv+Holleu.blp
+    jobid: 11
+    reason: Missing output files: blastp/Parliv+Holleu.blp; Input files updated by another job: processed_data/prot/Holleu.dmnd
+    wildcards: spec1=Parliv, spec2=Holleu
+    threads: 2
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 11:38:07 2023]
+Finished job 11.
+7 of 13 steps (54%) done
+Select jobs to execute...
+
+[Mon Jul 10 11:38:07 2023]
+rule blast:
+    input: processed_data/prot/Astrub.fa, processed_data/prot/Holleu.dmnd
+    output: blastp/Astrub+Holleu.blp
+    jobid: 7
+    reason: Missing output files: blastp/Astrub+Holleu.blp; Input files updated by another job: processed_data/prot/Holleu.dmnd
+    wildcards: spec1=Astrub, spec2=Holleu
+    threads: 2
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 11:41:43 2023]
+Finished job 7.
+8 of 13 steps (62%) done
+Select jobs to execute...
+
+[Mon Jul 10 11:41:43 2023]
+rule reciprocal_best_blast_hits:
+    input: blastp/Parliv+Holleu.blp, blastp/Holleu+Parliv.blp
+    output: orthologs/Parliv+Holleu_sensitive.txt
+    jobid: 10
+    reason: Missing output files: orthologs/Parliv+Holleu_sensitive.txt; Input files updated by another job: blastp/Holleu+Parliv.blp, blastp/Parliv+Holleu.blp
+    wildcards: spec1=Parliv, spec2=Holleu
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+
+[Mon Jul 10 11:41:43 2023]
+rule reciprocal_best_blast_hits:
+    input: blastp/Astrub+Holleu.blp, blastp/Holleu+Astrub.blp
+    output: orthologs/Astrub+Holleu_sensitive.txt
+    jobid: 6
+    reason: Missing output files: orthologs/Astrub+Holleu_sensitive.txt; Input files updated by another job: blastp/Holleu+Astrub.blp, blastp/Astrub+Holleu.blp
+    wildcards: spec1=Astrub, spec2=Holleu
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 11:41:43 2023]
+Finished job 6.
+9 of 13 steps (69%) done
+Select jobs to execute...
+[Mon Jul 10 11:41:44 2023]
+Finished job 10.
+10 of 13 steps (77%) done
+
+[Mon Jul 10 11:41:44 2023]
+rule blast:
+    input: processed_data/prot/Astrub.fa, processed_data/prot/Parliv.dmnd
+    output: blastp/Astrub+Parliv.blp
+    jobid: 2
+    reason: Missing output files: blastp/Astrub+Parliv.blp; Input files updated by another job: processed_data/prot/Parliv.dmnd
+    wildcards: spec1=Astrub, spec2=Parliv
+    threads: 2
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 11:44:50 2023]
+Finished job 2.
+11 of 13 steps (85%) done
+Select jobs to execute...
+
+[Mon Jul 10 11:44:50 2023]
+rule reciprocal_best_blast_hits:
+    input: blastp/Astrub+Parliv.blp, blastp/Parliv+Astrub.blp
+    output: orthologs/Astrub+Parliv_sensitive.txt
+    jobid: 1
+    reason: Missing output files: orthologs/Astrub+Parliv_sensitive.txt; Input files updated by another job: blastp/Astrub+Parliv.blp, blastp/Parliv+Astrub.blp
+    wildcards: spec1=Astrub, spec2=Parliv
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 11:44:51 2023]
+Finished job 1.
+12 of 13 steps (92%) done
+Select jobs to execute...
+
+[Mon Jul 10 11:44:51 2023]
+localrule all:
+    input: orthologs/Astrub+Parliv_sensitive.txt, orthologs/Astrub+Holleu_sensitive.txt, orthologs/Parliv+Holleu_sensitive.txt
+    jobid: 0
+    reason: Input files updated by another job: orthologs/Astrub+Parliv_sensitive.txt, orthologs/Parliv+Holleu_sensitive.txt, orthologs/Astrub+Holleu_sensitive.txt
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 11:44:51 2023]
+Finished job 0.
+13 of 13 steps (100%) done
+Complete log: .snakemake/log/2023-07-10T112010.264367.snakemake.log
