@@ -115,7 +115,7 @@ def rearrangements(data):
     
     outputs: 
     """
-    matrix = data.pivot(index = 'speciesB', columns='speciesA', values = 'Orthologs')
+    matrix = data.pivot(index = 'B', columns='A', values = 'Orthologs')
     matrix = matrix.where(matrix.isnull(), 1).fillna(0).astype(int)
     
     fusions = matrix.sum(axis = 1).loc[lambda x : x >= 2] - 1
