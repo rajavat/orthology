@@ -32,14 +32,16 @@ def orthofy(genelistA, genelistB, orthologies):
     orthdictB = dict(zip(orthologies[:, 2], orthologies[:, 0]))
 
     # Replace genelist values with ortholog dictionary keys
-    genelistA['Name'] = genelistA['Name'].map(lambda x: orthdictA.get(x, x))
-    genelistB['Name'] = genelistB['Name'].map(lambda x: orthdictB.get(x, x))
+    A_data = genelistA.copy()
+    B_data = genelistB.copy()
+    A_data['Name'] = A_data['Name'].map(lambda x: orthdictA.get(x, x))
+    B_data['Name'] = B_data['Name'].map(lambda x: orthdictB.get(x, x))
     
     # Make orthology location dictionaries (ortholog: chromosome)
-    dictA = dict(zip(genelistA.loc[genelistA['Name'].str.contains('ortholog')].Name, 
-                     genelistA.loc[genelistA['Name'].str.contains('ortholog')].Chromosome))
-    dictB = dict(zip(genelistB.loc[genelistB['Name'].str.contains('ortholog')].Name, 
-                     genelistB.loc[genelistB['Name'].str.contains('ortholog')].Chromosome))
+    dictA = dict(zip(A_data.loc[A_data['Name'].str.contains('ortholog')].Name, 
+                     A_data.loc[A_data['Name'].str.contains('ortholog')].Chromosome))
+    dictB = dict(zip(B_data.loc[B_data['Name'].str.contains('ortholog')].Name, 
+                     B_data.loc[B_data['Name'].str.contains('ortholog')].Chromosome))
     
     # Seperate all orthology entries into new dataframe
     AB_data = pd.DataFrame({'Orthologs': orthologies[:, 0],
@@ -53,7 +55,7 @@ def orthofy(genelistA, genelistB, orthologies):
     # Calculate number of orthologs for each pair of chromosomes
     AB_data = AB_data.groupby(['A', 'B']).count().reset_index()
     
-    M = len(list(set(genelistA.Name.values.tolist()) & set(genelistB.Name.values.tolist())))
+    M = len(list(set(A_data.Name.values.tolist()) & set(B_data.Name.values.tolist())))
     
     # Define inner function for hypergeometric testing
     def hypertest(chrA, chrB):
@@ -106,7 +108,7 @@ def orthoplot(data, titleA, titleB, x, y):
 
     plt.show()
     
-def orthoChr(data):
+def rearrangements(data):
     """
     inputs:
     dataset in format: speciesA chromosomes | speciesB chromosomes | Orthologs
@@ -123,3 +125,34 @@ def orthoChr(data):
     print(fusions.index.tolist())
     print("Fissions:", fissions.sum())
     print(fissions.index.tolist())
+    
+def orthFix(orthology, col, string, position):
+    """
+    inputs:
+    orthology: orthology input
+    col: column with suffix: A or B
+    string: string to remove
+    position: 0 for suffix, 1 for prefix
+    """
+    orthology = pd.DataFrame(orthology, columns = ['Code', 'A', 'B'])
+    orthology[col] = orthology[col].str.rsplit(string).str.get(position)
+    orthology = orthology.to_numpy()
+    
+    return orthology
+    
+def unscaff(data, scope):
+    """
+    inputs
+    data: dataframes
+    scope: level at which to filter scaffolds
+    """
+    scaffs = data.groupby('Chromosome').size()
+    scaffs = scaffs.reset_index()
+
+    scaffs.columns = ['Chromosome', 'Count']
+    scaffs = scaffs.loc[scaffs['Count'] >= scope]
+
+    scaffolds = scaffs.Chromosome.tolist() # Remove all values from non-chromosome scaffolds
+    data = data.loc[data['Chromosome'].isin(scaffolds)]
+    
+    return data
