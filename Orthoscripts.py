@@ -15,7 +15,6 @@ def readBED(file):
     
     return data
 
-
 def orthofy(genelistA, genelistB, orthologies):
     
     """
@@ -28,54 +27,47 @@ def orthofy(genelistA, genelistB, orthologies):
              and their location in species A and B and p-Values
     """
     
-    # Make ortholog dictionaries
-    A_orthdict = dict(zip(orthologies[:, 1], orthologies[:, 0]))
-    B_orthdict = dict(zip(orthologies[:, 2], orthologies[:, 0]))
+    # Make ortholog dictionaries (ortholog : gene name)
+    orthdictA = dict(zip(orthologies[:, 1], orthologies[:, 0]))
+    orthdictB = dict(zip(orthologies[:, 2], orthologies[:, 0]))
 
-    # Replace genelist values with ortholog dictionaries
-    A_data = genelistA.replace({'Name': A_orthdict})
-    B_data = genelistB.replace({'Name' : B_orthdict})
+    # Replace genelist values with ortholog dictionary keys
+    genelistA['Name'] = genelistA['Name'].map(lambda x: orthdictA.get(x, x))
+    genelistB['Name'] = genelistB['Name'].map(lambda x: orthdictB.get(x, x))
     
-    # Add column for orthologs: 1 if ortholog, 0 if not
-    B_data['Ortholog'] = B_data['Name'].apply(lambda x:1 if 'ortholog' in x.lower() else 0)
-    A_data['Ortholog'] = A_data['Name'].apply(lambda x:1 if 'ortholog' in x.lower() else 0)
-    
-    # Isolate orthologies
-    A_ortho = A_data.loc[A_data['Ortholog'] == 1]
-    A_dict = dict(zip(A_ortho.Name, A_ortho.Chromosome))
-
-    B_ortho = B_data.loc[B_data['Ortholog'] == 1]
-    B_dict = dict(zip(B_ortho.Name, B_ortho.Chromosome))
+    # Make orthology location dictionaries (ortholog: chromosome)
+    dictA = dict(zip(genelistA.loc[genelistA['Name'].str.contains('ortholog')].Name, 
+                     genelistA.loc[genelistA['Name'].str.contains('ortholog')].Chromosome))
+    dictB = dict(zip(genelistB.loc[genelistB['Name'].str.contains('ortholog')].Name, 
+                     genelistB.loc[genelistB['Name'].str.contains('ortholog')].Chromosome))
     
     # Seperate all orthology entries into new dataframe
-    AB_data = pd.DataFrame({'Orthologs' : orthologies[:, 0],
-                            'speciesA' : orthologies[:, 0],
-                            'speciesB' : orthologies[:, 0]})
+    AB_data = pd.DataFrame({'Orthologs': orthologies[:, 0],
+                            'A' : orthologies[:, 0],
+                            'B' : orthologies[:, 0]})
     
-    # Replace location in A and B with orthology dictionary keys
-    AB_data['speciesA'] = AB_data['speciesB'].map(A_dict)
-    AB_data['speciesB'] = AB_data['speciesB'].map(B_dict)
+    # Replace location in A and B with ortholog location dictionary keys
+    AB_data['A'] = AB_data['A'].map(dictA)
+    AB_data['B'] = AB_data['B'].map(dictB)
     
     # Calculate number of orthologs for each pair of chromosomes
-    AB_data = AB_data.groupby(['speciesA', 'speciesB']).count().reset_index()
+    AB_data = AB_data.groupby(['A', 'B']).count().reset_index()
     
-    A = A_data.Name.values.tolist()
-    B = B_data.Name.values.tolist()
-    M = len(list(set(A) & set(B)))
+    M = len(list(set(genelistA.Name.values.tolist()) & set(genelistB.Name.values.tolist())))
     
     # Define inner function for hypergeometric testing
     def hypertest(chrA, chrB):
-        nA = AB_data.loc[(AB_data['speciesA'] == chrA), 'Orthologs'].sum()
-        nB = AB_data.loc[(AB_data['speciesB'] == chrB), 'Orthologs'].sum()
-        x = AB_data.loc[(AB_data['speciesA'] == chrA) & 
-                        (AB_data['speciesB'] == chrB), 'Orthologs'].sum()
+        nA = AB_data.loc[(AB_data['A'] == chrA), 'Orthologs'].sum()
+        nB = AB_data.loc[(AB_data['B'] == chrB), 'Orthologs'].sum()
+        x = AB_data.loc[(AB_data['A'] == chrA) & 
+                        (AB_data['B'] == chrB), 'Orthologs'].sum()
     
         p = stats.hypergeom.sf(x - 1, M, nA, nB)
         
         return p
 
     # Conduct hypergeometric testing
-    AB_data['p-Values'] = AB_data.apply(lambda x : hypertest(x['speciesA'], x['speciesB']), axis = 1)
+    AB_data['p-Values'] = AB_data.apply(lambda x : hypertest(x['A'], x['B']), axis = 1)
     
     # Apply BH testing correction
     AB_data['Results'], AB_data['p-Values'] = pg.multicomp(AB_data['p-Values'], method = 'fdr_bh')
@@ -85,11 +77,19 @@ def orthofy(genelistA, genelistB, orthologies):
     
     return AB_data
 
-def orthoplot(data, titleA, titleB):
+def orthoplot(data, titleA, titleB, x, y):
+    """
+    input: 
+    dataset
+    titleA: x-axis title
+    titleB: y-axis title
+    x: species on x-axis
+    y: species on y-axis
+    """
     plt.rcParams['figure.dpi'] = 300
     plt.rcParams['figure.figsize'] = [8, 8]
     sns.set_style("whitegrid")
-    sns.scatterplot(data = data, x = 'speciesA', y = 'speciesB', 
+    sns.scatterplot(data = data, x = x, y = y, 
                 size = 'Orthologs', sizes = (10, 200),
                 hue = 'Orthologs', palette = "crest")
 
