@@ -16,6 +16,7 @@ def readBED(file):
     return data
     
 def orthFix(orthology, col, string, position):
+    
     """
     inputs:
     orthology: orthology input
@@ -23,6 +24,7 @@ def orthFix(orthology, col, string, position):
     string: string to remove
     position: 0 for suffix, 1 for prefix
     """
+    
     orthology = pd.DataFrame(orthology, columns = ['Code', 'A', 'B'])
     orthology[col] = orthology[col].str.rsplit(string).str.get(position)
     orthology = orthology.to_numpy()
@@ -30,11 +32,13 @@ def orthFix(orthology, col, string, position):
     return orthology
     
 def unscaff(data, scope):
+    
     """
     inputs
     data: dataframes
     scope: level at which to filter scaffolds
     """
+    
     scaffs = data.groupby('Chromosome').size()
     scaffs = scaffs.reset_index()
 
@@ -111,6 +115,7 @@ def orthofind(genelistA, genelistB, orthologies):
     return AB_data
 
 def orthoplot(data, titleA, titleB, x, y):
+
     """
     input: 
     dataset
@@ -119,6 +124,7 @@ def orthoplot(data, titleA, titleB, x, y):
     x: species on x-axis
     y: species on y-axis
     """
+    
     plt.rcParams['figure.dpi'] = 300
     plt.rcParams['figure.figsize'] = [8, 8]
     sns.set_style("whitegrid")
