@@ -154,7 +154,12 @@ def rearrangements(data):
     fissions = fissions.loc[(fissions.where(fissions.isnull(), 1).sum(axis=1) > 1) | (fissions.sum(axis=0) > 1)]
     fissions = fissions.stack(dropna = True).reset_index().groupby('A')['B'].apply(list).reset_index(name = 'B')
     
+    f = open("rearrangements.txt", "w+")
     for index, row in fissions.iterrows():
         print('Fission of', row['B'], 'into', row['A'])
+        f.write('{0} {1} {2} {3}\n'.format('Fission of', row['B'], 'into', row['A']))
     for index, row in fusions.iterrows():
         print('Fusion of', row['A'], 'into', row['B'])
+        f.write('{0} {1} {2} {3}\n'.format('Fusion of', row['A'], 'into', row['B']))
+    f.close()
+    

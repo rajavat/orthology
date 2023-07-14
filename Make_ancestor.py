@@ -13,7 +13,7 @@ Pecmax_Holleu = np.loadtxt("Orthology pipeline/orthologs/Pecmax+Holleu_sensitive
 Holleu_Braflo = np.loadtxt("Orthology pipeline/orthologs/Holleu+Braflo_sensitive.txt", dtype = "str")
 
 # Modified version of ortholog function - outputs just the orthologies in df
-def orthofy(genelistA, genelistB, orthologies):
+def orthofind(genelistA, genelistB, orthologies):
     
     """
     inputs:
@@ -50,7 +50,7 @@ def orthofy(genelistA, genelistB, orthologies):
     
     return AB_data
 
-PB = orthofy(Pecmax, Braflo, Pecmax_Braflo).dropna()
+PB = orthofind(Pecmax, Braflo, Pecmax_Braflo).dropna()
 
 # Make matrix with corresponding chromosomes
 Amp = ['BFL_11', 'BFL_10', 'BFL_16', 'BFL_8', 'BFL_3', 'BFL_1', 'BFL_18', 'BFL_14', 'BFL_15', 'BFL_5', 'BFL_7', 'BFL_3', 'BFL_17', 'BFL_3', 'BFL_19', 'BFL_12', 'BFL_1', 'BFL_13', 'BFL_2', 'BFL_2', 'BFL_6', 'BFL_9', 'BFL_4', 'BFL_4']

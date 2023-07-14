@@ -190,7 +190,6 @@ if __name__ == '__main__':
 	outfile = args['out_prefix'] + 'speciesA.geneslist.bed'
 	write_evolved_ancestor(ancestor, outfile)
 
-
 	outfile = args['out_prefix'] + 'list_of_rearrangements.txt'
 	with open(outfile, 'w') as out:
 		for event in list_of_events:
