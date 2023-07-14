@@ -60,7 +60,6 @@ def apply_fusion(chrom_names, genome, mixing=False, mixfactor=1):
 	del genome[idx2]
 	del chrom_names[idx2]
 
-	#
 	chrom_fuse = chrom1 + chrom2
 
 

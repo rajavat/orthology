@@ -1,7 +1,4 @@
-Fission of ['Scaffold_3014', 'Scaffold_3435'] into D
-Fission of ['Scaffold_3426', 'Scaffold_3433'] into R
-Fusion of ['A1aA1b', 'A2'] into Scaffold_174
-Fusion of ['B2', 'C2', 'EaEb'] into Scaffold_2100
-Fusion of ['B3', 'J1'] into Scaffold_2974
-Fusion of ['O1', 'O2', 'R'] into Scaffold_3426
-Fusion of ['QcQd', 'R'] into Scaffold_3433
+Fusion of ['AncChr17', 'AncChr18', 'AncChr8'] into Chr10
+Fusion of ['AncChr6', 'AncChr7'] into Chr7
+Fusion of ['AncChr10', 'AncChr11', 'AncChr19'] into Chr8
+Fusion of ['AncChr13', 'AncChr4'] into Chr9
