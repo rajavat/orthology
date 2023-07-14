@@ -11,7 +11,7 @@ def readBED(file):
         for line in f:
             rawdata.append(line.strip().split())
     data = pd.DataFrame(rawdata,
-                      columns = ['Chromosome', 'Start', 'End', 'Name', 'Dot'])
+                      columns = ['Chromosome', 'Start', 'End', 'Name'])
     
     return data
     
@@ -72,7 +72,7 @@ def orthofind(genelistA, genelistB, orthologies):
     A_data['Name'] = A_data['Name'].map(lambda x: orthdictA.get(x, x))
     B_data['Name'] = B_data['Name'].map(lambda x: orthdictB.get(x, x))
     
-    # Make orthology location dictionaries (ortholog: chromosome)
+    # Make orthology location dictionaries (ortholog : chromosome)
     dictA = dict(zip(A_data.loc[A_data['Name'].str.contains('ortholog')].Name, 
                      A_data.loc[A_data['Name'].str.contains('ortholog')].Chromosome))
     dictB = dict(zip(B_data.loc[B_data['Name'].str.contains('ortholog')].Name, 
@@ -129,7 +129,7 @@ def orthoplot(data, titleA, titleB, x, y):
     plt.rcParams['figure.figsize'] = [8, 8]
     sns.set_style("whitegrid")
     sns.scatterplot(data = data, x = x, y = y, 
-                size = 'Orthologs', sizes = (10, 200),
+                size = 'Orthologs', sizes = (50, 200),
                 hue = 'Orthologs', palette = "crest")
 
     plt.xlabel(titleA, fontsize = 13, 
