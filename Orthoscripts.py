@@ -14,8 +14,39 @@ def readBED(file):
                       columns = ['Chromosome', 'Start', 'End', 'Name', 'Dot'])
     
     return data
+    
+def orthFix(orthology, col, string, position):
+    """
+    inputs:
+    orthology: orthology input
+    col: column with suffix: A or B
+    string: string to remove
+    position: 0 for suffix, 1 for prefix
+    """
+    orthology = pd.DataFrame(orthology, columns = ['Code', 'A', 'B'])
+    orthology[col] = orthology[col].str.rsplit(string).str.get(position)
+    orthology = orthology.to_numpy()
+    
+    return orthology
+    
+def unscaff(data, scope):
+    """
+    inputs
+    data: dataframes
+    scope: level at which to filter scaffolds
+    """
+    scaffs = data.groupby('Chromosome').size()
+    scaffs = scaffs.reset_index()
 
-def orthofy(genelistA, genelistB, orthologies):
+    scaffs.columns = ['Chromosome', 'Count']
+    scaffs = scaffs.loc[scaffs['Count'] >= scope]
+
+    scaffolds = scaffs.Chromosome.tolist() # Remove all values from non-chromosome scaffolds
+    data = data.loc[data['Chromosome'].isin(scaffolds)]
+    
+    return data
+
+def orthofind(genelistA, genelistB, orthologies):
     
     """
     inputs:
@@ -109,50 +140,15 @@ def orthoplot(data, titleA, titleB, x, y):
     plt.show()
     
 def rearrangements(data):
-    """
-    inputs:
-    dataset in format: speciesA chromosomes | speciesB chromosomes | Orthologs
-    
-    outputs: 
-    """
-    matrix = data.pivot(index = 'B', columns='A', values = 'Orthologs')
-    matrix = matrix.where(matrix.isnull(), 1).fillna(0).astype(int)
-    
-    fusions = matrix.sum(axis = 1).loc[lambda x : x >= 2] - 1
-    fissions = matrix.sum().loc[lambda x : x >= 2] - 1
-    
-    print("Fusions:", fusions.sum())
-    print(fusions.index.tolist())
-    print("Fissions:", fissions.sum())
-    print(fissions.index.tolist())
-    
-def orthFix(orthology, col, string, position):
-    """
-    inputs:
-    orthology: orthology input
-    col: column with suffix: A or B
-    string: string to remove
-    position: 0 for suffix, 1 for prefix
-    """
-    orthology = pd.DataFrame(orthology, columns = ['Code', 'A', 'B'])
-    orthology[col] = orthology[col].str.rsplit(string).str.get(position)
-    orthology = orthology.to_numpy()
-    
-    return orthology
-    
-def unscaff(data, scope):
-    """
-    inputs
-    data: dataframes
-    scope: level at which to filter scaffolds
-    """
-    scaffs = data.groupby('Chromosome').size()
-    scaffs = scaffs.reset_index()
+    fusions = data.pivot(index = 'B', columns='A', values = 'Orthologs')
+    fusions = fusions.loc[(fusions.where(fusions.isnull(), 1).sum(axis=1) > 1) | (fusions.sum(axis=0) > 1)]
+    fusions = fusions.stack(dropna = True).reset_index().groupby('B')['A'].apply(list).reset_index(name = 'A')
 
-    scaffs.columns = ['Chromosome', 'Count']
-    scaffs = scaffs.loc[scaffs['Count'] >= scope]
-
-    scaffolds = scaffs.Chromosome.tolist() # Remove all values from non-chromosome scaffolds
-    data = data.loc[data['Chromosome'].isin(scaffolds)]
+    fissions = data.pivot(index = 'A', columns='B', values = 'Orthologs')
+    fissions = fissions.loc[(fissions.where(fissions.isnull(), 1).sum(axis=1) > 1) | (fissions.sum(axis=0) > 1)]
+    fissions = fissions.stack(dropna = True).reset_index().groupby('A')['B'].apply(list).reset_index(name = 'B')
     
-    return data
+    for index, row in fissions.iterrows():
+        print('Fission of', row['B'], 'into', row['A'])
+    for index, row in fusions.iterrows():
+        print('Fusion of', row['A'], 'into', row['B'])
