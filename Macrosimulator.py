@@ -23,7 +23,6 @@ def write_ancestor(chrom_names, ancestor, outfile):
 				out.write('\t'.join([chrom, str(k), str(k+1), 'ancg_'+str(g)])+'\n')
 				k += 1
 
-
 def write_dummy_orthologs_file(ancestor, outfile):
 	with open(outfile, 'w') as out:
 		o = 1
@@ -41,7 +40,6 @@ def write_evolved_ancestor(ancestor, outfile):
 				out.write('\t'.join([chrom_name, str(k), str(k+1),'g_'+str(g)])+'\n')
 				k += 1
 
-
 def apply_fusion(chrom_names, genome, mixing=False, mixfactor=1):
 
 	#randomly select two chromosomes and remove them from the genome
@@ -52,7 +50,6 @@ def apply_fusion(chrom_names, genome, mixing=False, mixfactor=1):
 	del genome[idx1]
 	del chrom_names[idx1]
 
-
 	idx2 = random.choice(range(len(genome)))
 	chrom2 = genome[idx2]
 	name2 = chrom_names[idx2]
@@ -61,7 +58,6 @@ def apply_fusion(chrom_names, genome, mixing=False, mixfactor=1):
 	del chrom_names[idx2]
 
 	chrom_fuse = chrom1 + chrom2
-
 
 	newname = f'{name1}+{name2}'
 	#apply mixing if requested
@@ -80,13 +76,11 @@ def apply_fusion(chrom_names, genome, mixing=False, mixfactor=1):
 	log_info = f'Fusion of {name1} and {name2} into {newname}'
 	return log_info
 
-
 def mix(chrom, mixfactor=1): #mixfactor should be a float between 0 and 1, where 1 implies extreme mixing and 0 no mixing
 	n = len(chrom)
 	for i in range(int(mixfactor*n)):
 		g1, g2 = randrange(n), randrange(n)
 		chrom[g2], chrom[g1] = chrom[g1], chrom[g2]
-
 
 def apply_fission(chrom_names, genome):
 
@@ -118,14 +112,11 @@ def apply_fission(chrom_names, genome):
 	log_info = f'Fission {name} into {newname1} and {newname2}'
 	return log_info
 
-
 # def synteny_loss(chrom, all_chromsomes):
 # 	return
 
-
 if __name__ == '__main__':
 	
-
 	parser = argparse.ArgumentParser(description=__doc__,
 									 formatter_class=argparse.RawDescriptionHelpFormatter)
 

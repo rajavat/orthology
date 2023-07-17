@@ -11,7 +11,7 @@ def readBED(file):
         for line in f:
             rawdata.append(line.strip().split())
     data = pd.DataFrame(rawdata,
-                      columns = ['Chromosome', 'Start', 'End', 'Name'])
+                      columns = ['Chromosome', 'Start', 'End', 'Name', 'Dot'])
     
     return data
     

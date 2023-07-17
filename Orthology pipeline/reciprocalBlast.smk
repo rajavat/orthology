@@ -7,10 +7,6 @@ import itertools
 
 # genomes = ['Afil_fr2py', 'Mar_glac', 'Sti_chlo', 'Parliv', 'Antmed', 'Pecmax', 'Braflo', 'Holleu']
 
-# 
-
-# 
-
 # genomes = ['Strpur', 'Helery']
 
 # genomes = ['Parhyale', 'Ambmex']
