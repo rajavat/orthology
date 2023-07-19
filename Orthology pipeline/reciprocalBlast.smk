@@ -15,7 +15,7 @@ import itertools
 
 # genomes = ['Afil_fr2py', 'Spu3']
 
-genomes = [ 'Pecmax', 'Holleu', 'Braflo']
+genomes = [ 'Pecmax', 'Holleu', 'Braflo', 'Ephmue']
 
 
 # pairs = [('+').join(pair) for pair in itertools.combinations(genomes, 2) if 'Holleu' in pair]

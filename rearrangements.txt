@@ -1,4 +1,4 @@
-Fission of ['Scaffold_1491', 'Scaffold_1592', 'Scaffold_3014', 'Scaffold_3435'] into D
+Fission of ['Scaffold_3014', 'Scaffold_3435'] into D
 Fission of ['Scaffold_3426', 'Scaffold_3433'] into R
 Fusion of ['A1aA1b', 'A2'] into Scaffold_174
 Fusion of ['B2', 'C2', 'EaEb'] into Scaffold_2100
