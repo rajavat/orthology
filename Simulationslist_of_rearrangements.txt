@@ -1,0 +1,8 @@
+EVENT_1: Fusion of AncChr5 and AncChr11 into AncChr5xAncChr11
+EVENT_2: Fission AncChr8 into AncChr8_1 and AncChr8_2
+EVENT_3: Fusion of AncChr18 and AncChr9 into AncChr18xAncChr9
+EVENT_4: Fusion of AncChr19 and AncChr16 into AncChr19+AncChr16
+EVENT_6: Fission AncChr13 into AncChr13_1 and AncChr13_2
+EVENT_7: Fusion of AncChr7 and AncChr20 into AncChr7xAncChr20
+EVENT_9: Fission AncChr12 into AncChr12_1 and AncChr12_2
+EVENT_10: Fusion of AncChr3 and AncChr15 into AncChr3+AncChr15
