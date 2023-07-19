@@ -1,11 +1,11 @@
 import argparse
 import os
 
+
 import numpy as np
 
 import random
 from random import randrange
-
 
 def make_ancestor(c, g):
 	ancestor = []
@@ -40,7 +40,7 @@ def write_evolved_ancestor(ancestor, outfile):
 				out.write('\t'.join([chrom_name, str(k), str(k+1),'g_'+str(g)])+'\n')
 				k += 1
 
-def apply_fusion(chrom_names, genome, mixing=False, mixfactor=1):
+def apply_fusion(chrom_names, genome, mixing=False, mixfactor = 0):
 
 	#randomly select two chromosomes and remove them from the genome
 	idx1 = random.choice(range(len(genome)))
@@ -56,9 +56,8 @@ def apply_fusion(chrom_names, genome, mixing=False, mixfactor=1):
 
 	del genome[idx2]
 	del chrom_names[idx2]
-
 	chrom_fuse = chrom1 + chrom2
-
+ 
 	newname = f'{name1}+{name2}'
 	#apply mixing if requested
 	if mixing:
@@ -75,6 +74,7 @@ def apply_fusion(chrom_names, genome, mixing=False, mixfactor=1):
 	#Return log info about the fusion event
 	log_info = f'Fusion of {name1} and {name2} into {newname}'
 	return log_info
+
 
 def mix(chrom, mixfactor=1): #mixfactor should be a float between 0 and 1, where 1 implies extreme mixing and 0 no mixing
 	n = len(chrom)
@@ -112,11 +112,14 @@ def apply_fission(chrom_names, genome):
 	log_info = f'Fission {name} into {newname1} and {newname2}'
 	return log_info
 
+
 # def synteny_loss(chrom, all_chromsomes):
 # 	return
 
+
 if __name__ == '__main__':
 	
+
 	parser = argparse.ArgumentParser(description=__doc__,
 									 formatter_class=argparse.RawDescriptionHelpFormatter)
 
@@ -129,7 +132,7 @@ if __name__ == '__main__':
 
 	# parser.add_argument('-r', '--mixing-events-ratio', type=str, required=False, default=5, help="Number of intra-chromosomal")
 
-	parser.add_argument('-p', "--out_prefix", type=str, required=False, default='simulations/sim_test/')
+	parser.add_argument('-p', "--out_prefix", type=str, required=False, default='Simulations/')
 
 	args = vars(parser.parse_args())
 
@@ -179,6 +182,7 @@ if __name__ == '__main__':
 	#Write .bed file for Species A evolved from ancestor
 	outfile = args['out_prefix'] + 'speciesA.geneslist.bed'
 	write_evolved_ancestor(ancestor, outfile)
+
 
 	outfile = args['out_prefix'] + 'list_of_rearrangements.txt'
 	with open(outfile, 'w') as out:
