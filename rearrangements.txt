@@ -1,3 +1,0 @@
-Fusion of ['AncChr12', 'AncChr8'] into Chr10
-Fusion of ['AncChr18', 'AncChr2'] into Chr8
-Fusion of ['AncChr11', 'AncChr5', 'AncChr7'] into Chr9
