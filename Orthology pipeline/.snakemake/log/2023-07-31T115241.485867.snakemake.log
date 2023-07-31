@@ -1,0 +1,65 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                           count    min threads    max threads
+--------------------------  -------  -------------  -------------
+all                               1              1              1
+reciprocal_best_blast_hits        3              1              1
+total                             4              1              1
+
+Select jobs to execute...
+
+[Mon Jul 31 11:52:43 2023]
+rule reciprocal_best_blast_hits:
+    input: blastp/Braflo+Ephmue.blp, blastp/Ephmue+Braflo.blp
+    output: orthologs/Braflo+Ephmue_sensitive.txt
+    jobid: 20
+    reason: Missing output files: orthologs/Braflo+Ephmue_sensitive.txt
+    wildcards: spec1=Braflo, spec2=Ephmue
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+
+[Mon Jul 31 11:52:43 2023]
+rule reciprocal_best_blast_hits:
+    input: blastp/Holleu+Ephmue.blp, blastp/Ephmue+Holleu.blp
+    output: orthologs/Holleu+Ephmue_sensitive.txt
+    jobid: 17
+    reason: Missing output files: orthologs/Holleu+Ephmue_sensitive.txt
+    wildcards: spec1=Holleu, spec2=Ephmue
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 31 11:52:43 2023]
+Finished job 20.
+1 of 4 steps (25%) done
+Select jobs to execute...
+
+[Mon Jul 31 11:52:43 2023]
+rule reciprocal_best_blast_hits:
+    input: blastp/Pecmax+Ephmue.blp, blastp/Ephmue+Pecmax.blp
+    output: orthologs/Pecmax+Ephmue_sensitive.txt
+    jobid: 10
+    reason: Missing output files: orthologs/Pecmax+Ephmue_sensitive.txt
+    wildcards: spec1=Pecmax, spec2=Ephmue
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 31 11:52:43 2023]
+Finished job 17.
+2 of 4 steps (50%) done
+[Mon Jul 31 11:52:44 2023]
+Finished job 10.
+3 of 4 steps (75%) done
+Select jobs to execute...
+
+[Mon Jul 31 11:52:44 2023]
+localrule all:
+    input: orthologs/Pecmax+Holleu_sensitive.txt, orthologs/Pecmax+Braflo_sensitive.txt, orthologs/Pecmax+Ephmue_sensitive.txt, orthologs/Holleu+Braflo_sensitive.txt, orthologs/Holleu+Ephmue_sensitive.txt, orthologs/Braflo+Ephmue_sensitive.txt
+    jobid: 0
+    reason: Input files updated by another job: orthologs/Pecmax+Ephmue_sensitive.txt, orthologs/Braflo+Ephmue_sensitive.txt, orthologs/Holleu+Ephmue_sensitive.txt
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 31 11:52:44 2023]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: .snakemake/log/2023-07-31T115241.485867.snakemake.log
