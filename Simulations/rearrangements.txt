@@ -1,0 +1,9 @@
+EVENT_1: Fission of AnchChr16 into Chr16_1 and Chr16_2
+EVENT_2: Fission of AnchChr4 into Chr4_1 and Chr4_2
+EVENT_3: Fission of AnchChr19 into Chr19_1 and Chr19_2
+EVENT_4: Fusion of AncChr8 and AncChr19 into Chr8+19
+EVENT_5: Fission of AnchChr11 into Chr11_1 and Chr11_2
+EVENT_6: Fusion of AncChr9 and AncChr12 into Chr9+12
+EVENT_7: Fusion of AncChr19 and AncChr4 into Chr19+4
+EVENT_8: Fission of AnchChr16 into Chr16_1 and Chr16_2
+EVENT_9: Fusion of AncChr8 and AncChr11 into Chr8+11
