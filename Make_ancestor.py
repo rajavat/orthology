@@ -160,8 +160,10 @@ np.savetxt(r'Data/Genelists/BilAnc.genelist.bed', Ancestorgenelist.values, fmt =
 PE = orthofy(Pecmax, Ephmue, Pecmax_Ephmue).dropna()
 
 # Make matrix with corresponding chromosomes
-PYE = ['PYE_5', 'PYE_5', 'PYE_6', 'PYE_6', 'PYE_2', 'PYE_2', 'PYE_2', 'PYE_2']
-EMU = ['EMU_19', 'EMU_14', 'EMU_01', 'EMU_14', 'EMU_2', 'EMU_10', 'EMU_7', 'EMU_10']
+PYE = ['PYE_5', 'PYE_5', 'PYE_6', 'PYE_6', 'PYE_2', 
+       'PYE_2', 'PYE_2', 'PYE_2']
+EMU = ['EMU_19', 'EMU_14', 'EMU_01', 'EMU_14', 'EMU_2', 
+       'EMU_10', 'EMU_7', 'EMU_10']
 Anc = ['A1a', 'A1b', 'Ea', 'Eb', 'Qa', 'Qb', 'Qc', 'Qd']
 ChrCorr = np.column_stack((PYE, EMU, Anc))
 
@@ -172,7 +174,6 @@ for i in range (0, 8):
     PEorthologs['Chr'] = ChrCorr[i, 2]
 
     PEgenes = pd.concat([PEgenes, PEorthologs])
-    
     
 PEgenes['EGenes'] = PEgenes.loc[:, 'Orthologs']
 PEgenes = PEgenes.rename(columns = {'Orthologs' : 'PGenes'})
