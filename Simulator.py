@@ -186,7 +186,7 @@ def translocation(ancestor):
     
     return speciesA, log
 
-def synteny_loss(ancestor):
+def syntenyloss(ancestor):
     syn = random.choice(range(len(ancestor.Chr.unique())))
     synchr = ancestor.loc[ancestor['Chr'] == syn]
 
@@ -210,30 +210,31 @@ events = {}
 for event in range(args['Nevents']):
     r = np.random.uniform()
     
-    if r <= 0.40:
+    if r <= 0.30:
         if len(ancestor) < 2: continue
         speciesA, event_log = fission(speciesA)
         events['EVENT_' + str(event + 1)] = event_log
         print(event_log)
     
-    elif r <= 0.60:
+    elif r <= 0.40:
         speciesA, event_log = translocation(speciesA)
         events['EVENT_' + str(event + 1)] = event_log
         print(event_log)
     
-    elif r <= 0.80:
+    elif r <= 0.60:
         speciesA, event_log = fusion(speciesA)
         events['EVENT_' + str(event + 1)] = event_log
         print(event_log)
     
-    elif r <= 0.90:
+    elif r <= 0.70:
         speciesA, event_log = fusion(ancestor, mixing = 0.5)
         events['EVENT_' + str(event + 1)] = event_log
         print(event_log)
         
     else:
-        print('Synteny loss: skipping for now...')
-        # Need to implement the synteny loss (and we could also have a WGD event)
+        speciesA, event_log = syntenyloss(ancestor)
+        events['EVENT_' + str(event + 1)] = event_log
+        print(event_log)
         continue
     
 # Create BED files and orthology file
