@@ -40,7 +40,6 @@ if '/' in args['out_prefix']:
 # Make ancestor genome
 def makeancestor(Nchr, Ngene):
     ancestor = pd.DataFrame(columns = ['Chr'])
-    chrNames = ['AncChr' + str (i + 1) for i in range(Nchr)]
     for i in range(Nchr):
         row = {'Chr' : (i + 1)}
         for i in range(Ngene):
@@ -137,26 +136,72 @@ def fission(ancestor):
     fiss = random.choice(range(len(ancestor.Chr.unique())))
     fission = ancestor.loc[ancestor['Chr'] == fiss]
 
-    # Randomly select a fission position and apply fission
-    n = len(fission['Chr'])
-
     pos = random.choice(range(1, Ngene))
-    genes = fission['Genes'].to_numpy()
 
     # Add the new chromosomes back into the genome
-    chr1 = pd.DataFrame({'Chr': [f'{fiss}_1'] * len(genes[:pos]),
-                        'Genes': genes[:pos]})
-    chr2 = pd.DataFrame({'Chr': [f'{fiss}_2'] * len(genes[pos:]),
-                       'Genes': genes[pos:]})
-
-    speciesA = ancestor.append([chr1, chr2])
+    chr1 = fission.iloc[: pos]
+    chr1['Chr'] = f'{fiss}_1'
+    chr2 = fission.iloc[pos :]
+    chr2['Chr'] = f'{fiss}_2'
     
     # Remove the fission chromosome from the genome
-    speciesA.drop(ancestor[ancestor['Chr'] == fiss].index, inplace = True)
+    speciesA = ancestor.append([chr1, chr2])
+    speciesA = speciesA[speciesA.Chr != fiss]
     
-    log = f'Fission of AnchChr{fiss} into Chr{fiss}_1 and Chr{fiss}_2'
+    log = f'Fission of AncChr{fiss} into Chr{fiss}_1 and Chr{fiss}_2'
     
     return speciesA, log
+
+def translocation(ancestor):
+    # Randomly select two chromosomes for translocation
+    cA = random.choice(range(len(ancestor.Chr.unique())))
+    cB = random.choice(range(len(ancestor.Chr.unique())))
+    
+    chrA = ancestor.loc[ancestor['Chr'] == cA]
+    chrB = ancestor.loc[ancestor['Chr'] == cB]
+    
+    # Randomly select two break point positions
+    posA = random.choice(range(1, Ngene))
+    posB = random.choice(range(1, Ngene))
+    
+    # Break up the two chromosomes into four fragments
+    fragmentA1 = chrA.iloc[: posA]
+    fragmentA2 = chrA.iloc[posA :]
+    fragmentB1 = chrB.iloc[: posB]
+    fragmentB2 = chrB.iloc[posB :]
+    
+    # Join the fragments to form recombinant chromosomes
+    chr1 = fragmentA1.append(fragmentB2)
+    chr1['Chr'] = f'{cA};{cB}'
+    chr2 = fragmentA2.append(fragmentB1)
+    chr2['Chr'] = f'{cA};{cB}'
+    
+    # Remove the original chromosomes from the genome
+    speciesA = ancestor.append([chr1, chr2])
+    
+    speciesA = speciesA[speciesA.Chr != cA]
+    speciesA = speciesA[speciesA.Chr != cB]
+    
+    log = f'Translocation between AncChr{cA} and AncChr{cB}'
+    
+    return speciesA, log
+
+def synteny_loss(ancestor):
+    syn = random.choice(range(len(ancestor.Chr.unique())))
+    synchr = ancestor.loc[ancestor['Chr'] == syn]
+
+    speciesA = ancestor.copy() # Create species A
+    speciesA = speciesA[speciesA.Chr != syn] # Remove lost chromosome
+    
+    # Assign all elements to a random chromosome
+    synchr['Chr'] = random.choices(ancestor.Chr.unique(), k = len(synchr))
+    
+    # Add back into the genome
+    speciesA = speciesA.append(synchr)
+    
+    log = f'Synteny loss of AncChr{syn}'
+
+    return speciesA
 
 # Apply macro-rearrangements to the ancestor
 ancestor = makeancestor(Nchr, Ngene)
@@ -165,18 +210,23 @@ events = {}
 for event in range(args['Nevents']):
     r = np.random.uniform()
     
-    if r <= 0.48:
+    if r <= 0.40:
         if len(ancestor) < 2: continue
         speciesA, event_log = fission(speciesA)
         events['EVENT_' + str(event + 1)] = event_log
         print(event_log)
     
-    elif r <= 0.81:
-        speciesA, event_log = fission(speciesA)
+    elif r <= 0.60:
+        speciesA, event_log = translocation(speciesA)
         events['EVENT_' + str(event + 1)] = event_log
         print(event_log)
     
-    elif r <= 0.94:
+    elif r <= 0.80:
+        speciesA, event_log = fusion(speciesA)
+        events['EVENT_' + str(event + 1)] = event_log
+        print(event_log)
+    
+    elif r <= 0.90:
         speciesA, event_log = fusion(ancestor, mixing = 0.5)
         events['EVENT_' + str(event + 1)] = event_log
         print(event_log)

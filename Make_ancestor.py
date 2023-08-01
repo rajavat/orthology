@@ -61,7 +61,7 @@ def orthofy(genelistA, genelistB, orthologies):
 
     return AB_data
 
-# BILATERIAN ANCESTOR -------------------------------------------------------------------
+# BILATERIAN ANCESTOR -----------------------------------------------------------------------
 PB = orthofy(Pecmax, Braflo, Pecmax_Braflo).dropna()
 
 # Make matrix with corresponding chromosomes
@@ -156,7 +156,7 @@ BilAnc = Ancestorgenelist
 
 np.savetxt(r'Data/Genelists/BilAnc.genelist.bed', Ancestorgenelist.values, fmt = '%s')
 
-# ANIMAL ANCESTOR ------------------------------------------------------------------
+# ANIMAL ANCESTOR ----------------------------------------------------------------------
 PE = orthofy(Pecmax, Ephmue, Pecmax_Ephmue).dropna()
 
 # Make matrix with corresponding chromosomes

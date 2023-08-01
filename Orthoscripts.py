@@ -10,7 +10,7 @@ from pathlib import PosixPath
 # from GFF2BED package: https://pypi.org/project/gff2bed/#files --------------------
 
 # parse an entry from the "attr" column of a GFF3 file and return it as a dict
-def parse_gff_attributes(attr: str, graceful: bool = False):
+def parseGFF(attr: str, graceful: bool = False):
     """
     inputs:
     attr : str
@@ -59,7 +59,7 @@ def readGFF(gff_file, type: str = 'gene', parse_attr: bool = True,
                 if ((t == type) or (type is None)):
                     if parse_attr:
                         yield (seqid, int(start), int(end), strand,
-                            parse_gff_attributes(attr, graceful=graceful))
+                            parseGFF(attr, graceful=graceful))
                     else:
                         yield seqid, int(start), int(end), strand, '.'
 
@@ -83,15 +83,11 @@ def convert(gff_data, tag: str = 'protein_id'):
 # -----------------------------------------------------------------------------------
 
 # reads a BED file into a dataframe - make it non-specific to row number
-def readBED(file):
-    rawdata = []
-    with open(file) as f:
-        for line in f:
-            rawdata.append(line.strip().split())
-    data = pd.DataFrame(rawdata,
-                      columns = ['Chromosome', 'Start', 'End', 'Name', 'Dot'])
-    
-    return data
+def readBED(file, d = '\t'):
+    cols = ['Chromosome', 'Start', 'End', 'Name']
+    df = pd.read_csv(file, sep=d, header = None, 
+                     names = cols, usecols = [0,1,2,3])
+    return df
 
 # removes suffix/prefix from ortholog data
 def orthFix(orthology, col, string, position):
