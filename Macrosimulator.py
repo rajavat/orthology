@@ -108,7 +108,7 @@ def apply_fission(chrom_names, genome):
 	chrom_names.append(newname2)
 
 	#Return log info about the fission event
-	log_info = f'Fission {name} into {newname1} and {newname2}'
+	log_info = f'Fission of {name} into {newname1} and {newname2}'
 	return log_info
 
 

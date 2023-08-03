@@ -43,7 +43,7 @@ def makeancestor(Nchr, Ngene):
     for i in range(Nchr):
         row = {'Chr' : (i + 1)}
         for i in range(Ngene):
-                ancestor = ancestor.append(row, ignore_index = True)
+                ancestor = pd.concat([ancestor, pd.DataFrame([row])], ignore_index = True)
     ancestor['Genes'] = (ancestor.reset_index().index + 1)
     # ancestor['Genes'] = 'g_' + ancestor['Genes'].astype(str)
 
@@ -95,7 +95,7 @@ def mixing(genome, mixing):
         genome['Genes'] = genes
         # genome['Chr'] = f'{fuse1}x{fuse2}'
         
-def fusion(ancestor, mixing = 0):
+def fusion(genome, mixing = 0):
     '''
     inputs: 
     ancestor : df with chromosome name | gene name
@@ -103,12 +103,13 @@ def fusion(ancestor, mixing = 0):
     '''
     
     # Randomly select two chromosomes to fuse
-    fuse1 = random.choice(range(len(ancestor.Chr.unique())))
-    fuse2 = random.choice(range(len(ancestor.Chr.unique())))
+    fuse1 = random.choice(genome.Chr.unique())
+    fuse2 = random.choice(genome.Chr.unique())
+    
+    if fuse1 == fuse2: # Just so the same chromosome isn't selected twice
+        fuse2 = random.choice(range(1, len(genome.Chr.unique())))
 
-    # Fuse the chromosomes
     fusion = ancestor.loc[ancestor['Chr'].isin([fuse1, fuse2])]
-    fusion['Chr'] = f'{fuse1}+{fuse2}'
     
     # Apply mixing if required
     if mixing > 0:
@@ -120,21 +121,22 @@ def fusion(ancestor, mixing = 0):
 
         fusion['Genes'] = genes
         fusion['Chr'] = f'{fuse1}x{fuse2}'
-
-    # Add the fused chromosome back into the genome
-    speciesA = ancestor.append([ancestor, fusion])
+        
+    else:
+         fusion['Chr'] = f'{fuse1}+{fuse2}'
     
     # Remove the unfused chromosomes
-    speciesA.drop(speciesA[speciesA['Chr'].isin([fuse1, fuse2])].index, inplace = True)
+    genome.drop(genome[genome['Chr'].isin([fuse1, fuse2])].index, inplace = True)
+    genome = pd.concat([genome, fusion])
     
     log = f'Fusion of AncChr{fuse1} and AncChr{fuse2} into Chr{fuse1}+{fuse2}'
     
-    return speciesA, log
+    return genome, log
 
-def fission(ancestor):
+def fission(genome):
     # Randomly select a chromosome for fission
-    fiss = random.choice(range(len(ancestor.Chr.unique())))
-    fission = ancestor.loc[ancestor['Chr'] == fiss]
+    fiss = random.choice(genome.Chr.unique())
+    fission = genome.loc[genome['Chr'] == fiss]
 
     pos = random.choice(range(1, Ngene))
 
@@ -145,105 +147,86 @@ def fission(ancestor):
     chr2['Chr'] = f'{fiss}_2'
     
     # Remove the fission chromosome from the genome
-    speciesA = ancestor.append([chr1, chr2])
-    speciesA = speciesA[speciesA.Chr != fiss]
+    genome = pd.concat([genome, chr1, chr2])
+    genome = genome[genome.Chr != fiss]
     
     log = f'Fission of AncChr{fiss} into Chr{fiss}_1 and Chr{fiss}_2'
     
-    return speciesA, log
+    return genome, log
 
-def translocation(ancestor):
+def translocation(genome):
     # Randomly select two chromosomes for translocation
-    cA = random.choice(range(len(ancestor.Chr.unique())))
-    cB = random.choice(range(len(ancestor.Chr.unique())))
+    cA = random.choice(genome.Chr.unique())
+    cB = random.choice(genome.Chr.unique())
     
-    chrA = ancestor.loc[ancestor['Chr'] == cA]
-    chrB = ancestor.loc[ancestor['Chr'] == cB]
+    chrA = genome.loc[genome['Chr'] == cA]
+    chrB = genome.loc[genome['Chr'] == cB]
     
     # Randomly select two break point positions
     posA = random.choice(range(1, Ngene))
     posB = random.choice(range(1, Ngene))
     
-    # Break up the two chromosomes into four fragments
-    fragmentA1 = chrA.iloc[: posA]
-    fragmentA2 = chrA.iloc[posA :]
-    fragmentB1 = chrB.iloc[: posB]
-    fragmentB2 = chrB.iloc[posB :]
-    
     # Join the fragments to form recombinant chromosomes
-    chr1 = fragmentA1.append(fragmentB2)
+    chr1 = pd.concat([chrA.iloc[: posA], chrB.iloc[posB :]])
     chr1['Chr'] = f'{cA};{cB}'
-    chr2 = fragmentA2.append(fragmentB1)
+    chr2 = pd.concat([chrB.iloc[: posB], chrA.iloc[posA :]])
     chr2['Chr'] = f'{cA};{cB}'
     
     # Remove the original chromosomes from the genome
-    speciesA = ancestor.append([chr1, chr2])
-    
-    speciesA = speciesA[speciesA.Chr != cA]
-    speciesA = speciesA[speciesA.Chr != cB]
+    genome = pd.concat([genome, chr1, chr2]).drop(genome[(genome['Chr'] == cA) & (genome['Chr'] == cB)].index)
     
     log = f'Translocation between AncChr{cA} and AncChr{cB}'
     
-    return speciesA, log
+    return genome, log
 
-def syntenyloss(ancestor):
-    syn = random.choice(range(len(ancestor.Chr.unique())))
-    synchr = ancestor.loc[ancestor['Chr'] == syn]
 
-    speciesA = ancestor.copy() # Create species A
-    speciesA = speciesA[speciesA.Chr != syn] # Remove lost chromosome
+def synteny_loss(genome):
+    syn = random.choice(genome.Chr.unique())
+    synchr = genome.loc[genome['Chr'] == syn]
+    genome = genome[genome.Chr != syn]
     
     # Assign all elements to a random chromosome
-    synchr['Chr'] = random.choices(ancestor.Chr.unique(), k = len(synchr))
+    synchr['Chr'] = random.choices(genome.Chr.unique(), k = len(synchr))
     
     # Add back into the genome
-    speciesA = speciesA.append(synchr)
+    genome = genome.append(synchr)
     
     log = f'Synteny loss of AncChr{syn}'
 
-    return speciesA
+    return genome, log
 
 # Apply macro-rearrangements to the ancestor
 ancestor = makeancestor(Nchr, Ngene)
-speciesA = ancestor.copy(deep = True)
+speciesA = ancestor.copy()
+
 events = {}
 for event in range(args['Nevents']):
     r = np.random.uniform()
     
-    if r <= 0.30:
+    if r <= 0.40:
         if len(ancestor) < 2: continue
-        speciesA, event_log = fission(speciesA)
-        events['EVENT_' + str(event + 1)] = event_log
-        print(event_log)
-    
-    elif r <= 0.40:
-        speciesA, event_log = translocation(speciesA)
-        events['EVENT_' + str(event + 1)] = event_log
-        print(event_log)
-    
-    elif r <= 0.60:
-        speciesA, event_log = fusion(speciesA)
-        events['EVENT_' + str(event + 1)] = event_log
-        print(event_log)
+        speciesA, log = fission(speciesA)
+        events['EVENT_' + str(event + 1)] = log
+        print(log)
     
     elif r <= 0.70:
-        speciesA, event_log = fusion(ancestor, mixing = 0.5)
-        events['EVENT_' + str(event + 1)] = event_log
-        print(event_log)
-        
+        speciesA, log = fusion(speciesA)
+        events['EVENT_' + str(event + 1)] = log
+        print(log)
+    
     else:
-        speciesA, event_log = syntenyloss(ancestor)
-        events['EVENT_' + str(event + 1)] = event_log
-        print(event_log)
+        speciesA, log = fusion(speciesA, mixing = 0.5)
+        events['EVENT_' + str(event + 1)] = log
+        print(log)
         continue
     
 # Create BED files and orthology file
+outfile = args['out_prefix'] + 'SpeciesA.genelist.bed'
+dummyBED(speciesA, 'des', outfile)
 outfile = args['out_prefix'] + 'Ancestor.genelist.bed'
 dummyBED(ancestor, 'anc', outfile)
 outfile = args['out_prefix'] + 'Ancestor+SpeciesA.txt'
 dummyOrthologs(ancestor, outfile)
-outfile = args['out_prefix'] + 'SpeciesA.genelist.bed'
-dummyBED(speciesA, 'des', outfile)
 
 # Create list of rearrangements
 outfile = args['out_prefix'] + 'rearrangements.txt'

@@ -83,9 +83,13 @@ def convert(gff_data, tag: str = 'protein_id'):
 # -----------------------------------------------------------------------------------
 
 # reads a BED file into a dataframe - make it non-specific to row number
-def readBED(file, d = '\t'):
+def readBED(file, str = 't'):
     cols = ['Chromosome', 'Start', 'End', 'Name']
-    df = pd.read_csv(file, sep=d, header = None, 
+    if str == 't':
+        delim = '\t'
+    if str == 's':
+        delim = '\s+'
+    df = pd.read_csv(file, sep = delim, header = None, 
                      names = cols, usecols = [0,1,2,3])
     return df
 
@@ -204,7 +208,7 @@ def orthofind(genelistA, genelistB, orthologies):
     return AB_data
 
 # plots an oxford dot plot 
-def orthoplot(data, titleA, titleB, x, y):
+def orthoplot(data, titleA, titleB, x = 'A', y = 'B'):
 
     """
     input: 

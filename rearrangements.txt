@@ -1,8 +1,11 @@
-Fission of ['scaffold_0006', 'scaffold_0014', 'scaffold_0019'] into BFL_1
-Fission of ['scaffold_0009', 'scaffold_0023'] into BFL_2
-Fission of ['scaffold_0002', 'scaffold_0010', 'scaffold_0017'] into BFL_3
-Fission of ['scaffold_0003', 'scaffold_0013'] into BFL_4
-Fission of ['scaffold_0001', 'scaffold_0014'] into BFL_5
-Fusion of ['BFL_1', 'BFL_5'] into scaffold_0014
-Fusion of ['BFL_12', 'BFL_19'] into scaffold_0021
-Fusion of ['BFL_2', 'BFL_9'] into scaffold_0023
+Fission of ['Chr12x2_1', 'Chr12x2_2'] into AncChr12
+Fission of ['Chr6x15_1', 'Chr6x15_2'] into AncChr15
+Fission of ['Chr12x2_1', 'Chr12x2_2'] into AncChr2
+Fission of ['Chr6x15_1', 'Chr6x15_2'] into AncChr6
+Fission of ['Chr7_1', 'Chr7_2'] into AncChr7
+Fission of ['Chr9_1', 'Chr9_2'] into AncChr9
+Fusion of ['AncChr12', 'AncChr2'] into Chr12x2_1
+Fusion of ['AncChr12', 'AncChr2'] into Chr12x2_2
+Fusion of ['AncChr13', 'AncChr19'] into Chr13x19
+Fusion of ['AncChr15', 'AncChr6'] into Chr6x15_1
+Fusion of ['AncChr15', 'AncChr6'] into Chr6x15_2
