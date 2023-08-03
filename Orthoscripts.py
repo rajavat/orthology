@@ -253,6 +253,9 @@ def rearrangements(data):
     fissions = fissions.loc[(fissions.where(fissions.isnull(), 1).sum(axis=1) > 1) | (fissions.sum(axis=0) > 1)]
     fissions = fissions.stack(dropna = True).reset_index().groupby('A')['B'].apply(list).reset_index(name = 'B')
     
+    translocations = fusions.groupby('A').filter(lambda g: len(g) > 1).drop_duplicates(subset=['A'])
+    translocations = translocations.groupby('B')['A'].apply(list).reset_index(name = 'A')
+    
     f = open("rearrangements.txt", "w+")
     for index, row in fissions.iterrows():
         print('Fission of ancestral chromosome', row['A'], 'into', row['B'])
@@ -260,5 +263,8 @@ def rearrangements(data):
     for index, row in fusions.iterrows():
         print('Fusion of ancestral chromosomes', row['A'], 'into', row['B'])
         f.write('{0} {1} {2} {3}\n'.format('Fusion of', row['A'], 'into', row['B']))
+        
+    for index, row in translocations.iterrows():
+        print('Translocation between ancestral chromosomes' row[B] 'to form")
     f.close()
     

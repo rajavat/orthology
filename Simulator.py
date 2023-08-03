@@ -121,15 +121,15 @@ def fusion(genome, chr, mixing = 0):
 
         fusion['Genes'] = genes
         fusion['Chr'] = f'{A}x{B}'
+        log = f'Fusion of AncChr{A} and AncChr{B} into Chr{A}x{B}'
         
     else:
          fusion['Chr'] = f'{A}+{B}'
+         log = f'Fusion of AncChr{A} and AncChr{B} into Chr{A}+{B}'
     
     # Remove the unfused chromosomes
     genome.drop(genome[genome['Chr'].isin([A, B])].index, inplace = True)
     genome = pd.concat([genome, fusion])
-    
-    log = f'Fusion of AncChr{A} and AncChr{B} into Chr{A}+{B}'
     
     return genome, log, chr
 
@@ -138,12 +138,13 @@ def fission(genome, chr):
     A = random.choice(chr)
     fission = genome.loc[genome['Chr'] == A]
     chr.remove(A)
-
+    
     pos = random.choice(range(1, Ngene))
 
     # Add the new chromosomes back into the genome
     chr1 = fission.iloc[: pos]
     chr1['Chr'] = f'{A}_1'
+    
     chr2 = fission.iloc[pos :]
     chr2['Chr'] = f'{A}_2'
     
@@ -173,7 +174,7 @@ def translocation(genome, chr):
     chr1 = pd.concat([chrA.iloc[: posA], chrB.iloc[posB :]])
     chr1['Chr'] = f'{A};{B}'
     chr2 = pd.concat([chrB.iloc[: posB], chrA.iloc[posA :]])
-    chr2['Chr'] = f'{A};{B}'
+    chr2['Chr'] = f'{B};{A}'
     
     # Remove the original chromosomes from the genome
     genome = pd.concat([genome, chr1, chr2]).drop(genome[(genome['Chr'] == A) & (genome['Chr'] == B)].index)
