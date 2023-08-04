@@ -140,7 +140,37 @@ def unscaff(data, scope = 100):
     return data
 
 # converts genelist, orthology file into a df with significant ortholog combinations
-def orthofind(genelistA, genelistB, orthologies):
+def orthologies(genelistA, genelistB, orthologies):
+    orthdictA = dict(zip(orthologies[:, 1], orthologies[:, 0]))
+    orthdictB = dict(zip(orthologies[:, 2], orthologies[:, 0]))
+
+    # replace genelist values with ortholog dictionary keys
+    A_data = genelistA.copy()
+    B_data = genelistB.copy()
+    A_data['Name'] = A_data['Name'].map(lambda x: orthdictA.get(x, x))
+    B_data['Name'] = B_data['Name'].map(lambda x: orthdictB.get(x, x))
+    
+    # make orthology location dictionaries (ortholog : chromosome)
+    dictA = dict(zip(A_data.loc[A_data['Name'].str.contains('ortholog')].Name, 
+                     A_data.loc[A_data['Name'].str.contains('ortholog')].Chromosome))
+    dictB = dict(zip(B_data.loc[B_data['Name'].str.contains('ortholog')].Name, 
+                     B_data.loc[B_data['Name'].str.contains('ortholog')].Chromosome))
+    
+    # seperate all orthology entries into new dataframe
+    AB_data = pd.DataFrame({'Orthologs': orthologies[:, 0],
+                            'A' : orthologies[:, 0],
+                            'B' : orthologies[:, 0]})
+    
+    # replace location in A and B with ortholog location dictionary keys
+    AB_data['A'] = AB_data['A'].map(dictA)
+    AB_data['B'] = AB_data['B'].map(dictB)
+    
+    # calculate number of orthologs for each pair of chromosomes
+    AB_data = AB_data.groupby(['A', 'B']).count().reset_index()
+    
+    return AB_data 
+
+def sigorthologies(genelistA, genelistB, orthologies):
     
     """
     inputs:
@@ -245,16 +275,39 @@ def orthoplot(data, titleA, titleB, x = 'A', y = 'B'):
     plt.show()
     
 def rearrangements(data):
-    fusions = data.pivot(index = 'B', columns='A', values = 'Orthologs')
-    fusions = fusions.loc[(fusions.where(fusions.isnull(), 1).sum(axis=1) > 1) | (fusions.sum(axis=0) > 1)]
-    fusions = fusions.stack(dropna = True).reset_index().groupby('B')['A'].apply(list).reset_index(name = 'A')
-
+    # Converts table into dotplot
     fissions = data.pivot(index = 'A', columns='B', values = 'Orthologs')
+    
+    # Picks out all rows and columns with more than one dot
     fissions = fissions.loc[(fissions.where(fissions.isnull(), 1).sum(axis=1) > 1) | (fissions.sum(axis=0) > 1)]
     fissions = fissions.stack(dropna = True).reset_index().groupby('A')['B'].apply(list).reset_index(name = 'B')
+    fissions['B'] = [', '.join(map(str, l)) for l in fissions['B']] # Convert list to str
+
+    # Identify all translocations
+    translocations = fissions.groupby('B').filter(lambda g: len(g) > 1)
+    # Remove all translocations from list of fissions
+    fissions = fissions[~ fissions.isin(translocations)]
+    fissions.dropna(inplace = True)
+
+    # Converts table into dotplot
+    fusions = data.pivot(index = 'B', columns = 'A', values = 'Orthologs')
+    fusions = fusions.loc[(fusions.where(fusions.isnull(), 1).sum(axis=1) > 1) | (fusions.sum(axis=0) > 1)]
+    fusions = fusions.stack(dropna = True).reset_index()
     
-    translocations = fusions.groupby('A').filter(lambda g: len(g) > 1).drop_duplicates(subset=['A'])
-    translocations = translocations.groupby('B')['A'].apply(list).reset_index(name = 'A')
+    # Picks out all rows and columns with more than one dot
+    translocations = fusions.groupby('A').filter(lambda g: len(g) > 1)
+    
+    # Remove all translocations from list of fissions
+    fusions = fusions[~ fusions.isin(translocations)]
+
+    # Identify and isolate the translocations
+    translocations = translocations.groupby('B')['A'].apply(list).reset_index()
+    translocations['A'] = [', '.join(map(str, l)) for l in translocations['A']]
+    translocations = translocations.groupby('A')['B'].apply(list).reset_index()
+    translocations['B'] = [', '.join(map(str, l)) for l in translocations['B']]
+
+    fusions = fusions.groupby('B')['A'].apply(list).reset_index(name = 'A')
+    fusions['A'] = [', '.join(map(str, l)) for l in fusions['A']]
     
     f = open("rearrangements.txt", "w+")
     for index, row in fissions.iterrows():
@@ -265,6 +318,7 @@ def rearrangements(data):
         f.write('{0} {1} {2} {3}\n'.format('Fusion of', row['A'], 'into', row['B']))
         
     for index, row in translocations.iterrows():
-        print('Translocation between ancestral chromosomes' row[B] 'to form")
+        print('Translocation of ancestral chromosomes', row['A'], 'into', row['B'])
+        f.write('{0} {1} {2} {3}\n'.format('Translocation of ancestral chromosomes', row['A'], 'into', row['B']))
     f.close()
     

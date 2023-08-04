@@ -161,6 +161,9 @@ def translocation(genome, chr):
     A = random.choice(chr)
     B = random.choice(chr)
     
+    if A == B: # Just so the same chromosome isn't selected twice
+        B = random.choice(chr)
+    
     chr = [x for x in chr if x not in (A, B)]
     
     chrA = genome.loc[genome['Chr'] == A]
