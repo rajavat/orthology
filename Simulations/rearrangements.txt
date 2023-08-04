@@ -1,10 +1,10 @@
-EVENT_1: Fission of AncChr4 into Chr4_1 and Chr4_2
-EVENT_2: Fusion of AncChr20 and AncChr16 into Chr20+16
-EVENT_3: Fusion of AncChr1 and AncChr8 into Chr1+8
-EVENT_4: Fission of AncChr14 into Chr14_1 and Chr14_2
-EVENT_5: Fusion of AncChr6 and AncChr5 into Chr6+5
-EVENT_6: Fission of AncChr7 into Chr7_1 and Chr7_2
-EVENT_7: Fusion of AncChr15 and AncChr12 into Chr15+12
-EVENT_8: Fusion of AncChr9 and AncChr17 into Chr9+17
-EVENT_9: Translocation between AncChr3 and AncChr11
-EVENT_10: Fusion of AncChr10 and AncChr13 into Chr10+13
+EVENT_1: Fusion of AncChr18 and AncChr20 into Chr18+20
+EVENT_2: Fission of AncChr16 into Chr16_1 and Chr16_2
+EVENT_3: Fusion of AncChr2 and AncChr8 into Chr2+8
+EVENT_4: Fission of AncChr9 into Chr9_1 and Chr9_2
+EVENT_5: Fusion of AncChr7 and AncChr13 into Chr7+13
+EVENT_6: Translocation between AncChr1 and AncChr10
+EVENT_7: Fission of AncChr19 into Chr19_1 and Chr19_2
+EVENT_8: Fusion of AncChr6 and AncChr11 into Chr6+11
+EVENT_9: Fusion of AncChr15 and AncChr12 into Chr15x12
+EVENT_10: Fusion of AncChr3 and AncChr14 into Chr3+14
