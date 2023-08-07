@@ -24,7 +24,7 @@ if __name__ == '__main__':
                         required = False, default = 10,
                         help = "Number of macro-syntetic rearrangement events")
     parser.add_argument('-r', '--Nruns', type = int, 
-                        required = False, default = 100,
+                        required = False, default = 1,
                         help = "Number of runs")
     args = vars(parser.parse_args())
     
@@ -180,17 +180,26 @@ def translocation(genome, chr):
     posA = random.choice(range(1, Ngene))
     posB = random.choice(range(1, Ngene))
     
-    # Join the fragments to form recombinant chromosomes
-    chr1 = pd.concat([chrA.iloc[: posA], chrB.iloc[posB :]])
-    chr1['Chr'] = f'{A};{B}'
-    chr2 = pd.concat([chrB.iloc[: posB], chrA.iloc[posA :]])
-    chr2['Chr'] = f'{B};{A}'
+    r = np.random.uniform()
+    if r <= 0.50:
+        # Join the fragments to form recombinant chromosomes
+        chr1 = pd.concat([chrA.iloc[: posA], chrB.iloc[posB :]])
+        chr1['Chr'] = f'{A};{B}'
+        chr2 = pd.concat([chrB.iloc[: posB], chrA.iloc[posA :]])
+        chr2['Chr'] = f'{B};{A}'
+        
+        log = f'Translocation between ancestral chromosomes AncChr{A}, AncChr{B} into Chr{A};{B}, Chr{B};{A}'
     
+    else:
+        chr1 = pd.concat([chrA.iloc[: posA]])
+        chr1['Chr'] = f'{A};'
+        chr2 = pd.concat([chrB, chrA.iloc[posA :]])
+        chr2['Chr'] = f'{B};{A}'
+    
+        log = f'Translocation between ancestral chromosomes AncChr{A}, AncChr{B} into Chr{A};, Chr{B};{A}'
+        
     # Remove the original chromosomes from the genome
     genome = pd.concat([genome, chr1, chr2]).drop(genome[(genome['Chr'] == A) & (genome['Chr'] == B)].index)
-    
-    log = f'Translocation of ancestral chromosomes AncChr{A}, AncChr{B} into Chr{A};{B}, Chr{B};{A}'
-    
     return genome, log, chr
 
 def syntenyloss(genome, chr):
@@ -211,7 +220,7 @@ def syntenyloss(genome, chr):
     return genome, log, chr
 
 # Apply macro-rearrangements to the ancestor
-for i in range(Nruns + 1):
+for i in range(Nruns):
     ancestor = makeancestor(Nchr, Ngene)
     chr = ancestor.Chr.unique().tolist()
     speciesA = ancestor.copy()
