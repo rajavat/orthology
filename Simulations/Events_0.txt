@@ -1,10 +1,10 @@
-Fusion of ancestral chromosome AncChr18, AncChr17 into Chr18+17
-Fission of ancestral chromosome AncChr13 into Chr13_1, Chr13_2
-Fission of ancestral chromosome AncChr6 into Chr6_1, Chr6_2
-Translocation between ancestral chromosomes AncChr2, AncChr11 into Chr2;, Chr11;2
-Translocation between ancestral chromosomes AncChr3, AncChr7 into Chr3;7, Chr7;3
-Fission of ancestral chromosome AncChr9 into Chr9_1, Chr9_2
-Fusion of ancestral chromosome AncChr12, AncChr16 into Chr12+16
-Fusion of ancestral chromosome AncChr14, AncChr10 into Chr14x10
-Fission of ancestral chromosome AncChr19 into Chr19_1, Chr19_2
-Fission of ancestral chromosome AncChr4 into Chr4_1, Chr4_2
+['FIS', 'AncChr17', 'Chr17_1, Chr17_2']
+['FIS', 'AncChr5', 'Chr5_1, Chr5_2']
+['FUS', 'AncChr8, AncChr9', 'Chr8x9']
+['FUS', 'AncChr18, AncChr6', 'Chr18x6']
+['FIS', 'AncChr10', 'Chr10_1, Chr10_2']
+['FIS', 'AncChr1', 'Chr1_1, Chr1_2']
+['FUS', 'AncChr20, AncChr11', 'Chr20+11']
+['FIS', 'AncChr12', 'Chr12_1, Chr12_2']
+['FUS', 'AncChr2, AncChr13', 'Chr2x13']
+['FIS', 'AncChr19', 'Chr19_1, Chr19_2']

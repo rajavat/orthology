@@ -44,30 +44,30 @@ def filename(path):
     
 # Make ancestor genome
 def makeancestor(Nchr, Ngene):
-    ancestor = pd.DataFrame(columns = ['Chr'])
+    ancestor = pd.DataFrame(columns = ['Chromosome'])
     for i in range(Nchr):
-        row = {'Chr' : (i + 1)}
+        row = {'Chromosome' : (i + 1)}
         for i in range(Ngene):
                 ancestor = pd.concat([ancestor, pd.DataFrame([row])], ignore_index = True)
-    ancestor['Genes'] = (ancestor.reset_index().index + 1)
-    # ancestor['Genes'] = 'g_' + ancestor['Genes'].astype(str)
+    ancestor['Name'] = (ancestor.reset_index().index + 1)
+    # ancestor['Name'] = 'g_' + ancestor['Name'].astype(str)
 
     return ancestor
 
 # Dummy BED files :: type 'anc' for ancestor, 'des' for descendant
 def dummyBED(genome, type, outfile):
     if type == 'anc':
-        genome['Chr'] = 'AncChr' + genome['Chr'].astype(str)
-        genome['Genes'] = 'ancg_' + genome['Genes'].astype(str)
+        genome['Chromosome'] = 'AncChr' + genome['Chromosome'].astype(str)
+        genome['Name'] = 'ancg_' + genome['Name'].astype(str)
         
     if type == 'des':
-        genome['Chr'] = 'Chr' + genome['Chr'].astype(str)
-        genome['Genes'] = 'g_' + genome['Genes'].astype(str)
+        genome['Chromosome'] = 'Chr' + genome['Chromosome'].astype(str)
+        genome['Name'] = 'g_' + genome['Name'].astype(str)
     
     genome['Start'] = np.arange(len(genome))
     genome['End'] = np.arange(len(genome)) + 5
     
-    genome = genome[['Chr', 'Start', 'End', 'Genes']]
+    genome = genome[['Chromosome', 'Start', 'End', 'Name']]
     
     with open(outfile, 'w') as out:
         out.write(genome.to_string(header = False, index = False))
@@ -91,20 +91,23 @@ def dummyOrthologs(genome, outfile):
         out.write(orthologs.to_string(header = False, index = False))
 
 def mixing(genome, mixing):
-    genes = genome['Genes'].to_numpy()
+    genes = genome['Name'].to_numpy()
     n = len(genes)
     for i in range(int(mixing * n)):
         g1, g2 = randrange(n), randrange(n)
         genes[g2], genes[g1] = genes[g1], genes[g2]
 
-        genome['Genes'] = genes
-        # genome['Chr'] = f'{fuse1}x{fuse2}'
+        genome['Name'] = genes
+        # genome['Chromosome'] = f'{fuse1}x{fuse2}'
         
 def fusion(genome, chr, mixing = 0):
     '''
     inputs: 
-    ancestor : df with chromosome name | gene name
-    mixing : float between 0 and 1, where 1 implies extreme mixing and 0 implies no mixing
+    ancestor : 
+        df with chromosome name | gene name
+    mixing : 
+        float between 0 and 1, where 1 implies 
+        extreme mixing and 0 implies no mixing
     '''
     
     # Randomly select two chromosomes to fuse
@@ -115,27 +118,33 @@ def fusion(genome, chr, mixing = 0):
     
     if A == B: # Just so the same chromosome isn't selected twice
         B = random.choice(chr)
+        if A == B:
+            B = random.choice(chr)
 
-    fusion = ancestor.loc[ancestor['Chr'].isin([A, B])]
+    fusion = ancestor.loc[ancestor['Chromosome'].isin([A, B])]
     
     # Apply mixing if required
     if mixing > 0:
-        genes = fusion['Genes'].to_numpy()
+        genes = fusion['Name'].to_numpy()
         n = len(genes)
         for i in range(int(mixing * n)):
             g1, g2 = randrange(n), randrange(n)
             genes[g2], genes[g1] = genes[g1], genes[g2]
 
-        fusion['Genes'] = genes
-        fusion['Chr'] = f'{A}x{B}'
-        log = f'Fusion of ancestral chromosome AncChr{A}, AncChr{B} into Chr{A}x{B}'
+        fusion['Name'] = genes
+        chrom = f'{A}x{B}'
+        fusion['Chromosome'] = chrom
         
     else:
-         fusion['Chr'] = f'{A}+{B}'
-         log = f'Fusion of ancestral chromosome AncChr{A}, AncChr{B} into Chr{A}+{B}'
+        chrom = f'{A}+{B}'
+        fusion['Chromosome'] = chrom
+         
+    log = ['FUS', 
+           ('AncChr' + str(A) + ', ' + 'AncChr' + str(B)), 
+           ('Chr' + str(chrom))]
     
     # Remove the unfused chromosomes
-    genome.drop(genome[genome['Chr'].isin([A, B])].index, inplace = True)
+    genome.drop(genome[genome['Chromosome'].isin([A, B])].index, inplace = True)
     genome = pd.concat([genome, fusion])
     
     return genome, log, chr
@@ -143,23 +152,24 @@ def fusion(genome, chr, mixing = 0):
 def fission(genome, chr):
     # Randomly select a chromosome for fission
     A = random.choice(chr)
-    fission = genome.loc[genome['Chr'] == A]
+    fission = genome.loc[genome['Chromosome'] == A]
     chr.remove(A)
     
     pos = random.choice(range(1, Ngene))
 
     # Add the new chromosomes back into the genome
     chr1 = fission.iloc[: pos]
-    chr1['Chr'] = f'{A}_1'
+    chr1['Chromosome'] = f'{A}_1'
     
     chr2 = fission.iloc[pos :]
-    chr2['Chr'] = f'{A}_2'
+    chr2['Chromosome'] = f'{A}_2'
     
     # Remove the fission chromosome from the genome
     genome = pd.concat([genome, chr1, chr2])
-    genome = genome[genome.Chr != A]
-    
-    log = f'Fission of ancestral chromosome AncChr{A} into Chr{A}_1, Chr{A}_2'
+    genome = genome[genome.Chromosome != A]
+    log = ['FIS', 
+           ('AncChr' + str(A)), 
+           ('Chr' + str(A) + '_1' + ', Chr' + str(A) + '_2')]
     
     return genome, log, chr
 
@@ -173,44 +183,47 @@ def translocation(genome, chr):
     
     chr = [x for x in chr if x not in (A, B)]
     
-    chrA = genome.loc[genome['Chr'] == A]
-    chrB = genome.loc[genome['Chr'] == B]
+    chrA = genome.loc[genome['Chromosome'] == A]
+    chrB = genome.loc[genome['Chromosome'] == B]
     
     # Randomly select two break point positions
     posA = random.choice(range(1, Ngene))
     posB = random.choice(range(1, Ngene))
     
     r = np.random.uniform()
-    if r <= 0.50:
+    if r <= 0.30:
         # Join the fragments to form recombinant chromosomes
         chr1 = pd.concat([chrA.iloc[: posA], chrB.iloc[posB :]])
-        chr1['Chr'] = f'{A};{B}'
+        chr1['Chromosome'] = f'{A};{B}'
         chr2 = pd.concat([chrB.iloc[: posB], chrA.iloc[posA :]])
-        chr2['Chr'] = f'{B};{A}'
-        
-        log = f'Translocation between ancestral chromosomes AncChr{A}, AncChr{B} into Chr{A};{B}, Chr{B};{A}'
+        chr2['Chromosome'] = f'{B};{A}'
+        log = ['TR', 
+               ('AncChr' + str(A) + ', AncChr' + str(B)), 
+               (('Chr' + str(A) + ';' + str(B) + ', Chr' + str(B) + ';' + str(A)))]
     
     else:
         chr1 = pd.concat([chrA.iloc[: posA]])
-        chr1['Chr'] = f'{A};'
+        chr1['Chromosom'] = f'{A};'
         chr2 = pd.concat([chrB, chrA.iloc[posA :]])
-        chr2['Chr'] = f'{B};{A}'
+        chr2['Chromosome'] = f'{B};{A}'
     
-        log = f'Translocation between ancestral chromosomes AncChr{A}, AncChr{B} into Chr{A};, Chr{B};{A}'
+        log = ['TR', 
+               ('AncChr' + str(A) + ', AncChr' + str(B)),
+               ('Chr' + str(B) + ';' + str(A))]
         
     # Remove the original chromosomes from the genome
-    genome = pd.concat([genome, chr1, chr2]).drop(genome[(genome['Chr'] == A) & (genome['Chr'] == B)].index)
+    genome = pd.concat([genome, chr1, chr2]).drop(genome[(genome['Chromosome'] == A) & (genome['Chromosome'] == B)].index)
     return genome, log, chr
 
 def syntenyloss(genome, chr):
     A = random.choice(chr)
-    syn = genome.loc[genome['Chr'] == A]
-    genome = genome[genome.Chr != syn]
+    syn = genome.loc[genome['Chromosome'] == A]
+    genome = genome[genome.Chromosome != syn]
     
     chr.remove(A)
     
     # Assign all elements to a random chromosome
-    syn['Chr'] = random.choices(genome.Chr.unique(), k = len(syn))
+    syn['Chromosome'] = random.choices(genome.Chromosome.unique(), k = len(syn))
     
     # Add back into the genome
     genome = pd.concat([genome, syn])
@@ -222,7 +235,7 @@ def syntenyloss(genome, chr):
 # Apply macro-rearrangements to the ancestor
 for i in range(Nruns):
     ancestor = makeancestor(Nchr, Ngene)
-    chr = ancestor.Chr.unique().tolist()
+    chr = ancestor.Chromosome.unique().tolist()
     speciesA = ancestor.copy()
 
     events = []
