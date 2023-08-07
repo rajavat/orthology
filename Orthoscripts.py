@@ -7,82 +7,7 @@ import seaborn as sns
 import gzip
 from pathlib import PosixPath
 
-# from GFF2BED package: https://pypi.org/project/gff2bed/#files --------------------
-
-# parse an entry from the "attr" column of a GFF3 file and return it as a dict
-def parseGFF(attr: str, graceful: bool = False):
-    """
-    inputs:
-    attr : str
-        feature attribute string
-    graceful : bool
-        if False, throw an error when a malformed tag-value pair is encountered
-        if True, ignore malformed pairs gracefully
-
-    returns:
-    dict
-        attr entries as a dict
-    """
-
-    return dict(pair.split('=') for pair in attr.split(';')
-                if ('=' in pair) or not graceful)
-
-# parse a GFF3 file and yield its lines as tuples
-def readGFF(gff_file, type: str = 'gene', parse_attr: bool = True,
-          graceful: bool = False):
-    """
-    inputs:
-    gff_file
-        String, PosixPath, or file-like object representing a GFF3 file
-    type
-        string indicating feature type to include, or None to include all
-        features [gene]
-    parse_attr : bool
-        if False, do not parse attributes [True]
-    graceful : bool
-        if False, throw an error when a malformed tag-value pair is encountered
-        if True, ignore malformed pairs gracefully [False]
-    
-    returns:
-    seqid, start, end, strand, attr
-        coordinates of a feature
-    """
-
-    with (
-        gff_file if not isinstance(gff_file, (str, PosixPath))
-        else gzip.open(gff_file, 'rt') if str(gff_file).endswith('.gz')
-        else open(gff_file, 'r')
-    ) as f:
-        for line in f:
-             if not line.startswith('#'):
-                seqid, _, t, start, end, _, strand, _, attr = line.rstrip().split('\t')
-                if ((t == type) or (type is None)):
-                    if parse_attr:
-                        yield (seqid, int(start), int(end), strand,
-                            parseGFF(attr, graceful=graceful))
-                    else:
-                        yield seqid, int(start), int(end), strand, '.'
-
-# converts rows of GFF file into BED data                
-def convert(gff_data, tag: str = 'protein_id'):
-    """
-    input:
-    gff_data
-        iterable of data from gff2bed.parse()
-    tag : str
-        GFF3 attribute tag to parse [ID]
-
-    returns:
-    tuple
-        a row of BED data
-    """
-
-    for seqid, start, end, strand, attr in gff_data:
-        yield seqid, start - 1, end, attr[tag], 0, strand
-        
-# -----------------------------------------------------------------------------------
-
-# reads a BED file into a dataframe - make it non-specific to row number
+# reads a BED file
 def readBED(file, str = 't'):
     cols = ['Chromosome', 'Start', 'End', 'Name']
     if str == 't':
@@ -139,7 +64,7 @@ def unscaff(data, scope = 100):
     
     return data
 
-# converts genelist, orthology file into a df with significant ortholog combinations
+# returns a df with the number of orthologs for each pair of chromosomes
 def orthologies(genelistA, genelistB, orthologies):
     orthdictA = dict(zip(orthologies[:, 1], orthologies[:, 0]))
     orthdictB = dict(zip(orthologies[:, 2], orthologies[:, 0]))
@@ -170,6 +95,7 @@ def orthologies(genelistA, genelistB, orthologies):
     
     return AB_data 
 
+# returns a df with significant chromosome pairs a
 def sigorthologies(genelistA, genelistB, orthologies):
     
     """
@@ -237,7 +163,7 @@ def sigorthologies(genelistA, genelistB, orthologies):
     
     return AB_data
 
-# plots an oxford dot plot 
+# plots
 def orthoplot(data, titleA, titleB, x = 'A', y = 'B'):
 
     """
@@ -273,8 +199,9 @@ def orthoplot(data, titleA, titleB, x = 'A', y = 'B'):
            fontsize=10, title = 'Orthologous genes', frameon = False)
 
     plt.show()
-    
-def rearrangements(data):
+
+# counts the rearrangements
+def rearrangements(data, outfile):
     # Converts table into dotplot
     fissions = data.pivot(index = 'A', columns='B', values = 'Orthologs')
     
@@ -308,17 +235,18 @@ def rearrangements(data):
 
     fusions = fusions.groupby('B')['A'].apply(list).reset_index(name = 'A')
     fusions['A'] = [', '.join(map(str, l)) for l in fusions['A']]
-    
-    f = open("rearrangements.txt", "w+")
+
+    events = []
     for index, row in fissions.iterrows():
-        print('Fission of ancestral chromosome', row['A'], 'into', row['B'])
-        f.write('{0} {1} {2} {3}\n'.format('Fission of', row['B'], 'into', row['A']))
+        events.append(''.join(('Fission of ancestral chromosome', row['A'], 'into', row['B'])))
+
     for index, row in fusions.iterrows():
-        print('Fusion of ancestral chromosomes', row['A'], 'into', row['B'])
-        f.write('{0} {1} {2} {3}\n'.format('Fusion of', row['A'], 'into', row['B']))
+        events.append(''.join(('Fusion of ancestral chromosome', row['A'], 'into', row['B'])))
         
     for index, row in translocations.iterrows():
-        print('Translocation of ancestral chromosomes', row['A'], 'into', row['B'])
-        f.write('{0} {1} {2} {3}\n'.format('Translocation of ancestral chromosomes', row['A'], 'into', row['B']))
-    f.close()
+        events.append(''.join(('Translocation of ancestral chromosome', row['A'], 'into', row['B'])))
+        
+    with open(outfile, 'w') as out:
+        out.write('\n'.join(events))
     
+    return events

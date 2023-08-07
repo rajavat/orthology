@@ -1,0 +1,2000 @@
+ AncChr1    0    5    ancg_1
+ AncChr1    1    6    ancg_2
+ AncChr1    2    7    ancg_3
+ AncChr1    3    8    ancg_4
+ AncChr1    4    9    ancg_5
+ AncChr1    5   10    ancg_6
+ AncChr1    6   11    ancg_7
+ AncChr1    7   12    ancg_8
+ AncChr1    8   13    ancg_9
+ AncChr1    9   14   ancg_10
+ AncChr1   10   15   ancg_11
+ AncChr1   11   16   ancg_12
+ AncChr1   12   17   ancg_13
+ AncChr1   13   18   ancg_14
+ AncChr1   14   19   ancg_15
+ AncChr1   15   20   ancg_16
+ AncChr1   16   21   ancg_17
+ AncChr1   17   22   ancg_18
+ AncChr1   18   23   ancg_19
+ AncChr1   19   24   ancg_20
+ AncChr1   20   25   ancg_21
+ AncChr1   21   26   ancg_22
+ AncChr1   22   27   ancg_23
+ AncChr1   23   28   ancg_24
+ AncChr1   24   29   ancg_25
+ AncChr1   25   30   ancg_26
+ AncChr1   26   31   ancg_27
+ AncChr1   27   32   ancg_28
+ AncChr1   28   33   ancg_29
+ AncChr1   29   34   ancg_30
+ AncChr1   30   35   ancg_31
+ AncChr1   31   36   ancg_32
+ AncChr1   32   37   ancg_33
+ AncChr1   33   38   ancg_34
+ AncChr1   34   39   ancg_35
+ AncChr1   35   40   ancg_36
+ AncChr1   36   41   ancg_37
+ AncChr1   37   42   ancg_38
+ AncChr1   38   43   ancg_39
+ AncChr1   39   44   ancg_40
+ AncChr1   40   45   ancg_41
+ AncChr1   41   46   ancg_42
+ AncChr1   42   47   ancg_43
+ AncChr1   43   48   ancg_44
+ AncChr1   44   49   ancg_45
+ AncChr1   45   50   ancg_46
+ AncChr1   46   51   ancg_47
+ AncChr1   47   52   ancg_48
+ AncChr1   48   53   ancg_49
+ AncChr1   49   54   ancg_50
+ AncChr1   50   55   ancg_51
+ AncChr1   51   56   ancg_52
+ AncChr1   52   57   ancg_53
+ AncChr1   53   58   ancg_54
+ AncChr1   54   59   ancg_55
+ AncChr1   55   60   ancg_56
+ AncChr1   56   61   ancg_57
+ AncChr1   57   62   ancg_58
+ AncChr1   58   63   ancg_59
+ AncChr1   59   64   ancg_60
+ AncChr1   60   65   ancg_61
+ AncChr1   61   66   ancg_62
+ AncChr1   62   67   ancg_63
+ AncChr1   63   68   ancg_64
+ AncChr1   64   69   ancg_65
+ AncChr1   65   70   ancg_66
+ AncChr1   66   71   ancg_67
+ AncChr1   67   72   ancg_68
+ AncChr1   68   73   ancg_69
+ AncChr1   69   74   ancg_70
+ AncChr1   70   75   ancg_71
+ AncChr1   71   76   ancg_72
+ AncChr1   72   77   ancg_73
+ AncChr1   73   78   ancg_74
+ AncChr1   74   79   ancg_75
+ AncChr1   75   80   ancg_76
+ AncChr1   76   81   ancg_77
+ AncChr1   77   82   ancg_78
+ AncChr1   78   83   ancg_79
+ AncChr1   79   84   ancg_80
+ AncChr1   80   85   ancg_81
+ AncChr1   81   86   ancg_82
+ AncChr1   82   87   ancg_83
+ AncChr1   83   88   ancg_84
+ AncChr1   84   89   ancg_85
+ AncChr1   85   90   ancg_86
+ AncChr1   86   91   ancg_87
+ AncChr1   87   92   ancg_88
+ AncChr1   88   93   ancg_89
+ AncChr1   89   94   ancg_90
+ AncChr1   90   95   ancg_91
+ AncChr1   91   96   ancg_92
+ AncChr1   92   97   ancg_93
+ AncChr1   93   98   ancg_94
+ AncChr1   94   99   ancg_95
+ AncChr1   95  100   ancg_96
+ AncChr1   96  101   ancg_97
+ AncChr1   97  102   ancg_98
+ AncChr1   98  103   ancg_99
+ AncChr1   99  104  ancg_100
+ AncChr2  100  105  ancg_101
+ AncChr2  101  106  ancg_102
+ AncChr2  102  107  ancg_103
+ AncChr2  103  108  ancg_104
+ AncChr2  104  109  ancg_105
+ AncChr2  105  110  ancg_106
+ AncChr2  106  111  ancg_107
+ AncChr2  107  112  ancg_108
+ AncChr2  108  113  ancg_109
+ AncChr2  109  114  ancg_110
+ AncChr2  110  115  ancg_111
+ AncChr2  111  116  ancg_112
+ AncChr2  112  117  ancg_113
+ AncChr2  113  118  ancg_114
+ AncChr2  114  119  ancg_115
+ AncChr2  115  120  ancg_116
+ AncChr2  116  121  ancg_117
+ AncChr2  117  122  ancg_118
+ AncChr2  118  123  ancg_119
+ AncChr2  119  124  ancg_120
+ AncChr2  120  125  ancg_121
+ AncChr2  121  126  ancg_122
+ AncChr2  122  127  ancg_123
+ AncChr2  123  128  ancg_124
+ AncChr2  124  129  ancg_125
+ AncChr2  125  130  ancg_126
+ AncChr2  126  131  ancg_127
+ AncChr2  127  132  ancg_128
+ AncChr2  128  133  ancg_129
+ AncChr2  129  134  ancg_130
+ AncChr2  130  135  ancg_131
+ AncChr2  131  136  ancg_132
+ AncChr2  132  137  ancg_133
+ AncChr2  133  138  ancg_134
+ AncChr2  134  139  ancg_135
+ AncChr2  135  140  ancg_136
+ AncChr2  136  141  ancg_137
+ AncChr2  137  142  ancg_138
+ AncChr2  138  143  ancg_139
+ AncChr2  139  144  ancg_140
+ AncChr2  140  145  ancg_141
+ AncChr2  141  146  ancg_142
+ AncChr2  142  147  ancg_143
+ AncChr2  143  148  ancg_144
+ AncChr2  144  149  ancg_145
+ AncChr2  145  150  ancg_146
+ AncChr2  146  151  ancg_147
+ AncChr2  147  152  ancg_148
+ AncChr2  148  153  ancg_149
+ AncChr2  149  154  ancg_150
+ AncChr2  150  155  ancg_151
+ AncChr2  151  156  ancg_152
+ AncChr2  152  157  ancg_153
+ AncChr2  153  158  ancg_154
+ AncChr2  154  159  ancg_155
+ AncChr2  155  160  ancg_156
+ AncChr2  156  161  ancg_157
+ AncChr2  157  162  ancg_158
+ AncChr2  158  163  ancg_159
+ AncChr2  159  164  ancg_160
+ AncChr2  160  165  ancg_161
+ AncChr2  161  166  ancg_162
+ AncChr2  162  167  ancg_163
+ AncChr2  163  168  ancg_164
+ AncChr2  164  169  ancg_165
+ AncChr2  165  170  ancg_166
+ AncChr2  166  171  ancg_167
+ AncChr2  167  172  ancg_168
+ AncChr2  168  173  ancg_169
+ AncChr2  169  174  ancg_170
+ AncChr2  170  175  ancg_171
+ AncChr2  171  176  ancg_172
+ AncChr2  172  177  ancg_173
+ AncChr2  173  178  ancg_174
+ AncChr2  174  179  ancg_175
+ AncChr2  175  180  ancg_176
+ AncChr2  176  181  ancg_177
+ AncChr2  177  182  ancg_178
+ AncChr2  178  183  ancg_179
+ AncChr2  179  184  ancg_180
+ AncChr2  180  185  ancg_181
+ AncChr2  181  186  ancg_182
+ AncChr2  182  187  ancg_183
+ AncChr2  183  188  ancg_184
+ AncChr2  184  189  ancg_185
+ AncChr2  185  190  ancg_186
+ AncChr2  186  191  ancg_187
+ AncChr2  187  192  ancg_188
+ AncChr2  188  193  ancg_189
+ AncChr2  189  194  ancg_190
+ AncChr2  190  195  ancg_191
+ AncChr2  191  196  ancg_192
+ AncChr2  192  197  ancg_193
+ AncChr2  193  198  ancg_194
+ AncChr2  194  199  ancg_195
+ AncChr2  195  200  ancg_196
+ AncChr2  196  201  ancg_197
+ AncChr2  197  202  ancg_198
+ AncChr2  198  203  ancg_199
+ AncChr2  199  204  ancg_200
+ AncChr3  200  205  ancg_201
+ AncChr3  201  206  ancg_202
+ AncChr3  202  207  ancg_203
+ AncChr3  203  208  ancg_204
+ AncChr3  204  209  ancg_205
+ AncChr3  205  210  ancg_206
+ AncChr3  206  211  ancg_207
+ AncChr3  207  212  ancg_208
+ AncChr3  208  213  ancg_209
+ AncChr3  209  214  ancg_210
+ AncChr3  210  215  ancg_211
+ AncChr3  211  216  ancg_212
+ AncChr3  212  217  ancg_213
+ AncChr3  213  218  ancg_214
+ AncChr3  214  219  ancg_215
+ AncChr3  215  220  ancg_216
+ AncChr3  216  221  ancg_217
+ AncChr3  217  222  ancg_218
+ AncChr3  218  223  ancg_219
+ AncChr3  219  224  ancg_220
+ AncChr3  220  225  ancg_221
+ AncChr3  221  226  ancg_222
+ AncChr3  222  227  ancg_223
+ AncChr3  223  228  ancg_224
+ AncChr3  224  229  ancg_225
+ AncChr3  225  230  ancg_226
+ AncChr3  226  231  ancg_227
+ AncChr3  227  232  ancg_228
+ AncChr3  228  233  ancg_229
+ AncChr3  229  234  ancg_230
+ AncChr3  230  235  ancg_231
+ AncChr3  231  236  ancg_232
+ AncChr3  232  237  ancg_233
+ AncChr3  233  238  ancg_234
+ AncChr3  234  239  ancg_235
+ AncChr3  235  240  ancg_236
+ AncChr3  236  241  ancg_237
+ AncChr3  237  242  ancg_238
+ AncChr3  238  243  ancg_239
+ AncChr3  239  244  ancg_240
+ AncChr3  240  245  ancg_241
+ AncChr3  241  246  ancg_242
+ AncChr3  242  247  ancg_243
+ AncChr3  243  248  ancg_244
+ AncChr3  244  249  ancg_245
+ AncChr3  245  250  ancg_246
+ AncChr3  246  251  ancg_247
+ AncChr3  247  252  ancg_248
+ AncChr3  248  253  ancg_249
+ AncChr3  249  254  ancg_250
+ AncChr3  250  255  ancg_251
+ AncChr3  251  256  ancg_252
+ AncChr3  252  257  ancg_253
+ AncChr3  253  258  ancg_254
+ AncChr3  254  259  ancg_255
+ AncChr3  255  260  ancg_256
+ AncChr3  256  261  ancg_257
+ AncChr3  257  262  ancg_258
+ AncChr3  258  263  ancg_259
+ AncChr3  259  264  ancg_260
+ AncChr3  260  265  ancg_261
+ AncChr3  261  266  ancg_262
+ AncChr3  262  267  ancg_263
+ AncChr3  263  268  ancg_264
+ AncChr3  264  269  ancg_265
+ AncChr3  265  270  ancg_266
+ AncChr3  266  271  ancg_267
+ AncChr3  267  272  ancg_268
+ AncChr3  268  273  ancg_269
+ AncChr3  269  274  ancg_270
+ AncChr3  270  275  ancg_271
+ AncChr3  271  276  ancg_272
+ AncChr3  272  277  ancg_273
+ AncChr3  273  278  ancg_274
+ AncChr3  274  279  ancg_275
+ AncChr3  275  280  ancg_276
+ AncChr3  276  281  ancg_277
+ AncChr3  277  282  ancg_278
+ AncChr3  278  283  ancg_279
+ AncChr3  279  284  ancg_280
+ AncChr3  280  285  ancg_281
+ AncChr3  281  286  ancg_282
+ AncChr3  282  287  ancg_283
+ AncChr3  283  288  ancg_284
+ AncChr3  284  289  ancg_285
+ AncChr3  285  290  ancg_286
+ AncChr3  286  291  ancg_287
+ AncChr3  287  292  ancg_288
+ AncChr3  288  293  ancg_289
+ AncChr3  289  294  ancg_290
+ AncChr3  290  295  ancg_291
+ AncChr3  291  296  ancg_292
+ AncChr3  292  297  ancg_293
+ AncChr3  293  298  ancg_294
+ AncChr3  294  299  ancg_295
+ AncChr3  295  300  ancg_296
+ AncChr3  296  301  ancg_297
+ AncChr3  297  302  ancg_298
+ AncChr3  298  303  ancg_299
+ AncChr3  299  304  ancg_300
+ AncChr4  300  305  ancg_301
+ AncChr4  301  306  ancg_302
+ AncChr4  302  307  ancg_303
+ AncChr4  303  308  ancg_304
+ AncChr4  304  309  ancg_305
+ AncChr4  305  310  ancg_306
+ AncChr4  306  311  ancg_307
+ AncChr4  307  312  ancg_308
+ AncChr4  308  313  ancg_309
+ AncChr4  309  314  ancg_310
+ AncChr4  310  315  ancg_311
+ AncChr4  311  316  ancg_312
+ AncChr4  312  317  ancg_313
+ AncChr4  313  318  ancg_314
+ AncChr4  314  319  ancg_315
+ AncChr4  315  320  ancg_316
+ AncChr4  316  321  ancg_317
+ AncChr4  317  322  ancg_318
+ AncChr4  318  323  ancg_319
+ AncChr4  319  324  ancg_320
+ AncChr4  320  325  ancg_321
+ AncChr4  321  326  ancg_322
+ AncChr4  322  327  ancg_323
+ AncChr4  323  328  ancg_324
+ AncChr4  324  329  ancg_325
+ AncChr4  325  330  ancg_326
+ AncChr4  326  331  ancg_327
+ AncChr4  327  332  ancg_328
+ AncChr4  328  333  ancg_329
+ AncChr4  329  334  ancg_330
+ AncChr4  330  335  ancg_331
+ AncChr4  331  336  ancg_332
+ AncChr4  332  337  ancg_333
+ AncChr4  333  338  ancg_334
+ AncChr4  334  339  ancg_335
+ AncChr4  335  340  ancg_336
+ AncChr4  336  341  ancg_337
+ AncChr4  337  342  ancg_338
+ AncChr4  338  343  ancg_339
+ AncChr4  339  344  ancg_340
+ AncChr4  340  345  ancg_341
+ AncChr4  341  346  ancg_342
+ AncChr4  342  347  ancg_343
+ AncChr4  343  348  ancg_344
+ AncChr4  344  349  ancg_345
+ AncChr4  345  350  ancg_346
+ AncChr4  346  351  ancg_347
+ AncChr4  347  352  ancg_348
+ AncChr4  348  353  ancg_349
+ AncChr4  349  354  ancg_350
+ AncChr4  350  355  ancg_351
+ AncChr4  351  356  ancg_352
+ AncChr4  352  357  ancg_353
+ AncChr4  353  358  ancg_354
+ AncChr4  354  359  ancg_355
+ AncChr4  355  360  ancg_356
+ AncChr4  356  361  ancg_357
+ AncChr4  357  362  ancg_358
+ AncChr4  358  363  ancg_359
+ AncChr4  359  364  ancg_360
+ AncChr4  360  365  ancg_361
+ AncChr4  361  366  ancg_362
+ AncChr4  362  367  ancg_363
+ AncChr4  363  368  ancg_364
+ AncChr4  364  369  ancg_365
+ AncChr4  365  370  ancg_366
+ AncChr4  366  371  ancg_367
+ AncChr4  367  372  ancg_368
+ AncChr4  368  373  ancg_369
+ AncChr4  369  374  ancg_370
+ AncChr4  370  375  ancg_371
+ AncChr4  371  376  ancg_372
+ AncChr4  372  377  ancg_373
+ AncChr4  373  378  ancg_374
+ AncChr4  374  379  ancg_375
+ AncChr4  375  380  ancg_376
+ AncChr4  376  381  ancg_377
+ AncChr4  377  382  ancg_378
+ AncChr4  378  383  ancg_379
+ AncChr4  379  384  ancg_380
+ AncChr4  380  385  ancg_381
+ AncChr4  381  386  ancg_382
+ AncChr4  382  387  ancg_383
+ AncChr4  383  388  ancg_384
+ AncChr4  384  389  ancg_385
+ AncChr4  385  390  ancg_386
+ AncChr4  386  391  ancg_387
+ AncChr4  387  392  ancg_388
+ AncChr4  388  393  ancg_389
+ AncChr4  389  394  ancg_390
+ AncChr4  390  395  ancg_391
+ AncChr4  391  396  ancg_392
+ AncChr4  392  397  ancg_393
+ AncChr4  393  398  ancg_394
+ AncChr4  394  399  ancg_395
+ AncChr4  395  400  ancg_396
+ AncChr4  396  401  ancg_397
+ AncChr4  397  402  ancg_398
+ AncChr4  398  403  ancg_399
+ AncChr4  399  404  ancg_400
+ AncChr5  400  405  ancg_401
+ AncChr5  401  406  ancg_402
+ AncChr5  402  407  ancg_403
+ AncChr5  403  408  ancg_404
+ AncChr5  404  409  ancg_405
+ AncChr5  405  410  ancg_406
+ AncChr5  406  411  ancg_407
+ AncChr5  407  412  ancg_408
+ AncChr5  408  413  ancg_409
+ AncChr5  409  414  ancg_410
+ AncChr5  410  415  ancg_411
+ AncChr5  411  416  ancg_412
+ AncChr5  412  417  ancg_413
+ AncChr5  413  418  ancg_414
+ AncChr5  414  419  ancg_415
+ AncChr5  415  420  ancg_416
+ AncChr5  416  421  ancg_417
+ AncChr5  417  422  ancg_418
+ AncChr5  418  423  ancg_419
+ AncChr5  419  424  ancg_420
+ AncChr5  420  425  ancg_421
+ AncChr5  421  426  ancg_422
+ AncChr5  422  427  ancg_423
+ AncChr5  423  428  ancg_424
+ AncChr5  424  429  ancg_425
+ AncChr5  425  430  ancg_426
+ AncChr5  426  431  ancg_427
+ AncChr5  427  432  ancg_428
+ AncChr5  428  433  ancg_429
+ AncChr5  429  434  ancg_430
+ AncChr5  430  435  ancg_431
+ AncChr5  431  436  ancg_432
+ AncChr5  432  437  ancg_433
+ AncChr5  433  438  ancg_434
+ AncChr5  434  439  ancg_435
+ AncChr5  435  440  ancg_436
+ AncChr5  436  441  ancg_437
+ AncChr5  437  442  ancg_438
+ AncChr5  438  443  ancg_439
+ AncChr5  439  444  ancg_440
+ AncChr5  440  445  ancg_441
+ AncChr5  441  446  ancg_442
+ AncChr5  442  447  ancg_443
+ AncChr5  443  448  ancg_444
+ AncChr5  444  449  ancg_445
+ AncChr5  445  450  ancg_446
+ AncChr5  446  451  ancg_447
+ AncChr5  447  452  ancg_448
+ AncChr5  448  453  ancg_449
+ AncChr5  449  454  ancg_450
+ AncChr5  450  455  ancg_451
+ AncChr5  451  456  ancg_452
+ AncChr5  452  457  ancg_453
+ AncChr5  453  458  ancg_454
+ AncChr5  454  459  ancg_455
+ AncChr5  455  460  ancg_456
+ AncChr5  456  461  ancg_457
+ AncChr5  457  462  ancg_458
+ AncChr5  458  463  ancg_459
+ AncChr5  459  464  ancg_460
+ AncChr5  460  465  ancg_461
+ AncChr5  461  466  ancg_462
+ AncChr5  462  467  ancg_463
+ AncChr5  463  468  ancg_464
+ AncChr5  464  469  ancg_465
+ AncChr5  465  470  ancg_466
+ AncChr5  466  471  ancg_467
+ AncChr5  467  472  ancg_468
+ AncChr5  468  473  ancg_469
+ AncChr5  469  474  ancg_470
+ AncChr5  470  475  ancg_471
+ AncChr5  471  476  ancg_472
+ AncChr5  472  477  ancg_473
+ AncChr5  473  478  ancg_474
+ AncChr5  474  479  ancg_475
+ AncChr5  475  480  ancg_476
+ AncChr5  476  481  ancg_477
+ AncChr5  477  482  ancg_478
+ AncChr5  478  483  ancg_479
+ AncChr5  479  484  ancg_480
+ AncChr5  480  485  ancg_481
+ AncChr5  481  486  ancg_482
+ AncChr5  482  487  ancg_483
+ AncChr5  483  488  ancg_484
+ AncChr5  484  489  ancg_485
+ AncChr5  485  490  ancg_486
+ AncChr5  486  491  ancg_487
+ AncChr5  487  492  ancg_488
+ AncChr5  488  493  ancg_489
+ AncChr5  489  494  ancg_490
+ AncChr5  490  495  ancg_491
+ AncChr5  491  496  ancg_492
+ AncChr5  492  497  ancg_493
+ AncChr5  493  498  ancg_494
+ AncChr5  494  499  ancg_495
+ AncChr5  495  500  ancg_496
+ AncChr5  496  501  ancg_497
+ AncChr5  497  502  ancg_498
+ AncChr5  498  503  ancg_499
+ AncChr5  499  504  ancg_500
+ AncChr6  500  505  ancg_501
+ AncChr6  501  506  ancg_502
+ AncChr6  502  507  ancg_503
+ AncChr6  503  508  ancg_504
+ AncChr6  504  509  ancg_505
+ AncChr6  505  510  ancg_506
+ AncChr6  506  511  ancg_507
+ AncChr6  507  512  ancg_508
+ AncChr6  508  513  ancg_509
+ AncChr6  509  514  ancg_510
+ AncChr6  510  515  ancg_511
+ AncChr6  511  516  ancg_512
+ AncChr6  512  517  ancg_513
+ AncChr6  513  518  ancg_514
+ AncChr6  514  519  ancg_515
+ AncChr6  515  520  ancg_516
+ AncChr6  516  521  ancg_517
+ AncChr6  517  522  ancg_518
+ AncChr6  518  523  ancg_519
+ AncChr6  519  524  ancg_520
+ AncChr6  520  525  ancg_521
+ AncChr6  521  526  ancg_522
+ AncChr6  522  527  ancg_523
+ AncChr6  523  528  ancg_524
+ AncChr6  524  529  ancg_525
+ AncChr6  525  530  ancg_526
+ AncChr6  526  531  ancg_527
+ AncChr6  527  532  ancg_528
+ AncChr6  528  533  ancg_529
+ AncChr6  529  534  ancg_530
+ AncChr6  530  535  ancg_531
+ AncChr6  531  536  ancg_532
+ AncChr6  532  537  ancg_533
+ AncChr6  533  538  ancg_534
+ AncChr6  534  539  ancg_535
+ AncChr6  535  540  ancg_536
+ AncChr6  536  541  ancg_537
+ AncChr6  537  542  ancg_538
+ AncChr6  538  543  ancg_539
+ AncChr6  539  544  ancg_540
+ AncChr6  540  545  ancg_541
+ AncChr6  541  546  ancg_542
+ AncChr6  542  547  ancg_543
+ AncChr6  543  548  ancg_544
+ AncChr6  544  549  ancg_545
+ AncChr6  545  550  ancg_546
+ AncChr6  546  551  ancg_547
+ AncChr6  547  552  ancg_548
+ AncChr6  548  553  ancg_549
+ AncChr6  549  554  ancg_550
+ AncChr6  550  555  ancg_551
+ AncChr6  551  556  ancg_552
+ AncChr6  552  557  ancg_553
+ AncChr6  553  558  ancg_554
+ AncChr6  554  559  ancg_555
+ AncChr6  555  560  ancg_556
+ AncChr6  556  561  ancg_557
+ AncChr6  557  562  ancg_558
+ AncChr6  558  563  ancg_559
+ AncChr6  559  564  ancg_560
+ AncChr6  560  565  ancg_561
+ AncChr6  561  566  ancg_562
+ AncChr6  562  567  ancg_563
+ AncChr6  563  568  ancg_564
+ AncChr6  564  569  ancg_565
+ AncChr6  565  570  ancg_566
+ AncChr6  566  571  ancg_567
+ AncChr6  567  572  ancg_568
+ AncChr6  568  573  ancg_569
+ AncChr6  569  574  ancg_570
+ AncChr6  570  575  ancg_571
+ AncChr6  571  576  ancg_572
+ AncChr6  572  577  ancg_573
+ AncChr6  573  578  ancg_574
+ AncChr6  574  579  ancg_575
+ AncChr6  575  580  ancg_576
+ AncChr6  576  581  ancg_577
+ AncChr6  577  582  ancg_578
+ AncChr6  578  583  ancg_579
+ AncChr6  579  584  ancg_580
+ AncChr6  580  585  ancg_581
+ AncChr6  581  586  ancg_582
+ AncChr6  582  587  ancg_583
+ AncChr6  583  588  ancg_584
+ AncChr6  584  589  ancg_585
+ AncChr6  585  590  ancg_586
+ AncChr6  586  591  ancg_587
+ AncChr6  587  592  ancg_588
+ AncChr6  588  593  ancg_589
+ AncChr6  589  594  ancg_590
+ AncChr6  590  595  ancg_591
+ AncChr6  591  596  ancg_592
+ AncChr6  592  597  ancg_593
+ AncChr6  593  598  ancg_594
+ AncChr6  594  599  ancg_595
+ AncChr6  595  600  ancg_596
+ AncChr6  596  601  ancg_597
+ AncChr6  597  602  ancg_598
+ AncChr6  598  603  ancg_599
+ AncChr6  599  604  ancg_600
+ AncChr7  600  605  ancg_601
+ AncChr7  601  606  ancg_602
+ AncChr7  602  607  ancg_603
+ AncChr7  603  608  ancg_604
+ AncChr7  604  609  ancg_605
+ AncChr7  605  610  ancg_606
+ AncChr7  606  611  ancg_607
+ AncChr7  607  612  ancg_608
+ AncChr7  608  613  ancg_609
+ AncChr7  609  614  ancg_610
+ AncChr7  610  615  ancg_611
+ AncChr7  611  616  ancg_612
+ AncChr7  612  617  ancg_613
+ AncChr7  613  618  ancg_614
+ AncChr7  614  619  ancg_615
+ AncChr7  615  620  ancg_616
+ AncChr7  616  621  ancg_617
+ AncChr7  617  622  ancg_618
+ AncChr7  618  623  ancg_619
+ AncChr7  619  624  ancg_620
+ AncChr7  620  625  ancg_621
+ AncChr7  621  626  ancg_622
+ AncChr7  622  627  ancg_623
+ AncChr7  623  628  ancg_624
+ AncChr7  624  629  ancg_625
+ AncChr7  625  630  ancg_626
+ AncChr7  626  631  ancg_627
+ AncChr7  627  632  ancg_628
+ AncChr7  628  633  ancg_629
+ AncChr7  629  634  ancg_630
+ AncChr7  630  635  ancg_631
+ AncChr7  631  636  ancg_632
+ AncChr7  632  637  ancg_633
+ AncChr7  633  638  ancg_634
+ AncChr7  634  639  ancg_635
+ AncChr7  635  640  ancg_636
+ AncChr7  636  641  ancg_637
+ AncChr7  637  642  ancg_638
+ AncChr7  638  643  ancg_639
+ AncChr7  639  644  ancg_640
+ AncChr7  640  645  ancg_641
+ AncChr7  641  646  ancg_642
+ AncChr7  642  647  ancg_643
+ AncChr7  643  648  ancg_644
+ AncChr7  644  649  ancg_645
+ AncChr7  645  650  ancg_646
+ AncChr7  646  651  ancg_647
+ AncChr7  647  652  ancg_648
+ AncChr7  648  653  ancg_649
+ AncChr7  649  654  ancg_650
+ AncChr7  650  655  ancg_651
+ AncChr7  651  656  ancg_652
+ AncChr7  652  657  ancg_653
+ AncChr7  653  658  ancg_654
+ AncChr7  654  659  ancg_655
+ AncChr7  655  660  ancg_656
+ AncChr7  656  661  ancg_657
+ AncChr7  657  662  ancg_658
+ AncChr7  658  663  ancg_659
+ AncChr7  659  664  ancg_660
+ AncChr7  660  665  ancg_661
+ AncChr7  661  666  ancg_662
+ AncChr7  662  667  ancg_663
+ AncChr7  663  668  ancg_664
+ AncChr7  664  669  ancg_665
+ AncChr7  665  670  ancg_666
+ AncChr7  666  671  ancg_667
+ AncChr7  667  672  ancg_668
+ AncChr7  668  673  ancg_669
+ AncChr7  669  674  ancg_670
+ AncChr7  670  675  ancg_671
+ AncChr7  671  676  ancg_672
+ AncChr7  672  677  ancg_673
+ AncChr7  673  678  ancg_674
+ AncChr7  674  679  ancg_675
+ AncChr7  675  680  ancg_676
+ AncChr7  676  681  ancg_677
+ AncChr7  677  682  ancg_678
+ AncChr7  678  683  ancg_679
+ AncChr7  679  684  ancg_680
+ AncChr7  680  685  ancg_681
+ AncChr7  681  686  ancg_682
+ AncChr7  682  687  ancg_683
+ AncChr7  683  688  ancg_684
+ AncChr7  684  689  ancg_685
+ AncChr7  685  690  ancg_686
+ AncChr7  686  691  ancg_687
+ AncChr7  687  692  ancg_688
+ AncChr7  688  693  ancg_689
+ AncChr7  689  694  ancg_690
+ AncChr7  690  695  ancg_691
+ AncChr7  691  696  ancg_692
+ AncChr7  692  697  ancg_693
+ AncChr7  693  698  ancg_694
+ AncChr7  694  699  ancg_695
+ AncChr7  695  700  ancg_696
+ AncChr7  696  701  ancg_697
+ AncChr7  697  702  ancg_698
+ AncChr7  698  703  ancg_699
+ AncChr7  699  704  ancg_700
+ AncChr8  700  705  ancg_701
+ AncChr8  701  706  ancg_702
+ AncChr8  702  707  ancg_703
+ AncChr8  703  708  ancg_704
+ AncChr8  704  709  ancg_705
+ AncChr8  705  710  ancg_706
+ AncChr8  706  711  ancg_707
+ AncChr8  707  712  ancg_708
+ AncChr8  708  713  ancg_709
+ AncChr8  709  714  ancg_710
+ AncChr8  710  715  ancg_711
+ AncChr8  711  716  ancg_712
+ AncChr8  712  717  ancg_713
+ AncChr8  713  718  ancg_714
+ AncChr8  714  719  ancg_715
+ AncChr8  715  720  ancg_716
+ AncChr8  716  721  ancg_717
+ AncChr8  717  722  ancg_718
+ AncChr8  718  723  ancg_719
+ AncChr8  719  724  ancg_720
+ AncChr8  720  725  ancg_721
+ AncChr8  721  726  ancg_722
+ AncChr8  722  727  ancg_723
+ AncChr8  723  728  ancg_724
+ AncChr8  724  729  ancg_725
+ AncChr8  725  730  ancg_726
+ AncChr8  726  731  ancg_727
+ AncChr8  727  732  ancg_728
+ AncChr8  728  733  ancg_729
+ AncChr8  729  734  ancg_730
+ AncChr8  730  735  ancg_731
+ AncChr8  731  736  ancg_732
+ AncChr8  732  737  ancg_733
+ AncChr8  733  738  ancg_734
+ AncChr8  734  739  ancg_735
+ AncChr8  735  740  ancg_736
+ AncChr8  736  741  ancg_737
+ AncChr8  737  742  ancg_738
+ AncChr8  738  743  ancg_739
+ AncChr8  739  744  ancg_740
+ AncChr8  740  745  ancg_741
+ AncChr8  741  746  ancg_742
+ AncChr8  742  747  ancg_743
+ AncChr8  743  748  ancg_744
+ AncChr8  744  749  ancg_745
+ AncChr8  745  750  ancg_746
+ AncChr8  746  751  ancg_747
+ AncChr8  747  752  ancg_748
+ AncChr8  748  753  ancg_749
+ AncChr8  749  754  ancg_750
+ AncChr8  750  755  ancg_751
+ AncChr8  751  756  ancg_752
+ AncChr8  752  757  ancg_753
+ AncChr8  753  758  ancg_754
+ AncChr8  754  759  ancg_755
+ AncChr8  755  760  ancg_756
+ AncChr8  756  761  ancg_757
+ AncChr8  757  762  ancg_758
+ AncChr8  758  763  ancg_759
+ AncChr8  759  764  ancg_760
+ AncChr8  760  765  ancg_761
+ AncChr8  761  766  ancg_762
+ AncChr8  762  767  ancg_763
+ AncChr8  763  768  ancg_764
+ AncChr8  764  769  ancg_765
+ AncChr8  765  770  ancg_766
+ AncChr8  766  771  ancg_767
+ AncChr8  767  772  ancg_768
+ AncChr8  768  773  ancg_769
+ AncChr8  769  774  ancg_770
+ AncChr8  770  775  ancg_771
+ AncChr8  771  776  ancg_772
+ AncChr8  772  777  ancg_773
+ AncChr8  773  778  ancg_774
+ AncChr8  774  779  ancg_775
+ AncChr8  775  780  ancg_776
+ AncChr8  776  781  ancg_777
+ AncChr8  777  782  ancg_778
+ AncChr8  778  783  ancg_779
+ AncChr8  779  784  ancg_780
+ AncChr8  780  785  ancg_781
+ AncChr8  781  786  ancg_782
+ AncChr8  782  787  ancg_783
+ AncChr8  783  788  ancg_784
+ AncChr8  784  789  ancg_785
+ AncChr8  785  790  ancg_786
+ AncChr8  786  791  ancg_787
+ AncChr8  787  792  ancg_788
+ AncChr8  788  793  ancg_789
+ AncChr8  789  794  ancg_790
+ AncChr8  790  795  ancg_791
+ AncChr8  791  796  ancg_792
+ AncChr8  792  797  ancg_793
+ AncChr8  793  798  ancg_794
+ AncChr8  794  799  ancg_795
+ AncChr8  795  800  ancg_796
+ AncChr8  796  801  ancg_797
+ AncChr8  797  802  ancg_798
+ AncChr8  798  803  ancg_799
+ AncChr8  799  804  ancg_800
+ AncChr9  800  805  ancg_801
+ AncChr9  801  806  ancg_802
+ AncChr9  802  807  ancg_803
+ AncChr9  803  808  ancg_804
+ AncChr9  804  809  ancg_805
+ AncChr9  805  810  ancg_806
+ AncChr9  806  811  ancg_807
+ AncChr9  807  812  ancg_808
+ AncChr9  808  813  ancg_809
+ AncChr9  809  814  ancg_810
+ AncChr9  810  815  ancg_811
+ AncChr9  811  816  ancg_812
+ AncChr9  812  817  ancg_813
+ AncChr9  813  818  ancg_814
+ AncChr9  814  819  ancg_815
+ AncChr9  815  820  ancg_816
+ AncChr9  816  821  ancg_817
+ AncChr9  817  822  ancg_818
+ AncChr9  818  823  ancg_819
+ AncChr9  819  824  ancg_820
+ AncChr9  820  825  ancg_821
+ AncChr9  821  826  ancg_822
+ AncChr9  822  827  ancg_823
+ AncChr9  823  828  ancg_824
+ AncChr9  824  829  ancg_825
+ AncChr9  825  830  ancg_826
+ AncChr9  826  831  ancg_827
+ AncChr9  827  832  ancg_828
+ AncChr9  828  833  ancg_829
+ AncChr9  829  834  ancg_830
+ AncChr9  830  835  ancg_831
+ AncChr9  831  836  ancg_832
+ AncChr9  832  837  ancg_833
+ AncChr9  833  838  ancg_834
+ AncChr9  834  839  ancg_835
+ AncChr9  835  840  ancg_836
+ AncChr9  836  841  ancg_837
+ AncChr9  837  842  ancg_838
+ AncChr9  838  843  ancg_839
+ AncChr9  839  844  ancg_840
+ AncChr9  840  845  ancg_841
+ AncChr9  841  846  ancg_842
+ AncChr9  842  847  ancg_843
+ AncChr9  843  848  ancg_844
+ AncChr9  844  849  ancg_845
+ AncChr9  845  850  ancg_846
+ AncChr9  846  851  ancg_847
+ AncChr9  847  852  ancg_848
+ AncChr9  848  853  ancg_849
+ AncChr9  849  854  ancg_850
+ AncChr9  850  855  ancg_851
+ AncChr9  851  856  ancg_852
+ AncChr9  852  857  ancg_853
+ AncChr9  853  858  ancg_854
+ AncChr9  854  859  ancg_855
+ AncChr9  855  860  ancg_856
+ AncChr9  856  861  ancg_857
+ AncChr9  857  862  ancg_858
+ AncChr9  858  863  ancg_859
+ AncChr9  859  864  ancg_860
+ AncChr9  860  865  ancg_861
+ AncChr9  861  866  ancg_862
+ AncChr9  862  867  ancg_863
+ AncChr9  863  868  ancg_864
+ AncChr9  864  869  ancg_865
+ AncChr9  865  870  ancg_866
+ AncChr9  866  871  ancg_867
+ AncChr9  867  872  ancg_868
+ AncChr9  868  873  ancg_869
+ AncChr9  869  874  ancg_870
+ AncChr9  870  875  ancg_871
+ AncChr9  871  876  ancg_872
+ AncChr9  872  877  ancg_873
+ AncChr9  873  878  ancg_874
+ AncChr9  874  879  ancg_875
+ AncChr9  875  880  ancg_876
+ AncChr9  876  881  ancg_877
+ AncChr9  877  882  ancg_878
+ AncChr9  878  883  ancg_879
+ AncChr9  879  884  ancg_880
+ AncChr9  880  885  ancg_881
+ AncChr9  881  886  ancg_882
+ AncChr9  882  887  ancg_883
+ AncChr9  883  888  ancg_884
+ AncChr9  884  889  ancg_885
+ AncChr9  885  890  ancg_886
+ AncChr9  886  891  ancg_887
+ AncChr9  887  892  ancg_888
+ AncChr9  888  893  ancg_889
+ AncChr9  889  894  ancg_890
+ AncChr9  890  895  ancg_891
+ AncChr9  891  896  ancg_892
+ AncChr9  892  897  ancg_893
+ AncChr9  893  898  ancg_894
+ AncChr9  894  899  ancg_895
+ AncChr9  895  900  ancg_896
+ AncChr9  896  901  ancg_897
+ AncChr9  897  902  ancg_898
+ AncChr9  898  903  ancg_899
+ AncChr9  899  904  ancg_900
+AncChr10  900  905  ancg_901
+AncChr10  901  906  ancg_902
+AncChr10  902  907  ancg_903
+AncChr10  903  908  ancg_904
+AncChr10  904  909  ancg_905
+AncChr10  905  910  ancg_906
+AncChr10  906  911  ancg_907
+AncChr10  907  912  ancg_908
+AncChr10  908  913  ancg_909
+AncChr10  909  914  ancg_910
+AncChr10  910  915  ancg_911
+AncChr10  911  916  ancg_912
+AncChr10  912  917  ancg_913
+AncChr10  913  918  ancg_914
+AncChr10  914  919  ancg_915
+AncChr10  915  920  ancg_916
+AncChr10  916  921  ancg_917
+AncChr10  917  922  ancg_918
+AncChr10  918  923  ancg_919
+AncChr10  919  924  ancg_920
+AncChr10  920  925  ancg_921
+AncChr10  921  926  ancg_922
+AncChr10  922  927  ancg_923
+AncChr10  923  928  ancg_924
+AncChr10  924  929  ancg_925
+AncChr10  925  930  ancg_926
+AncChr10  926  931  ancg_927
+AncChr10  927  932  ancg_928
+AncChr10  928  933  ancg_929
+AncChr10  929  934  ancg_930
+AncChr10  930  935  ancg_931
+AncChr10  931  936  ancg_932
+AncChr10  932  937  ancg_933
+AncChr10  933  938  ancg_934
+AncChr10  934  939  ancg_935
+AncChr10  935  940  ancg_936
+AncChr10  936  941  ancg_937
+AncChr10  937  942  ancg_938
+AncChr10  938  943  ancg_939
+AncChr10  939  944  ancg_940
+AncChr10  940  945  ancg_941
+AncChr10  941  946  ancg_942
+AncChr10  942  947  ancg_943
+AncChr10  943  948  ancg_944
+AncChr10  944  949  ancg_945
+AncChr10  945  950  ancg_946
+AncChr10  946  951  ancg_947
+AncChr10  947  952  ancg_948
+AncChr10  948  953  ancg_949
+AncChr10  949  954  ancg_950
+AncChr10  950  955  ancg_951
+AncChr10  951  956  ancg_952
+AncChr10  952  957  ancg_953
+AncChr10  953  958  ancg_954
+AncChr10  954  959  ancg_955
+AncChr10  955  960  ancg_956
+AncChr10  956  961  ancg_957
+AncChr10  957  962  ancg_958
+AncChr10  958  963  ancg_959
+AncChr10  959  964  ancg_960
+AncChr10  960  965  ancg_961
+AncChr10  961  966  ancg_962
+AncChr10  962  967  ancg_963
+AncChr10  963  968  ancg_964
+AncChr10  964  969  ancg_965
+AncChr10  965  970  ancg_966
+AncChr10  966  971  ancg_967
+AncChr10  967  972  ancg_968
+AncChr10  968  973  ancg_969
+AncChr10  969  974  ancg_970
+AncChr10  970  975  ancg_971
+AncChr10  971  976  ancg_972
+AncChr10  972  977  ancg_973
+AncChr10  973  978  ancg_974
+AncChr10  974  979  ancg_975
+AncChr10  975  980  ancg_976
+AncChr10  976  981  ancg_977
+AncChr10  977  982  ancg_978
+AncChr10  978  983  ancg_979
+AncChr10  979  984  ancg_980
+AncChr10  980  985  ancg_981
+AncChr10  981  986  ancg_982
+AncChr10  982  987  ancg_983
+AncChr10  983  988  ancg_984
+AncChr10  984  989  ancg_985
+AncChr10  985  990  ancg_986
+AncChr10  986  991  ancg_987
+AncChr10  987  992  ancg_988
+AncChr10  988  993  ancg_989
+AncChr10  989  994  ancg_990
+AncChr10  990  995  ancg_991
+AncChr10  991  996  ancg_992
+AncChr10  992  997  ancg_993
+AncChr10  993  998  ancg_994
+AncChr10  994  999  ancg_995
+AncChr10  995 1000  ancg_996
+AncChr10  996 1001  ancg_997
+AncChr10  997 1002  ancg_998
+AncChr10  998 1003  ancg_999
+AncChr10  999 1004 ancg_1000
+AncChr11 1000 1005 ancg_1001
+AncChr11 1001 1006 ancg_1002
+AncChr11 1002 1007 ancg_1003
+AncChr11 1003 1008 ancg_1004
+AncChr11 1004 1009 ancg_1005
+AncChr11 1005 1010 ancg_1006
+AncChr11 1006 1011 ancg_1007
+AncChr11 1007 1012 ancg_1008
+AncChr11 1008 1013 ancg_1009
+AncChr11 1009 1014 ancg_1010
+AncChr11 1010 1015 ancg_1011
+AncChr11 1011 1016 ancg_1012
+AncChr11 1012 1017 ancg_1013
+AncChr11 1013 1018 ancg_1014
+AncChr11 1014 1019 ancg_1015
+AncChr11 1015 1020 ancg_1016
+AncChr11 1016 1021 ancg_1017
+AncChr11 1017 1022 ancg_1018
+AncChr11 1018 1023 ancg_1019
+AncChr11 1019 1024 ancg_1020
+AncChr11 1020 1025 ancg_1021
+AncChr11 1021 1026 ancg_1022
+AncChr11 1022 1027 ancg_1023
+AncChr11 1023 1028 ancg_1024
+AncChr11 1024 1029 ancg_1025
+AncChr11 1025 1030 ancg_1026
+AncChr11 1026 1031 ancg_1027
+AncChr11 1027 1032 ancg_1028
+AncChr11 1028 1033 ancg_1029
+AncChr11 1029 1034 ancg_1030
+AncChr11 1030 1035 ancg_1031
+AncChr11 1031 1036 ancg_1032
+AncChr11 1032 1037 ancg_1033
+AncChr11 1033 1038 ancg_1034
+AncChr11 1034 1039 ancg_1035
+AncChr11 1035 1040 ancg_1036
+AncChr11 1036 1041 ancg_1037
+AncChr11 1037 1042 ancg_1038
+AncChr11 1038 1043 ancg_1039
+AncChr11 1039 1044 ancg_1040
+AncChr11 1040 1045 ancg_1041
+AncChr11 1041 1046 ancg_1042
+AncChr11 1042 1047 ancg_1043
+AncChr11 1043 1048 ancg_1044
+AncChr11 1044 1049 ancg_1045
+AncChr11 1045 1050 ancg_1046
+AncChr11 1046 1051 ancg_1047
+AncChr11 1047 1052 ancg_1048
+AncChr11 1048 1053 ancg_1049
+AncChr11 1049 1054 ancg_1050
+AncChr11 1050 1055 ancg_1051
+AncChr11 1051 1056 ancg_1052
+AncChr11 1052 1057 ancg_1053
+AncChr11 1053 1058 ancg_1054
+AncChr11 1054 1059 ancg_1055
+AncChr11 1055 1060 ancg_1056
+AncChr11 1056 1061 ancg_1057
+AncChr11 1057 1062 ancg_1058
+AncChr11 1058 1063 ancg_1059
+AncChr11 1059 1064 ancg_1060
+AncChr11 1060 1065 ancg_1061
+AncChr11 1061 1066 ancg_1062
+AncChr11 1062 1067 ancg_1063
+AncChr11 1063 1068 ancg_1064
+AncChr11 1064 1069 ancg_1065
+AncChr11 1065 1070 ancg_1066
+AncChr11 1066 1071 ancg_1067
+AncChr11 1067 1072 ancg_1068
+AncChr11 1068 1073 ancg_1069
+AncChr11 1069 1074 ancg_1070
+AncChr11 1070 1075 ancg_1071
+AncChr11 1071 1076 ancg_1072
+AncChr11 1072 1077 ancg_1073
+AncChr11 1073 1078 ancg_1074
+AncChr11 1074 1079 ancg_1075
+AncChr11 1075 1080 ancg_1076
+AncChr11 1076 1081 ancg_1077
+AncChr11 1077 1082 ancg_1078
+AncChr11 1078 1083 ancg_1079
+AncChr11 1079 1084 ancg_1080
+AncChr11 1080 1085 ancg_1081
+AncChr11 1081 1086 ancg_1082
+AncChr11 1082 1087 ancg_1083
+AncChr11 1083 1088 ancg_1084
+AncChr11 1084 1089 ancg_1085
+AncChr11 1085 1090 ancg_1086
+AncChr11 1086 1091 ancg_1087
+AncChr11 1087 1092 ancg_1088
+AncChr11 1088 1093 ancg_1089
+AncChr11 1089 1094 ancg_1090
+AncChr11 1090 1095 ancg_1091
+AncChr11 1091 1096 ancg_1092
+AncChr11 1092 1097 ancg_1093
+AncChr11 1093 1098 ancg_1094
+AncChr11 1094 1099 ancg_1095
+AncChr11 1095 1100 ancg_1096
+AncChr11 1096 1101 ancg_1097
+AncChr11 1097 1102 ancg_1098
+AncChr11 1098 1103 ancg_1099
+AncChr11 1099 1104 ancg_1100
+AncChr12 1100 1105 ancg_1101
+AncChr12 1101 1106 ancg_1102
+AncChr12 1102 1107 ancg_1103
+AncChr12 1103 1108 ancg_1104
+AncChr12 1104 1109 ancg_1105
+AncChr12 1105 1110 ancg_1106
+AncChr12 1106 1111 ancg_1107
+AncChr12 1107 1112 ancg_1108
+AncChr12 1108 1113 ancg_1109
+AncChr12 1109 1114 ancg_1110
+AncChr12 1110 1115 ancg_1111
+AncChr12 1111 1116 ancg_1112
+AncChr12 1112 1117 ancg_1113
+AncChr12 1113 1118 ancg_1114
+AncChr12 1114 1119 ancg_1115
+AncChr12 1115 1120 ancg_1116
+AncChr12 1116 1121 ancg_1117
+AncChr12 1117 1122 ancg_1118
+AncChr12 1118 1123 ancg_1119
+AncChr12 1119 1124 ancg_1120
+AncChr12 1120 1125 ancg_1121
+AncChr12 1121 1126 ancg_1122
+AncChr12 1122 1127 ancg_1123
+AncChr12 1123 1128 ancg_1124
+AncChr12 1124 1129 ancg_1125
+AncChr12 1125 1130 ancg_1126
+AncChr12 1126 1131 ancg_1127
+AncChr12 1127 1132 ancg_1128
+AncChr12 1128 1133 ancg_1129
+AncChr12 1129 1134 ancg_1130
+AncChr12 1130 1135 ancg_1131
+AncChr12 1131 1136 ancg_1132
+AncChr12 1132 1137 ancg_1133
+AncChr12 1133 1138 ancg_1134
+AncChr12 1134 1139 ancg_1135
+AncChr12 1135 1140 ancg_1136
+AncChr12 1136 1141 ancg_1137
+AncChr12 1137 1142 ancg_1138
+AncChr12 1138 1143 ancg_1139
+AncChr12 1139 1144 ancg_1140
+AncChr12 1140 1145 ancg_1141
+AncChr12 1141 1146 ancg_1142
+AncChr12 1142 1147 ancg_1143
+AncChr12 1143 1148 ancg_1144
+AncChr12 1144 1149 ancg_1145
+AncChr12 1145 1150 ancg_1146
+AncChr12 1146 1151 ancg_1147
+AncChr12 1147 1152 ancg_1148
+AncChr12 1148 1153 ancg_1149
+AncChr12 1149 1154 ancg_1150
+AncChr12 1150 1155 ancg_1151
+AncChr12 1151 1156 ancg_1152
+AncChr12 1152 1157 ancg_1153
+AncChr12 1153 1158 ancg_1154
+AncChr12 1154 1159 ancg_1155
+AncChr12 1155 1160 ancg_1156
+AncChr12 1156 1161 ancg_1157
+AncChr12 1157 1162 ancg_1158
+AncChr12 1158 1163 ancg_1159
+AncChr12 1159 1164 ancg_1160
+AncChr12 1160 1165 ancg_1161
+AncChr12 1161 1166 ancg_1162
+AncChr12 1162 1167 ancg_1163
+AncChr12 1163 1168 ancg_1164
+AncChr12 1164 1169 ancg_1165
+AncChr12 1165 1170 ancg_1166
+AncChr12 1166 1171 ancg_1167
+AncChr12 1167 1172 ancg_1168
+AncChr12 1168 1173 ancg_1169
+AncChr12 1169 1174 ancg_1170
+AncChr12 1170 1175 ancg_1171
+AncChr12 1171 1176 ancg_1172
+AncChr12 1172 1177 ancg_1173
+AncChr12 1173 1178 ancg_1174
+AncChr12 1174 1179 ancg_1175
+AncChr12 1175 1180 ancg_1176
+AncChr12 1176 1181 ancg_1177
+AncChr12 1177 1182 ancg_1178
+AncChr12 1178 1183 ancg_1179
+AncChr12 1179 1184 ancg_1180
+AncChr12 1180 1185 ancg_1181
+AncChr12 1181 1186 ancg_1182
+AncChr12 1182 1187 ancg_1183
+AncChr12 1183 1188 ancg_1184
+AncChr12 1184 1189 ancg_1185
+AncChr12 1185 1190 ancg_1186
+AncChr12 1186 1191 ancg_1187
+AncChr12 1187 1192 ancg_1188
+AncChr12 1188 1193 ancg_1189
+AncChr12 1189 1194 ancg_1190
+AncChr12 1190 1195 ancg_1191
+AncChr12 1191 1196 ancg_1192
+AncChr12 1192 1197 ancg_1193
+AncChr12 1193 1198 ancg_1194
+AncChr12 1194 1199 ancg_1195
+AncChr12 1195 1200 ancg_1196
+AncChr12 1196 1201 ancg_1197
+AncChr12 1197 1202 ancg_1198
+AncChr12 1198 1203 ancg_1199
+AncChr12 1199 1204 ancg_1200
+AncChr13 1200 1205 ancg_1201
+AncChr13 1201 1206 ancg_1202
+AncChr13 1202 1207 ancg_1203
+AncChr13 1203 1208 ancg_1204
+AncChr13 1204 1209 ancg_1205
+AncChr13 1205 1210 ancg_1206
+AncChr13 1206 1211 ancg_1207
+AncChr13 1207 1212 ancg_1208
+AncChr13 1208 1213 ancg_1209
+AncChr13 1209 1214 ancg_1210
+AncChr13 1210 1215 ancg_1211
+AncChr13 1211 1216 ancg_1212
+AncChr13 1212 1217 ancg_1213
+AncChr13 1213 1218 ancg_1214
+AncChr13 1214 1219 ancg_1215
+AncChr13 1215 1220 ancg_1216
+AncChr13 1216 1221 ancg_1217
+AncChr13 1217 1222 ancg_1218
+AncChr13 1218 1223 ancg_1219
+AncChr13 1219 1224 ancg_1220
+AncChr13 1220 1225 ancg_1221
+AncChr13 1221 1226 ancg_1222
+AncChr13 1222 1227 ancg_1223
+AncChr13 1223 1228 ancg_1224
+AncChr13 1224 1229 ancg_1225
+AncChr13 1225 1230 ancg_1226
+AncChr13 1226 1231 ancg_1227
+AncChr13 1227 1232 ancg_1228
+AncChr13 1228 1233 ancg_1229
+AncChr13 1229 1234 ancg_1230
+AncChr13 1230 1235 ancg_1231
+AncChr13 1231 1236 ancg_1232
+AncChr13 1232 1237 ancg_1233
+AncChr13 1233 1238 ancg_1234
+AncChr13 1234 1239 ancg_1235
+AncChr13 1235 1240 ancg_1236
+AncChr13 1236 1241 ancg_1237
+AncChr13 1237 1242 ancg_1238
+AncChr13 1238 1243 ancg_1239
+AncChr13 1239 1244 ancg_1240
+AncChr13 1240 1245 ancg_1241
+AncChr13 1241 1246 ancg_1242
+AncChr13 1242 1247 ancg_1243
+AncChr13 1243 1248 ancg_1244
+AncChr13 1244 1249 ancg_1245
+AncChr13 1245 1250 ancg_1246
+AncChr13 1246 1251 ancg_1247
+AncChr13 1247 1252 ancg_1248
+AncChr13 1248 1253 ancg_1249
+AncChr13 1249 1254 ancg_1250
+AncChr13 1250 1255 ancg_1251
+AncChr13 1251 1256 ancg_1252
+AncChr13 1252 1257 ancg_1253
+AncChr13 1253 1258 ancg_1254
+AncChr13 1254 1259 ancg_1255
+AncChr13 1255 1260 ancg_1256
+AncChr13 1256 1261 ancg_1257
+AncChr13 1257 1262 ancg_1258
+AncChr13 1258 1263 ancg_1259
+AncChr13 1259 1264 ancg_1260
+AncChr13 1260 1265 ancg_1261
+AncChr13 1261 1266 ancg_1262
+AncChr13 1262 1267 ancg_1263
+AncChr13 1263 1268 ancg_1264
+AncChr13 1264 1269 ancg_1265
+AncChr13 1265 1270 ancg_1266
+AncChr13 1266 1271 ancg_1267
+AncChr13 1267 1272 ancg_1268
+AncChr13 1268 1273 ancg_1269
+AncChr13 1269 1274 ancg_1270
+AncChr13 1270 1275 ancg_1271
+AncChr13 1271 1276 ancg_1272
+AncChr13 1272 1277 ancg_1273
+AncChr13 1273 1278 ancg_1274
+AncChr13 1274 1279 ancg_1275
+AncChr13 1275 1280 ancg_1276
+AncChr13 1276 1281 ancg_1277
+AncChr13 1277 1282 ancg_1278
+AncChr13 1278 1283 ancg_1279
+AncChr13 1279 1284 ancg_1280
+AncChr13 1280 1285 ancg_1281
+AncChr13 1281 1286 ancg_1282
+AncChr13 1282 1287 ancg_1283
+AncChr13 1283 1288 ancg_1284
+AncChr13 1284 1289 ancg_1285
+AncChr13 1285 1290 ancg_1286
+AncChr13 1286 1291 ancg_1287
+AncChr13 1287 1292 ancg_1288
+AncChr13 1288 1293 ancg_1289
+AncChr13 1289 1294 ancg_1290
+AncChr13 1290 1295 ancg_1291
+AncChr13 1291 1296 ancg_1292
+AncChr13 1292 1297 ancg_1293
+AncChr13 1293 1298 ancg_1294
+AncChr13 1294 1299 ancg_1295
+AncChr13 1295 1300 ancg_1296
+AncChr13 1296 1301 ancg_1297
+AncChr13 1297 1302 ancg_1298
+AncChr13 1298 1303 ancg_1299
+AncChr13 1299 1304 ancg_1300
+AncChr14 1300 1305 ancg_1301
+AncChr14 1301 1306 ancg_1302
+AncChr14 1302 1307 ancg_1303
+AncChr14 1303 1308 ancg_1304
+AncChr14 1304 1309 ancg_1305
+AncChr14 1305 1310 ancg_1306
+AncChr14 1306 1311 ancg_1307
+AncChr14 1307 1312 ancg_1308
+AncChr14 1308 1313 ancg_1309
+AncChr14 1309 1314 ancg_1310
+AncChr14 1310 1315 ancg_1311
+AncChr14 1311 1316 ancg_1312
+AncChr14 1312 1317 ancg_1313
+AncChr14 1313 1318 ancg_1314
+AncChr14 1314 1319 ancg_1315
+AncChr14 1315 1320 ancg_1316
+AncChr14 1316 1321 ancg_1317
+AncChr14 1317 1322 ancg_1318
+AncChr14 1318 1323 ancg_1319
+AncChr14 1319 1324 ancg_1320
+AncChr14 1320 1325 ancg_1321
+AncChr14 1321 1326 ancg_1322
+AncChr14 1322 1327 ancg_1323
+AncChr14 1323 1328 ancg_1324
+AncChr14 1324 1329 ancg_1325
+AncChr14 1325 1330 ancg_1326
+AncChr14 1326 1331 ancg_1327
+AncChr14 1327 1332 ancg_1328
+AncChr14 1328 1333 ancg_1329
+AncChr14 1329 1334 ancg_1330
+AncChr14 1330 1335 ancg_1331
+AncChr14 1331 1336 ancg_1332
+AncChr14 1332 1337 ancg_1333
+AncChr14 1333 1338 ancg_1334
+AncChr14 1334 1339 ancg_1335
+AncChr14 1335 1340 ancg_1336
+AncChr14 1336 1341 ancg_1337
+AncChr14 1337 1342 ancg_1338
+AncChr14 1338 1343 ancg_1339
+AncChr14 1339 1344 ancg_1340
+AncChr14 1340 1345 ancg_1341
+AncChr14 1341 1346 ancg_1342
+AncChr14 1342 1347 ancg_1343
+AncChr14 1343 1348 ancg_1344
+AncChr14 1344 1349 ancg_1345
+AncChr14 1345 1350 ancg_1346
+AncChr14 1346 1351 ancg_1347
+AncChr14 1347 1352 ancg_1348
+AncChr14 1348 1353 ancg_1349
+AncChr14 1349 1354 ancg_1350
+AncChr14 1350 1355 ancg_1351
+AncChr14 1351 1356 ancg_1352
+AncChr14 1352 1357 ancg_1353
+AncChr14 1353 1358 ancg_1354
+AncChr14 1354 1359 ancg_1355
+AncChr14 1355 1360 ancg_1356
+AncChr14 1356 1361 ancg_1357
+AncChr14 1357 1362 ancg_1358
+AncChr14 1358 1363 ancg_1359
+AncChr14 1359 1364 ancg_1360
+AncChr14 1360 1365 ancg_1361
+AncChr14 1361 1366 ancg_1362
+AncChr14 1362 1367 ancg_1363
+AncChr14 1363 1368 ancg_1364
+AncChr14 1364 1369 ancg_1365
+AncChr14 1365 1370 ancg_1366
+AncChr14 1366 1371 ancg_1367
+AncChr14 1367 1372 ancg_1368
+AncChr14 1368 1373 ancg_1369
+AncChr14 1369 1374 ancg_1370
+AncChr14 1370 1375 ancg_1371
+AncChr14 1371 1376 ancg_1372
+AncChr14 1372 1377 ancg_1373
+AncChr14 1373 1378 ancg_1374
+AncChr14 1374 1379 ancg_1375
+AncChr14 1375 1380 ancg_1376
+AncChr14 1376 1381 ancg_1377
+AncChr14 1377 1382 ancg_1378
+AncChr14 1378 1383 ancg_1379
+AncChr14 1379 1384 ancg_1380
+AncChr14 1380 1385 ancg_1381
+AncChr14 1381 1386 ancg_1382
+AncChr14 1382 1387 ancg_1383
+AncChr14 1383 1388 ancg_1384
+AncChr14 1384 1389 ancg_1385
+AncChr14 1385 1390 ancg_1386
+AncChr14 1386 1391 ancg_1387
+AncChr14 1387 1392 ancg_1388
+AncChr14 1388 1393 ancg_1389
+AncChr14 1389 1394 ancg_1390
+AncChr14 1390 1395 ancg_1391
+AncChr14 1391 1396 ancg_1392
+AncChr14 1392 1397 ancg_1393
+AncChr14 1393 1398 ancg_1394
+AncChr14 1394 1399 ancg_1395
+AncChr14 1395 1400 ancg_1396
+AncChr14 1396 1401 ancg_1397
+AncChr14 1397 1402 ancg_1398
+AncChr14 1398 1403 ancg_1399
+AncChr14 1399 1404 ancg_1400
+AncChr15 1400 1405 ancg_1401
+AncChr15 1401 1406 ancg_1402
+AncChr15 1402 1407 ancg_1403
+AncChr15 1403 1408 ancg_1404
+AncChr15 1404 1409 ancg_1405
+AncChr15 1405 1410 ancg_1406
+AncChr15 1406 1411 ancg_1407
+AncChr15 1407 1412 ancg_1408
+AncChr15 1408 1413 ancg_1409
+AncChr15 1409 1414 ancg_1410
+AncChr15 1410 1415 ancg_1411
+AncChr15 1411 1416 ancg_1412
+AncChr15 1412 1417 ancg_1413
+AncChr15 1413 1418 ancg_1414
+AncChr15 1414 1419 ancg_1415
+AncChr15 1415 1420 ancg_1416
+AncChr15 1416 1421 ancg_1417
+AncChr15 1417 1422 ancg_1418
+AncChr15 1418 1423 ancg_1419
+AncChr15 1419 1424 ancg_1420
+AncChr15 1420 1425 ancg_1421
+AncChr15 1421 1426 ancg_1422
+AncChr15 1422 1427 ancg_1423
+AncChr15 1423 1428 ancg_1424
+AncChr15 1424 1429 ancg_1425
+AncChr15 1425 1430 ancg_1426
+AncChr15 1426 1431 ancg_1427
+AncChr15 1427 1432 ancg_1428
+AncChr15 1428 1433 ancg_1429
+AncChr15 1429 1434 ancg_1430
+AncChr15 1430 1435 ancg_1431
+AncChr15 1431 1436 ancg_1432
+AncChr15 1432 1437 ancg_1433
+AncChr15 1433 1438 ancg_1434
+AncChr15 1434 1439 ancg_1435
+AncChr15 1435 1440 ancg_1436
+AncChr15 1436 1441 ancg_1437
+AncChr15 1437 1442 ancg_1438
+AncChr15 1438 1443 ancg_1439
+AncChr15 1439 1444 ancg_1440
+AncChr15 1440 1445 ancg_1441
+AncChr15 1441 1446 ancg_1442
+AncChr15 1442 1447 ancg_1443
+AncChr15 1443 1448 ancg_1444
+AncChr15 1444 1449 ancg_1445
+AncChr15 1445 1450 ancg_1446
+AncChr15 1446 1451 ancg_1447
+AncChr15 1447 1452 ancg_1448
+AncChr15 1448 1453 ancg_1449
+AncChr15 1449 1454 ancg_1450
+AncChr15 1450 1455 ancg_1451
+AncChr15 1451 1456 ancg_1452
+AncChr15 1452 1457 ancg_1453
+AncChr15 1453 1458 ancg_1454
+AncChr15 1454 1459 ancg_1455
+AncChr15 1455 1460 ancg_1456
+AncChr15 1456 1461 ancg_1457
+AncChr15 1457 1462 ancg_1458
+AncChr15 1458 1463 ancg_1459
+AncChr15 1459 1464 ancg_1460
+AncChr15 1460 1465 ancg_1461
+AncChr15 1461 1466 ancg_1462
+AncChr15 1462 1467 ancg_1463
+AncChr15 1463 1468 ancg_1464
+AncChr15 1464 1469 ancg_1465
+AncChr15 1465 1470 ancg_1466
+AncChr15 1466 1471 ancg_1467
+AncChr15 1467 1472 ancg_1468
+AncChr15 1468 1473 ancg_1469
+AncChr15 1469 1474 ancg_1470
+AncChr15 1470 1475 ancg_1471
+AncChr15 1471 1476 ancg_1472
+AncChr15 1472 1477 ancg_1473
+AncChr15 1473 1478 ancg_1474
+AncChr15 1474 1479 ancg_1475
+AncChr15 1475 1480 ancg_1476
+AncChr15 1476 1481 ancg_1477
+AncChr15 1477 1482 ancg_1478
+AncChr15 1478 1483 ancg_1479
+AncChr15 1479 1484 ancg_1480
+AncChr15 1480 1485 ancg_1481
+AncChr15 1481 1486 ancg_1482
+AncChr15 1482 1487 ancg_1483
+AncChr15 1483 1488 ancg_1484
+AncChr15 1484 1489 ancg_1485
+AncChr15 1485 1490 ancg_1486
+AncChr15 1486 1491 ancg_1487
+AncChr15 1487 1492 ancg_1488
+AncChr15 1488 1493 ancg_1489
+AncChr15 1489 1494 ancg_1490
+AncChr15 1490 1495 ancg_1491
+AncChr15 1491 1496 ancg_1492
+AncChr15 1492 1497 ancg_1493
+AncChr15 1493 1498 ancg_1494
+AncChr15 1494 1499 ancg_1495
+AncChr15 1495 1500 ancg_1496
+AncChr15 1496 1501 ancg_1497
+AncChr15 1497 1502 ancg_1498
+AncChr15 1498 1503 ancg_1499
+AncChr15 1499 1504 ancg_1500
+AncChr16 1500 1505 ancg_1501
+AncChr16 1501 1506 ancg_1502
+AncChr16 1502 1507 ancg_1503
+AncChr16 1503 1508 ancg_1504
+AncChr16 1504 1509 ancg_1505
+AncChr16 1505 1510 ancg_1506
+AncChr16 1506 1511 ancg_1507
+AncChr16 1507 1512 ancg_1508
+AncChr16 1508 1513 ancg_1509
+AncChr16 1509 1514 ancg_1510
+AncChr16 1510 1515 ancg_1511
+AncChr16 1511 1516 ancg_1512
+AncChr16 1512 1517 ancg_1513
+AncChr16 1513 1518 ancg_1514
+AncChr16 1514 1519 ancg_1515
+AncChr16 1515 1520 ancg_1516
+AncChr16 1516 1521 ancg_1517
+AncChr16 1517 1522 ancg_1518
+AncChr16 1518 1523 ancg_1519
+AncChr16 1519 1524 ancg_1520
+AncChr16 1520 1525 ancg_1521
+AncChr16 1521 1526 ancg_1522
+AncChr16 1522 1527 ancg_1523
+AncChr16 1523 1528 ancg_1524
+AncChr16 1524 1529 ancg_1525
+AncChr16 1525 1530 ancg_1526
+AncChr16 1526 1531 ancg_1527
+AncChr16 1527 1532 ancg_1528
+AncChr16 1528 1533 ancg_1529
+AncChr16 1529 1534 ancg_1530
+AncChr16 1530 1535 ancg_1531
+AncChr16 1531 1536 ancg_1532
+AncChr16 1532 1537 ancg_1533
+AncChr16 1533 1538 ancg_1534
+AncChr16 1534 1539 ancg_1535
+AncChr16 1535 1540 ancg_1536
+AncChr16 1536 1541 ancg_1537
+AncChr16 1537 1542 ancg_1538
+AncChr16 1538 1543 ancg_1539
+AncChr16 1539 1544 ancg_1540
+AncChr16 1540 1545 ancg_1541
+AncChr16 1541 1546 ancg_1542
+AncChr16 1542 1547 ancg_1543
+AncChr16 1543 1548 ancg_1544
+AncChr16 1544 1549 ancg_1545
+AncChr16 1545 1550 ancg_1546
+AncChr16 1546 1551 ancg_1547
+AncChr16 1547 1552 ancg_1548
+AncChr16 1548 1553 ancg_1549
+AncChr16 1549 1554 ancg_1550
+AncChr16 1550 1555 ancg_1551
+AncChr16 1551 1556 ancg_1552
+AncChr16 1552 1557 ancg_1553
+AncChr16 1553 1558 ancg_1554
+AncChr16 1554 1559 ancg_1555
+AncChr16 1555 1560 ancg_1556
+AncChr16 1556 1561 ancg_1557
+AncChr16 1557 1562 ancg_1558
+AncChr16 1558 1563 ancg_1559
+AncChr16 1559 1564 ancg_1560
+AncChr16 1560 1565 ancg_1561
+AncChr16 1561 1566 ancg_1562
+AncChr16 1562 1567 ancg_1563
+AncChr16 1563 1568 ancg_1564
+AncChr16 1564 1569 ancg_1565
+AncChr16 1565 1570 ancg_1566
+AncChr16 1566 1571 ancg_1567
+AncChr16 1567 1572 ancg_1568
+AncChr16 1568 1573 ancg_1569
+AncChr16 1569 1574 ancg_1570
+AncChr16 1570 1575 ancg_1571
+AncChr16 1571 1576 ancg_1572
+AncChr16 1572 1577 ancg_1573
+AncChr16 1573 1578 ancg_1574
+AncChr16 1574 1579 ancg_1575
+AncChr16 1575 1580 ancg_1576
+AncChr16 1576 1581 ancg_1577
+AncChr16 1577 1582 ancg_1578
+AncChr16 1578 1583 ancg_1579
+AncChr16 1579 1584 ancg_1580
+AncChr16 1580 1585 ancg_1581
+AncChr16 1581 1586 ancg_1582
+AncChr16 1582 1587 ancg_1583
+AncChr16 1583 1588 ancg_1584
+AncChr16 1584 1589 ancg_1585
+AncChr16 1585 1590 ancg_1586
+AncChr16 1586 1591 ancg_1587
+AncChr16 1587 1592 ancg_1588
+AncChr16 1588 1593 ancg_1589
+AncChr16 1589 1594 ancg_1590
+AncChr16 1590 1595 ancg_1591
+AncChr16 1591 1596 ancg_1592
+AncChr16 1592 1597 ancg_1593
+AncChr16 1593 1598 ancg_1594
+AncChr16 1594 1599 ancg_1595
+AncChr16 1595 1600 ancg_1596
+AncChr16 1596 1601 ancg_1597
+AncChr16 1597 1602 ancg_1598
+AncChr16 1598 1603 ancg_1599
+AncChr16 1599 1604 ancg_1600
+AncChr17 1600 1605 ancg_1601
+AncChr17 1601 1606 ancg_1602
+AncChr17 1602 1607 ancg_1603
+AncChr17 1603 1608 ancg_1604
+AncChr17 1604 1609 ancg_1605
+AncChr17 1605 1610 ancg_1606
+AncChr17 1606 1611 ancg_1607
+AncChr17 1607 1612 ancg_1608
+AncChr17 1608 1613 ancg_1609
+AncChr17 1609 1614 ancg_1610
+AncChr17 1610 1615 ancg_1611
+AncChr17 1611 1616 ancg_1612
+AncChr17 1612 1617 ancg_1613
+AncChr17 1613 1618 ancg_1614
+AncChr17 1614 1619 ancg_1615
+AncChr17 1615 1620 ancg_1616
+AncChr17 1616 1621 ancg_1617
+AncChr17 1617 1622 ancg_1618
+AncChr17 1618 1623 ancg_1619
+AncChr17 1619 1624 ancg_1620
+AncChr17 1620 1625 ancg_1621
+AncChr17 1621 1626 ancg_1622
+AncChr17 1622 1627 ancg_1623
+AncChr17 1623 1628 ancg_1624
+AncChr17 1624 1629 ancg_1625
+AncChr17 1625 1630 ancg_1626
+AncChr17 1626 1631 ancg_1627
+AncChr17 1627 1632 ancg_1628
+AncChr17 1628 1633 ancg_1629
+AncChr17 1629 1634 ancg_1630
+AncChr17 1630 1635 ancg_1631
+AncChr17 1631 1636 ancg_1632
+AncChr17 1632 1637 ancg_1633
+AncChr17 1633 1638 ancg_1634
+AncChr17 1634 1639 ancg_1635
+AncChr17 1635 1640 ancg_1636
+AncChr17 1636 1641 ancg_1637
+AncChr17 1637 1642 ancg_1638
+AncChr17 1638 1643 ancg_1639
+AncChr17 1639 1644 ancg_1640
+AncChr17 1640 1645 ancg_1641
+AncChr17 1641 1646 ancg_1642
+AncChr17 1642 1647 ancg_1643
+AncChr17 1643 1648 ancg_1644
+AncChr17 1644 1649 ancg_1645
+AncChr17 1645 1650 ancg_1646
+AncChr17 1646 1651 ancg_1647
+AncChr17 1647 1652 ancg_1648
+AncChr17 1648 1653 ancg_1649
+AncChr17 1649 1654 ancg_1650
+AncChr17 1650 1655 ancg_1651
+AncChr17 1651 1656 ancg_1652
+AncChr17 1652 1657 ancg_1653
+AncChr17 1653 1658 ancg_1654
+AncChr17 1654 1659 ancg_1655
+AncChr17 1655 1660 ancg_1656
+AncChr17 1656 1661 ancg_1657
+AncChr17 1657 1662 ancg_1658
+AncChr17 1658 1663 ancg_1659
+AncChr17 1659 1664 ancg_1660
+AncChr17 1660 1665 ancg_1661
+AncChr17 1661 1666 ancg_1662
+AncChr17 1662 1667 ancg_1663
+AncChr17 1663 1668 ancg_1664
+AncChr17 1664 1669 ancg_1665
+AncChr17 1665 1670 ancg_1666
+AncChr17 1666 1671 ancg_1667
+AncChr17 1667 1672 ancg_1668
+AncChr17 1668 1673 ancg_1669
+AncChr17 1669 1674 ancg_1670
+AncChr17 1670 1675 ancg_1671
+AncChr17 1671 1676 ancg_1672
+AncChr17 1672 1677 ancg_1673
+AncChr17 1673 1678 ancg_1674
+AncChr17 1674 1679 ancg_1675
+AncChr17 1675 1680 ancg_1676
+AncChr17 1676 1681 ancg_1677
+AncChr17 1677 1682 ancg_1678
+AncChr17 1678 1683 ancg_1679
+AncChr17 1679 1684 ancg_1680
+AncChr17 1680 1685 ancg_1681
+AncChr17 1681 1686 ancg_1682
+AncChr17 1682 1687 ancg_1683
+AncChr17 1683 1688 ancg_1684
+AncChr17 1684 1689 ancg_1685
+AncChr17 1685 1690 ancg_1686
+AncChr17 1686 1691 ancg_1687
+AncChr17 1687 1692 ancg_1688
+AncChr17 1688 1693 ancg_1689
+AncChr17 1689 1694 ancg_1690
+AncChr17 1690 1695 ancg_1691
+AncChr17 1691 1696 ancg_1692
+AncChr17 1692 1697 ancg_1693
+AncChr17 1693 1698 ancg_1694
+AncChr17 1694 1699 ancg_1695
+AncChr17 1695 1700 ancg_1696
+AncChr17 1696 1701 ancg_1697
+AncChr17 1697 1702 ancg_1698
+AncChr17 1698 1703 ancg_1699
+AncChr17 1699 1704 ancg_1700
+AncChr18 1700 1705 ancg_1701
+AncChr18 1701 1706 ancg_1702
+AncChr18 1702 1707 ancg_1703
+AncChr18 1703 1708 ancg_1704
+AncChr18 1704 1709 ancg_1705
+AncChr18 1705 1710 ancg_1706
+AncChr18 1706 1711 ancg_1707
+AncChr18 1707 1712 ancg_1708
+AncChr18 1708 1713 ancg_1709
+AncChr18 1709 1714 ancg_1710
+AncChr18 1710 1715 ancg_1711
+AncChr18 1711 1716 ancg_1712
+AncChr18 1712 1717 ancg_1713
+AncChr18 1713 1718 ancg_1714
+AncChr18 1714 1719 ancg_1715
+AncChr18 1715 1720 ancg_1716
+AncChr18 1716 1721 ancg_1717
+AncChr18 1717 1722 ancg_1718
+AncChr18 1718 1723 ancg_1719
+AncChr18 1719 1724 ancg_1720
+AncChr18 1720 1725 ancg_1721
+AncChr18 1721 1726 ancg_1722
+AncChr18 1722 1727 ancg_1723
+AncChr18 1723 1728 ancg_1724
+AncChr18 1724 1729 ancg_1725
+AncChr18 1725 1730 ancg_1726
+AncChr18 1726 1731 ancg_1727
+AncChr18 1727 1732 ancg_1728
+AncChr18 1728 1733 ancg_1729
+AncChr18 1729 1734 ancg_1730
+AncChr18 1730 1735 ancg_1731
+AncChr18 1731 1736 ancg_1732
+AncChr18 1732 1737 ancg_1733
+AncChr18 1733 1738 ancg_1734
+AncChr18 1734 1739 ancg_1735
+AncChr18 1735 1740 ancg_1736
+AncChr18 1736 1741 ancg_1737
+AncChr18 1737 1742 ancg_1738
+AncChr18 1738 1743 ancg_1739
+AncChr18 1739 1744 ancg_1740
+AncChr18 1740 1745 ancg_1741
+AncChr18 1741 1746 ancg_1742
+AncChr18 1742 1747 ancg_1743
+AncChr18 1743 1748 ancg_1744
+AncChr18 1744 1749 ancg_1745
+AncChr18 1745 1750 ancg_1746
+AncChr18 1746 1751 ancg_1747
+AncChr18 1747 1752 ancg_1748
+AncChr18 1748 1753 ancg_1749
+AncChr18 1749 1754 ancg_1750
+AncChr18 1750 1755 ancg_1751
+AncChr18 1751 1756 ancg_1752
+AncChr18 1752 1757 ancg_1753
+AncChr18 1753 1758 ancg_1754
+AncChr18 1754 1759 ancg_1755
+AncChr18 1755 1760 ancg_1756
+AncChr18 1756 1761 ancg_1757
+AncChr18 1757 1762 ancg_1758
+AncChr18 1758 1763 ancg_1759
+AncChr18 1759 1764 ancg_1760
+AncChr18 1760 1765 ancg_1761
+AncChr18 1761 1766 ancg_1762
+AncChr18 1762 1767 ancg_1763
+AncChr18 1763 1768 ancg_1764
+AncChr18 1764 1769 ancg_1765
+AncChr18 1765 1770 ancg_1766
+AncChr18 1766 1771 ancg_1767
+AncChr18 1767 1772 ancg_1768
+AncChr18 1768 1773 ancg_1769
+AncChr18 1769 1774 ancg_1770
+AncChr18 1770 1775 ancg_1771
+AncChr18 1771 1776 ancg_1772
+AncChr18 1772 1777 ancg_1773
+AncChr18 1773 1778 ancg_1774
+AncChr18 1774 1779 ancg_1775
+AncChr18 1775 1780 ancg_1776
+AncChr18 1776 1781 ancg_1777
+AncChr18 1777 1782 ancg_1778
+AncChr18 1778 1783 ancg_1779
+AncChr18 1779 1784 ancg_1780
+AncChr18 1780 1785 ancg_1781
+AncChr18 1781 1786 ancg_1782
+AncChr18 1782 1787 ancg_1783
+AncChr18 1783 1788 ancg_1784
+AncChr18 1784 1789 ancg_1785
+AncChr18 1785 1790 ancg_1786
+AncChr18 1786 1791 ancg_1787
+AncChr18 1787 1792 ancg_1788
+AncChr18 1788 1793 ancg_1789
+AncChr18 1789 1794 ancg_1790
+AncChr18 1790 1795 ancg_1791
+AncChr18 1791 1796 ancg_1792
+AncChr18 1792 1797 ancg_1793
+AncChr18 1793 1798 ancg_1794
+AncChr18 1794 1799 ancg_1795
+AncChr18 1795 1800 ancg_1796
+AncChr18 1796 1801 ancg_1797
+AncChr18 1797 1802 ancg_1798
+AncChr18 1798 1803 ancg_1799
+AncChr18 1799 1804 ancg_1800
+AncChr19 1800 1805 ancg_1801
+AncChr19 1801 1806 ancg_1802
+AncChr19 1802 1807 ancg_1803
+AncChr19 1803 1808 ancg_1804
+AncChr19 1804 1809 ancg_1805
+AncChr19 1805 1810 ancg_1806
+AncChr19 1806 1811 ancg_1807
+AncChr19 1807 1812 ancg_1808
+AncChr19 1808 1813 ancg_1809
+AncChr19 1809 1814 ancg_1810
+AncChr19 1810 1815 ancg_1811
+AncChr19 1811 1816 ancg_1812
+AncChr19 1812 1817 ancg_1813
+AncChr19 1813 1818 ancg_1814
+AncChr19 1814 1819 ancg_1815
+AncChr19 1815 1820 ancg_1816
+AncChr19 1816 1821 ancg_1817
+AncChr19 1817 1822 ancg_1818
+AncChr19 1818 1823 ancg_1819
+AncChr19 1819 1824 ancg_1820
+AncChr19 1820 1825 ancg_1821
+AncChr19 1821 1826 ancg_1822
+AncChr19 1822 1827 ancg_1823
+AncChr19 1823 1828 ancg_1824
+AncChr19 1824 1829 ancg_1825
+AncChr19 1825 1830 ancg_1826
+AncChr19 1826 1831 ancg_1827
+AncChr19 1827 1832 ancg_1828
+AncChr19 1828 1833 ancg_1829
+AncChr19 1829 1834 ancg_1830
+AncChr19 1830 1835 ancg_1831
+AncChr19 1831 1836 ancg_1832
+AncChr19 1832 1837 ancg_1833
+AncChr19 1833 1838 ancg_1834
+AncChr19 1834 1839 ancg_1835
+AncChr19 1835 1840 ancg_1836
+AncChr19 1836 1841 ancg_1837
+AncChr19 1837 1842 ancg_1838
+AncChr19 1838 1843 ancg_1839
+AncChr19 1839 1844 ancg_1840
+AncChr19 1840 1845 ancg_1841
+AncChr19 1841 1846 ancg_1842
+AncChr19 1842 1847 ancg_1843
+AncChr19 1843 1848 ancg_1844
+AncChr19 1844 1849 ancg_1845
+AncChr19 1845 1850 ancg_1846
+AncChr19 1846 1851 ancg_1847
+AncChr19 1847 1852 ancg_1848
+AncChr19 1848 1853 ancg_1849
+AncChr19 1849 1854 ancg_1850
+AncChr19 1850 1855 ancg_1851
+AncChr19 1851 1856 ancg_1852
+AncChr19 1852 1857 ancg_1853
+AncChr19 1853 1858 ancg_1854
+AncChr19 1854 1859 ancg_1855
+AncChr19 1855 1860 ancg_1856
+AncChr19 1856 1861 ancg_1857
+AncChr19 1857 1862 ancg_1858
+AncChr19 1858 1863 ancg_1859
+AncChr19 1859 1864 ancg_1860
+AncChr19 1860 1865 ancg_1861
+AncChr19 1861 1866 ancg_1862
+AncChr19 1862 1867 ancg_1863
+AncChr19 1863 1868 ancg_1864
+AncChr19 1864 1869 ancg_1865
+AncChr19 1865 1870 ancg_1866
+AncChr19 1866 1871 ancg_1867
+AncChr19 1867 1872 ancg_1868
+AncChr19 1868 1873 ancg_1869
+AncChr19 1869 1874 ancg_1870
+AncChr19 1870 1875 ancg_1871
+AncChr19 1871 1876 ancg_1872
+AncChr19 1872 1877 ancg_1873
+AncChr19 1873 1878 ancg_1874
+AncChr19 1874 1879 ancg_1875
+AncChr19 1875 1880 ancg_1876
+AncChr19 1876 1881 ancg_1877
+AncChr19 1877 1882 ancg_1878
+AncChr19 1878 1883 ancg_1879
+AncChr19 1879 1884 ancg_1880
+AncChr19 1880 1885 ancg_1881
+AncChr19 1881 1886 ancg_1882
+AncChr19 1882 1887 ancg_1883
+AncChr19 1883 1888 ancg_1884
+AncChr19 1884 1889 ancg_1885
+AncChr19 1885 1890 ancg_1886
+AncChr19 1886 1891 ancg_1887
+AncChr19 1887 1892 ancg_1888
+AncChr19 1888 1893 ancg_1889
+AncChr19 1889 1894 ancg_1890
+AncChr19 1890 1895 ancg_1891
+AncChr19 1891 1896 ancg_1892
+AncChr19 1892 1897 ancg_1893
+AncChr19 1893 1898 ancg_1894
+AncChr19 1894 1899 ancg_1895
+AncChr19 1895 1900 ancg_1896
+AncChr19 1896 1901 ancg_1897
+AncChr19 1897 1902 ancg_1898
+AncChr19 1898 1903 ancg_1899
+AncChr19 1899 1904 ancg_1900
+AncChr20 1900 1905 ancg_1901
+AncChr20 1901 1906 ancg_1902
+AncChr20 1902 1907 ancg_1903
+AncChr20 1903 1908 ancg_1904
+AncChr20 1904 1909 ancg_1905
+AncChr20 1905 1910 ancg_1906
+AncChr20 1906 1911 ancg_1907
+AncChr20 1907 1912 ancg_1908
+AncChr20 1908 1913 ancg_1909
+AncChr20 1909 1914 ancg_1910
+AncChr20 1910 1915 ancg_1911
+AncChr20 1911 1916 ancg_1912
+AncChr20 1912 1917 ancg_1913
+AncChr20 1913 1918 ancg_1914
+AncChr20 1914 1919 ancg_1915
+AncChr20 1915 1920 ancg_1916
+AncChr20 1916 1921 ancg_1917
+AncChr20 1917 1922 ancg_1918
+AncChr20 1918 1923 ancg_1919
+AncChr20 1919 1924 ancg_1920
+AncChr20 1920 1925 ancg_1921
+AncChr20 1921 1926 ancg_1922
+AncChr20 1922 1927 ancg_1923
+AncChr20 1923 1928 ancg_1924
+AncChr20 1924 1929 ancg_1925
+AncChr20 1925 1930 ancg_1926
+AncChr20 1926 1931 ancg_1927
+AncChr20 1927 1932 ancg_1928
+AncChr20 1928 1933 ancg_1929
+AncChr20 1929 1934 ancg_1930
+AncChr20 1930 1935 ancg_1931
+AncChr20 1931 1936 ancg_1932
+AncChr20 1932 1937 ancg_1933
+AncChr20 1933 1938 ancg_1934
+AncChr20 1934 1939 ancg_1935
+AncChr20 1935 1940 ancg_1936
+AncChr20 1936 1941 ancg_1937
+AncChr20 1937 1942 ancg_1938
+AncChr20 1938 1943 ancg_1939
+AncChr20 1939 1944 ancg_1940
+AncChr20 1940 1945 ancg_1941
+AncChr20 1941 1946 ancg_1942
+AncChr20 1942 1947 ancg_1943
+AncChr20 1943 1948 ancg_1944
+AncChr20 1944 1949 ancg_1945
+AncChr20 1945 1950 ancg_1946
+AncChr20 1946 1951 ancg_1947
+AncChr20 1947 1952 ancg_1948
+AncChr20 1948 1953 ancg_1949
+AncChr20 1949 1954 ancg_1950
+AncChr20 1950 1955 ancg_1951
+AncChr20 1951 1956 ancg_1952
+AncChr20 1952 1957 ancg_1953
+AncChr20 1953 1958 ancg_1954
+AncChr20 1954 1959 ancg_1955
+AncChr20 1955 1960 ancg_1956
+AncChr20 1956 1961 ancg_1957
+AncChr20 1957 1962 ancg_1958
+AncChr20 1958 1963 ancg_1959
+AncChr20 1959 1964 ancg_1960
+AncChr20 1960 1965 ancg_1961
+AncChr20 1961 1966 ancg_1962
+AncChr20 1962 1967 ancg_1963
+AncChr20 1963 1968 ancg_1964
+AncChr20 1964 1969 ancg_1965
+AncChr20 1965 1970 ancg_1966
+AncChr20 1966 1971 ancg_1967
+AncChr20 1967 1972 ancg_1968
+AncChr20 1968 1973 ancg_1969
+AncChr20 1969 1974 ancg_1970
+AncChr20 1970 1975 ancg_1971
+AncChr20 1971 1976 ancg_1972
+AncChr20 1972 1977 ancg_1973
+AncChr20 1973 1978 ancg_1974
+AncChr20 1974 1979 ancg_1975
+AncChr20 1975 1980 ancg_1976
+AncChr20 1976 1981 ancg_1977
+AncChr20 1977 1982 ancg_1978
+AncChr20 1978 1983 ancg_1979
+AncChr20 1979 1984 ancg_1980
+AncChr20 1980 1985 ancg_1981
+AncChr20 1981 1986 ancg_1982
+AncChr20 1982 1987 ancg_1983
+AncChr20 1983 1988 ancg_1984
+AncChr20 1984 1989 ancg_1985
+AncChr20 1985 1990 ancg_1986
+AncChr20 1986 1991 ancg_1987
+AncChr20 1987 1992 ancg_1988
+AncChr20 1988 1993 ancg_1989
+AncChr20 1989 1994 ancg_1990
+AncChr20 1990 1995 ancg_1991
+AncChr20 1991 1996 ancg_1992
+AncChr20 1992 1997 ancg_1993
+AncChr20 1993 1998 ancg_1994
+AncChr20 1994 1999 ancg_1995
+AncChr20 1995 2000 ancg_1996
+AncChr20 1996 2001 ancg_1997
+AncChr20 1997 2002 ancg_1998
+AncChr20 1998 2003 ancg_1999
+AncChr20 1999 2004 ancg_2000

@@ -1,0 +1,10 @@
+Fusion of ancestral chromosome AncChr7, AncChr5 into Chr7x5
+Fusion of ancestral chromosome AncChr9, AncChr6 into Chr9x6
+Fusion of ancestral chromosome AncChr14, AncChr2 into Chr14x2
+Fission of ancestral chromosome AncChr16 into Chr16_1, Chr16_2
+Fission of ancestral chromosome AncChr20 into Chr20_1, Chr20_2
+Fusion of ancestral chromosome AncChr13, AncChr17 into Chr13x17
+Translocation of ancestral chromosomes AncChr4, AncChr2 into Chr4;2, Chr2;4
+Fusion of ancestral chromosome AncChr3, AncChr18 into Chr3+18
+Fusion of ancestral chromosome AncChr19, AncChr15 into Chr19+15
+Fusion of ancestral chromosome AncChr10, AncChr1 into Chr10x1

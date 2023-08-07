@@ -1,12 +1,14 @@
+# Imports
 import numpy as np
 import pandas as pd
+import argparse
+import os
+
 import random
 from random import randrange
 
-# Disable chained assignments
-pd.options.mode.chained_assignment = None 
-
-def simulator(Nchr = 20, Ngene = 100, Nevents = 10):
+# Make ancestor genome
+def simulator(Nchr = 20, Ngene = 100, Nevents = 10, Nruns = 1):
     def makeancestor(Nchr, Ngene):
         ancestor = pd.DataFrame(columns = ['Chr'])
         for i in range(Nchr):
@@ -14,11 +16,11 @@ def simulator(Nchr = 20, Ngene = 100, Nevents = 10):
             for i in range(Ngene):
                     ancestor = pd.concat([ancestor, pd.DataFrame([row])], ignore_index = True)
         ancestor['Genes'] = (ancestor.reset_index().index + 1)
-        # ancestor['Genes'] = 'g_' + ancestor['Genes'].astype(str)
 
         return ancestor
-    
-    def dummyBED(genome, type):
+
+    # Dummy BED files :: type 'anc' for ancestor, 'des' for descendant
+    def dummyBED(genome, type, outfile):
         if type == 'anc':
             genome['Chr'] = 'AncChr' + genome['Chr'].astype(str)
             genome['Genes'] = 'ancg_' + genome['Genes'].astype(str)
@@ -33,8 +35,10 @@ def simulator(Nchr = 20, Ngene = 100, Nevents = 10):
         genome = genome[['Chr', 'Start', 'End', 'Genes']]
             
         return genome
-    
+
+    # Dummy ortholog file
     def dummyOrthologs(genome, outfile):
+        
         orthologs = pd.DataFrame()
         
         orthologs['Orthologs'] = np.arange(len(genome)) + 1
@@ -45,9 +49,18 @@ def simulator(Nchr = 20, Ngene = 100, Nevents = 10):
         orthologs['speciesA'] = 'ancg_' + orthologs['speciesA'].astype(str)
         orthologs['speciesB'] = 'g_' + orthologs['speciesB'].astype(str)
         
-        with open(outfile, 'w') as out:
-            out.write(orthologs.to_string(header = False, index = False))
-    
+        return orthologs
+
+    def mixing(genome, mixing):
+        genes = genome['Genes'].to_numpy()
+        n = len(genes)
+        for i in range(int(mixing * n)):
+            g1, g2 = randrange(n), randrange(n)
+            genes[g2], genes[g1] = genes[g1], genes[g2]
+
+            genome['Genes'] = genes
+            # genome['Chr'] = f'{fuse1}x{fuse2}'
+            
     def fusion(genome, chr, mixing = 0):
         '''
         inputs: 
@@ -76,29 +89,30 @@ def simulator(Nchr = 20, Ngene = 100, Nevents = 10):
 
             fusion['Genes'] = genes
             fusion['Chr'] = f'{A}x{B}'
-            log = f'Fusion of AncChr{A} and AncChr{B} into Chr{A}x{B}'
+            log = f'Fusion of ancestral chromosome AncChr{A}, AncChr{B} into Chr{A}x{B}'
             
         else:
             fusion['Chr'] = f'{A}+{B}'
-            log = f'Fusion of AncChr{A} and AncChr{B} into Chr{A}+{B}'
+            log = f'Fusion of ancestral chromosome AncChr{A}, AncChr{B} into Chr{A}+{B}'
         
         # Remove the unfused chromosomes
         genome.drop(genome[genome['Chr'].isin([A, B])].index, inplace = True)
         genome = pd.concat([genome, fusion])
         
         return genome, log, chr
-    
+
     def fission(genome, chr):
         # Randomly select a chromosome for fission
         A = random.choice(chr)
         fission = genome.loc[genome['Chr'] == A]
         chr.remove(A)
-
+        
         pos = random.choice(range(1, Ngene))
 
         # Add the new chromosomes back into the genome
         chr1 = fission.iloc[: pos]
         chr1['Chr'] = f'{A}_1'
+        
         chr2 = fission.iloc[pos :]
         chr2['Chr'] = f'{A}_2'
         
@@ -106,14 +120,17 @@ def simulator(Nchr = 20, Ngene = 100, Nevents = 10):
         genome = pd.concat([genome, chr1, chr2])
         genome = genome[genome.Chr != A]
         
-        log = f'Fission of AncChr{A} into Chr{A}_1 and Chr{A}_2'
+        log = f'Fission of ancestral chromosome AncChr{A} into Chr{A}_1, Chr{A}_2'
         
         return genome, log, chr
-    
+
     def translocation(genome, chr):
         # Randomly select two chromosomes for translocation
         A = random.choice(chr)
         B = random.choice(chr)
+        
+        if A == B: # Just so the same chromosome isn't selected twice
+            B = random.choice(chr)
         
         chr = [x for x in chr if x not in (A, B)]
         
@@ -133,10 +150,10 @@ def simulator(Nchr = 20, Ngene = 100, Nevents = 10):
         # Remove the original chromosomes from the genome
         genome = pd.concat([genome, chr1, chr2]).drop(genome[(genome['Chr'] == A) & (genome['Chr'] == B)].index)
         
-        log = f'Translocation between AncChr{A} and AncChr{B}'
+        log = f'Translocation of ancestral chromosomes AncChr{A}, AncChr{B} into Chr{A};{B}, Chr{B};{A}'
         
         return genome, log, chr
-    
+
     def syntenyloss(genome, chr):
         A = random.choice(chr)
         syn = genome.loc[genome['Chr'] == A]
@@ -153,46 +170,41 @@ def simulator(Nchr = 20, Ngene = 100, Nevents = 10):
         log = f'Synteny loss of AncChr{A}'
 
         return genome, log, chr
-    
+
     # Apply macro-rearrangements to the ancestor
     ancestor = makeancestor(Nchr, Ngene)
     chr = ancestor.Chr.unique().tolist()
     speciesA = ancestor.copy()
-    
-    events = {}
+
+    events = []
     for event in range(Nevents):
         r = np.random.uniform()
         
         if r <= 0.30:
             if len(ancestor) < 2: continue
             speciesA, log, chr = fission(speciesA, chr)
-            events['EVENT_' + str(event + 1)] = log
+            events.append(log)
             print(log)
         
         elif r <= 0.45:
             speciesA, log, chr = translocation(speciesA, chr)
-            events['EVENT_' + str(event + 1)] = log
+            events.append(log)
             print(log)
         
         elif r <= 0.70:
             speciesA, log, chr = fusion(speciesA, chr)
-            events['EVENT_' + str(event + 1)] = log
+            events.append(log)
             print(log)
         
-        elif r <= 0.95:
+        elif r <= 0.99:
             speciesA, log, chr = fusion(speciesA, chr, mixing = 0.5)
-            events['EVENT_' + str(event + 1)] = log
+            events.append(log)
             print(log)
             
         else:
-            speciesA, log, chr = syntenyloss(speciesA, chr)
-            events['EVENT_' + str(event + 1)] = log
-            print(log)
+            # speciesA, log, chr = syntenyloss(speciesA, chr)
+            # events.append(log)
+            # print(log)
             continue
         
-        ancestor = dummyBED(ancestor, 'anc')
-        speciesA = dummyBED(speciesA, 'des')
-        orthologs = dummyOrthologs(ancestor)
-        
-        
-        
+        print(events)

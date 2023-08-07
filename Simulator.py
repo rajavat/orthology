@@ -23,17 +23,24 @@ if __name__ == '__main__':
     parser.add_argument('-n', '--Nevents', type = int, 
                         required = False, default = 10,
                         help = "Number of macro-syntetic rearrangement events")
-    parser.add_argument('-p', "--out_prefix", type=str, 
-                        required=False, default='Simulations/')
+    parser.add_argument('-r', '--Nruns', type = int, 
+                        required = False, default = 100,
+                        help = "Number of runs")
     args = vars(parser.parse_args())
     
     Nchr = args['Nchr']
     Ngene = args['Ngene']
+    Nevents = args['Nevents']
+    Nruns = args['Nruns']
 
 # Create output folder
-if '/' in args['out_prefix']:
-    folder = '/'.join(args['out_prefix'].split('/')[:-1])
-    os.makedirs(folder, exist_ok = True)
+os.makedirs(os.path.dirname('Simulations/'), exist_ok=True)
+
+def filename(path):
+    i = 1
+    while os.path.exists(path % i):
+        i += 1
+    return path % i
     
 # Make ancestor genome
 def makeancestor(Nchr, Ngene):
@@ -121,11 +128,11 @@ def fusion(genome, chr, mixing = 0):
 
         fusion['Genes'] = genes
         fusion['Chr'] = f'{A}x{B}'
-        log = f'Fusion of AncChr{A} and AncChr{B} into Chr{A}x{B}'
+        log = f'Fusion of ancestral chromosome AncChr{A}, AncChr{B} into Chr{A}x{B}'
         
     else:
          fusion['Chr'] = f'{A}+{B}'
-         log = f'Fusion of AncChr{A} and AncChr{B} into Chr{A}+{B}'
+         log = f'Fusion of ancestral chromosome AncChr{A}, AncChr{B} into Chr{A}+{B}'
     
     # Remove the unfused chromosomes
     genome.drop(genome[genome['Chr'].isin([A, B])].index, inplace = True)
@@ -152,7 +159,7 @@ def fission(genome, chr):
     genome = pd.concat([genome, chr1, chr2])
     genome = genome[genome.Chr != A]
     
-    log = f'Fission of AncChr{A} into Chr{A}_1 and Chr{A}_2'
+    log = f'Fission of ancestral chromosome AncChr{A} into Chr{A}_1, Chr{A}_2'
     
     return genome, log, chr
 
@@ -182,7 +189,7 @@ def translocation(genome, chr):
     # Remove the original chromosomes from the genome
     genome = pd.concat([genome, chr1, chr2]).drop(genome[(genome['Chr'] == A) & (genome['Chr'] == B)].index)
     
-    log = f'Translocation between AncChr{A} and AncChr{B}'
+    log = f'Translocation of ancestral chromosomes AncChr{A}, AncChr{B} into Chr{A};{B}, Chr{B};{A}'
     
     return genome, log, chr
 
@@ -204,51 +211,53 @@ def syntenyloss(genome, chr):
     return genome, log, chr
 
 # Apply macro-rearrangements to the ancestor
-ancestor = makeancestor(Nchr, Ngene)
-chr = ancestor.Chr.unique().tolist()
-speciesA = ancestor.copy()
+for i in range(Nruns + 1):
+    ancestor = makeancestor(Nchr, Ngene)
+    chr = ancestor.Chr.unique().tolist()
+    speciesA = ancestor.copy()
 
-events = {}
-for event in range(args['Nevents']):
-    r = np.random.uniform()
-    
-    if r <= 0.30:
-        if len(ancestor) < 2: continue
-        speciesA, log, chr = fission(speciesA, chr)
-        events['EVENT_' + str(event + 1)] = log
-        print(log)
-    
-    elif r <= 0.45:
-        speciesA, log, chr = translocation(speciesA, chr)
-        events['EVENT_' + str(event + 1)] = log
-        print(log)
-    
-    elif r <= 0.70:
-        speciesA, log, chr = fusion(speciesA, chr)
-        events['EVENT_' + str(event + 1)] = log
-        print(log)
-    
-    elif r <= 0.95:
-        speciesA, log, chr = fusion(speciesA, chr, mixing = 0.5)
-        events['EVENT_' + str(event + 1)] = log
-        print(log)
+    events = []
+    for event in range(Nevents):
+        r = np.random.uniform()
         
-    else:
-        speciesA, log, chr = syntenyloss(speciesA, chr)
-        events['EVENT_' + str(event + 1)] = log
-        print(log)
-        continue
-    
-# Create BED files and orthology file
-outfile = args['out_prefix'] + 'SpeciesA.genelist.bed'
-dummyBED(speciesA, 'des', outfile)
-outfile = args['out_prefix'] + 'Ancestor.genelist.bed'
-dummyBED(ancestor, 'anc', outfile)
-outfile = args['out_prefix'] + 'Ancestor+SpeciesA.txt'
-dummyOrthologs(ancestor, outfile)
+        if r <= 0.30:
+            if len(ancestor) < 2: continue
+            speciesA, log, chr = fission(speciesA, chr)
+            events.append(log)
+            print(log)
+        
+        elif r <= 0.45:
+            speciesA, log, chr = translocation(speciesA, chr)
+            events.append(log)
+            print(log)
+        
+        elif r <= 0.70:
+            speciesA, log, chr = fusion(speciesA, chr)
+            events.append(log)
+            print(log)
+        
+        elif r <= 0.99:
+            speciesA, log, chr = fusion(speciesA, chr, mixing = 0.5)
+            events.append(log)
+            print(log)
+            
+        else:
+            # speciesA, log, chr = syntenyloss(speciesA, chr)
+            # events.append(log)
+            # print(log)
+            continue
+        
+    # Create BED files and orthology file
+    outfile = 'Simulations/SpeciesA_' + str(i) + '.bed'
+    dummyBED(speciesA, 'des', outfile)
+    outfile = 'Simulations/Ancestor_' + str(i) + '.bed'
+    dummyBED(ancestor, 'anc', outfile)
+    outfile = 'Simulations/Ancestor+SpeciesA_' + str(i) + '.txt'
+    dummyOrthologs(ancestor, outfile)
 
-# Create list of rearrangements
-outfile = args['out_prefix'] + 'rearrangements.txt'
-with open(outfile, 'w') as out:
-    for event in events:
-        out.write(f'{event}: {events[event]}\n')
+    # Create list of rearrangements
+    outfile = 'Simulations/Events_' + str(i) + '.txt'
+    with open(outfile, 'w') as out:
+        for event in events:
+            # write each item on a new line
+            out.write("%s\n" % event)
