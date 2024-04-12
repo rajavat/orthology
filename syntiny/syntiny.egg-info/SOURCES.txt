@@ -1,8 +1,0 @@
-LICENSE
-README.md
-setup.py
-syntiny.egg-info/PKG-INFO
-syntiny.egg-info/SOURCES.txt
-syntiny.egg-info/dependency_links.txt
-syntiny.egg-info/requires.txt
-syntiny.egg-info/top_level.txt
