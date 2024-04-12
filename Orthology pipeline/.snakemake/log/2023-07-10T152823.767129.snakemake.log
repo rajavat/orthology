@@ -1,0 +1,127 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                           count    min threads    max threads
+--------------------------  -------  -------------  -------------
+all                               1              1              1
+blast                             4              2              2
+makedb                            1              1              1
+reciprocal_best_blast_hits        2              1              1
+total                             8              1              2
+
+Select jobs to execute...
+
+[Mon Jul 10 15:28:25 2023]
+rule blast:
+    input: processed_data/prot/Bralan.fa, processed_data/prot/Holleu.dmnd
+    output: blastp/Bralan+Holleu.blp
+    jobid: 12
+    reason: Missing output files: blastp/Bralan+Holleu.blp
+    wildcards: spec1=Bralan, spec2=Holleu
+    threads: 2
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 15:33:04 2023]
+Finished job 12.
+1 of 8 steps (12%) done
+Select jobs to execute...
+
+[Mon Jul 10 15:33:04 2023]
+rule blast:
+    input: processed_data/prot/Bralan.fa, processed_data/prot/Pecmax.dmnd
+    output: blastp/Bralan+Pecmax.blp
+    jobid: 9
+    reason: Missing output files: blastp/Bralan+Pecmax.blp
+    wildcards: spec1=Bralan, spec2=Pecmax
+    threads: 2
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 15:36:56 2023]
+Finished job 9.
+2 of 8 steps (25%) done
+Select jobs to execute...
+
+[Mon Jul 10 15:36:56 2023]
+rule makedb:
+    input: processed_data/prot/Bralan.fa
+    output: processed_data/prot/Bralan.dmnd
+    jobid: 8
+    reason: Missing output files: processed_data/prot/Bralan.dmnd
+    wildcards: spec2=Bralan
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 15:36:58 2023]
+Finished job 8.
+3 of 8 steps (38%) done
+Select jobs to execute...
+
+[Mon Jul 10 15:36:58 2023]
+rule blast:
+    input: processed_data/prot/Pecmax.fa, processed_data/prot/Bralan.dmnd
+    output: blastp/Pecmax+Bralan.blp
+    jobid: 7
+    reason: Missing output files: blastp/Pecmax+Bralan.blp; Input files updated by another job: processed_data/prot/Bralan.dmnd
+    wildcards: spec1=Pecmax, spec2=Bralan
+    threads: 2
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 15:41:10 2023]
+Finished job 7.
+4 of 8 steps (50%) done
+Select jobs to execute...
+
+[Mon Jul 10 15:41:10 2023]
+rule blast:
+    input: processed_data/prot/Holleu.fa, processed_data/prot/Bralan.dmnd
+    output: blastp/Holleu+Bralan.blp
+    jobid: 11
+    reason: Missing output files: blastp/Holleu+Bralan.blp; Input files updated by another job: processed_data/prot/Bralan.dmnd
+    wildcards: spec1=Holleu, spec2=Bralan
+    threads: 2
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 15:46:18 2023]
+Finished job 11.
+5 of 8 steps (62%) done
+Select jobs to execute...
+
+[Mon Jul 10 15:46:18 2023]
+rule reciprocal_best_blast_hits:
+    input: blastp/Holleu+Bralan.blp, blastp/Bralan+Holleu.blp
+    output: orthologs/Holleu+Bralan_sensitive.txt
+    jobid: 10
+    reason: Missing output files: orthologs/Holleu+Bralan_sensitive.txt; Input files updated by another job: blastp/Bralan+Holleu.blp, blastp/Holleu+Bralan.blp
+    wildcards: spec1=Holleu, spec2=Bralan
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+
+[Mon Jul 10 15:46:18 2023]
+rule reciprocal_best_blast_hits:
+    input: blastp/Pecmax+Bralan.blp, blastp/Bralan+Pecmax.blp
+    output: orthologs/Pecmax+Bralan_sensitive.txt
+    jobid: 6
+    reason: Missing output files: orthologs/Pecmax+Bralan_sensitive.txt; Input files updated by another job: blastp/Pecmax+Bralan.blp, blastp/Bralan+Pecmax.blp
+    wildcards: spec1=Pecmax, spec2=Bralan
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 15:46:19 2023]
+Finished job 10.
+6 of 8 steps (75%) done
+[Mon Jul 10 15:46:19 2023]
+Finished job 6.
+7 of 8 steps (88%) done
+Select jobs to execute...
+
+[Mon Jul 10 15:46:19 2023]
+localrule all:
+    input: orthologs/Pecmax+Holleu_sensitive.txt, orthologs/Pecmax+Bralan_sensitive.txt, orthologs/Holleu+Bralan_sensitive.txt
+    jobid: 0
+    reason: Input files updated by another job: orthologs/Holleu+Bralan_sensitive.txt, orthologs/Pecmax+Bralan_sensitive.txt
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Mon Jul 10 15:46:19 2023]
+Finished job 0.
+8 of 8 steps (100%) done
+Complete log: .snakemake/log/2023-07-10T152823.767129.snakemake.log

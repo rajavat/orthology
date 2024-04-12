@@ -1,0 +1,55 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                           count    min threads    max threads
+--------------------------  -------  -------------  -------------
+all                               1              1              1
+blast                             6              2              2
+makedb                            3              1              1
+reciprocal_best_blast_hits        3              1              1
+total                            13              1              2
+
+Select jobs to execute...
+
+[Fri Jul  7 14:54:01 2023]
+rule makedb:
+    input: processed_data/prot/Holleu.fa
+    output: processed_data/prot/Holleu.dmnd
+    jobid: 8
+    reason: Missing output files: processed_data/prot/Holleu.dmnd
+    wildcards: spec2=Holleu
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+
+[Fri Jul  7 14:54:01 2023]
+rule makedb:
+    input: processed_data/prot/Parliv.fa
+    output: processed_data/prot/Parliv.dmnd
+    jobid: 3
+    reason: Missing output files: processed_data/prot/Parliv.dmnd
+    wildcards: spec2=Parliv
+    resources: tmpdir=/var/folders/p6/srwyjmkd58z7wrlc0w8mnjbc0000gn/T
+
+[Fri Jul  7 14:54:01 2023]
+Error in rule makedb:
+    jobid: 8
+    input: processed_data/prot/Holleu.fa
+    output: processed_data/prot/Holleu.dmnd
+    shell:
+        diamond makedb --in processed_data/prot/Holleu.fa -d processed_data/prot/Holleu
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Jul  7 14:54:01 2023]
+Error in rule makedb:
+    jobid: 3
+    input: processed_data/prot/Parliv.fa
+    output: processed_data/prot/Parliv.dmnd
+    shell:
+        diamond makedb --in processed_data/prot/Parliv.fa -d processed_data/prot/Parliv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-07-07T145400.565404.snakemake.log
